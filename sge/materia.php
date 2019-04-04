@@ -30,6 +30,7 @@
 								</div>								
 							</div>
 						</div>
+						
 							&nbsp;
 							&nbsp;
 						<a href="javascript:history.back(-1)" class="btn btn-warning col-sm-2" style="margin-left: auto; padding: 15px; background-color: #0b56a6;">Voltar</a>
