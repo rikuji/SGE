@@ -14,7 +14,7 @@ if (isset($_GET['id']))
     $acao = 'Editar';
   } else if (isset($_GET['acao']) && $_GET_['acao'] == 'Vizualizar') {
     
-    $acao = "Vizualizar";
+    $acao = "Vizualizar";  
   } 
 else
   {
