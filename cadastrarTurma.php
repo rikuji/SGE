@@ -4,7 +4,7 @@
 
       if(isset($_GET['id'])){
 
-        $turma->setId($_GET['id']); 
+        $turma->setId($_GET['id']);
 
         $acao = "Editar";
 

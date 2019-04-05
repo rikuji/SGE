@@ -18,9 +18,9 @@
 				echo "Aconteceu o Seguinte erro*****" . $erro->getMenssage();
 			} 
 		}
-		public function listar(){
+			public function listar(){
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");
-			$sql->setFectMode(PDO::FETCH_CLASS, $this->class);
+			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
 			$sql->execute();
 			return $sql->fetchAll();
 		}
