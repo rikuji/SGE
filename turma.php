@@ -14,7 +14,7 @@ if (isset($_GET['id']))
     $acao = 'Editar';
   } else if (isset($_GET['acao']) && $_GET_['acao'] == 'Vizualizar') {
     
-    $acao = "Vizualizar";  
+    $acao = "Vizualizar";
   } 
 else
   {
@@ -67,7 +67,7 @@ else
 
                     <?php if (isset($_GET['acao']) && $_GET['acao'] == 'Vizualizar') { ?>
 
-                        <form action="novo_turma.php?acao=Editar&id=<?php echo $turma->getId(); ?>" method="POST" class="form-horizontal">
+                        <form action="salvaTurma.php?acao=Editar&id=<?php echo $turma->getId(); ?>" method="POST" class="form-horizontal">
 
     
 
@@ -90,7 +90,7 @@ else
                     </div>
                 </div>
                 <?php }else{ ?>
-                 <form action="salva_turma.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
+                 <form action="salvaTurma.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
 
     
 
@@ -130,12 +130,12 @@ else
                             ?>
                             <tr>
                               <td><?php echo $turma->getId(); ?></td>
-                              <td><?php echo $turma->getDescricao(); ?></td>
+                              <td><?php echo utf8_encode($turma->getDescricao()); ?></td>
                               <td>
-                                <a href="novo_turma.php?acao=Vizualizar&id=<?php echo $turma->getId(); ?>" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Vizualizar">
+                                <a href="novaTurma.php?acao=Vizualizar&id=<?php echo $turma->getId(); ?>" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Vizualizar">
                                     <i class="icon-search" ></i>
                                 </a>
-                                <a href="novo_turma.php?acao=Editar&id=<?php echo $turma->getId(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
+                                <a href="novaTurma.php?acao=Editar&id=<?php echo $turma->getId(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
                                     <i class="fa fa-pencil" aria-hidden="true" ></i>
                                 </a>
                                 
@@ -145,7 +145,7 @@ else
                                 </button>
                                 <?php }else{ ?>
 
-                                    <a href="#" class="btn btn-danger" onclick="return excluir('salva_turma.php?acao=Deletar&id=<?php echo $turma->getId(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
+                                    <a href="#" class="btn btn-danger" onclick="return excluir('salvaTurma.php?acao=Deletar&id=<?php echo $turma->getId(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
                                      <div data-icon="y" class="icon" ></div>
                                 </a>
                                 <?php } ?>

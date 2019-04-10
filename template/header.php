@@ -2,7 +2,7 @@
 require_once('template/autoload.php'); ?>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SisSGE :: Sistema Gerenciamento Escolar - SGE</title>
     <meta name="description" content="">
