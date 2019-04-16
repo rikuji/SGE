@@ -3,7 +3,7 @@ require_once 'Model.php';
 	
 	class ProfessorDAO extends Model{
 		public function __construct(){
-			parent::__construct();
+			parent:: __construct();
 			$this->class = 'Professor';
 			$this->table = 'professor';
 		}
