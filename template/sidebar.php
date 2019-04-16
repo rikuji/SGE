@@ -26,7 +26,7 @@
 
             <li><a href="#cadastros" aria-expanded="false" data-toggle="collapse"> <i class="icon-user"></i>Cadastros</a>
               <ul id="cadastros" class="collapse list-unstyled">
-                <li><a href="#">Professor</a></li>
+                <li><a href="cadastraProfessor.php">Professor</a></li>
                 <li><a href="CadastrarAluno.php">Aluno</a></li>
                 <li><a href="CadastrarTurma.php">Turma</a></li>
                 <li><a href="CadastrarMateria.php">Materias</a></li>
