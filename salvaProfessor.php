@@ -1,15 +1,20 @@
 <?php
 include_once 'template/autoload.php';
+$professor = new Professor(); 
+$professorDAO = new ProfessorDAO(); 
 
-$professor = new Professor();
-$professorDAO = new ProfessorDAO();
-
-if (isset($_GET['professor']) and $_GET['acao'] == 'Deletar') {
+if (isset($_GET['id']) and $_GET['acao'] == 'Deletar') {
 		
-		$professorDAO->deletar($_GET['professor']);
+		$professorDAO->deletar($_GET['id']);
 	}else{
-		$professor->setIdProfessor($_POST['professor']);
-		$professor->setIdProfessor($_POST['professor']);
+		$professor->setId($_POST['id']);
+		$professor->setNome($_POST['nome']);
+		$professor->setCpf($_POST['cpf']); 
+		$professor->setSexo($_POST['sexo']);
+		$professor->setEmail($_POST['email']);
+		$professor->setDisciplina($_POST['disciplina']);
+		$professor->setPeriodo($_POST['periodo']);
+		$professor->setRegistro($_POST['registro']);
 
 		$acao = $_GET['acao'];
 
@@ -22,4 +27,5 @@ if (isset($_GET['professor']) and $_GET['acao'] == 'Deletar') {
 	}
 	$msg = "Executado com sucesso!";
 	$class = "success";
-?>
+	header("Location: professor.php?msg=$msg&class=$class");
+?> 
