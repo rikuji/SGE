@@ -1,7 +1,7 @@
 <?php 
-
+ 
 	class Turma{
-		private $id;
+		private $id; 
 		private $descricao;
 
 		

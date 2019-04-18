@@ -1,7 +1,7 @@
 <?php require_once 'Model.php';
 
 	class TurmaDAO extends Model{
-		public function __construct(){
+		public function __construct(){ 
 			parent::__construct();
 			$this->class = 'Turma';
 			$this->table = 'turma';

@@ -2,96 +2,25 @@
     include 'template/header.php';
     include 'template/menu.php';
     //nome professor
-    if(isset($_GET['professor'])){
+    $professor = new Professor();
+    $professorDAO = new ProfessorDAO();
 
-        $professor->setIdProfessor($_GET['professor']); 
+    if(isset($_GET['id'])){
+
+         $professor->setId($_GET['id']);
+
         $acao = "Editar";
+
         }else{
           $acao = "Cadastrar";
+        
         }
-        if(isset($_GET['acao']) AND $_GET['acao'] == 'Visualizar'){
+        if(isset($_GET['acao']) AND $_GET['acao'] == 'Visualizar')
+        {
         $disabled = 'disabled';
         }else{
         $disabled = "";
-        }
-        // cpf
-        if(isset($_GET['cpf'])){
-
-        $professor->setIdProfessor($_GET['cpf']); 
-        $acao = "Editar";
-        }else{
-          $acao = "Cadastrar";
-        }
-        if(isset($_GET['acao']) AND $_GET['acao'] == 'Visualizar'){
-        $disabled = 'disabled';
-        }else{
-        $disabled = "";
-        }
-        //sexo
-        if(isset($_GET['sexo'])){
-
-        $professor->setIdProfessor($_GET['sexo']); 
-        $acao = "Editar";
-        }else{
-          $acao = "Cadastrar";
-        }
-        if(isset($_GET['acao']) AND $_GET['acao'] == 'Visualizar'){
-        $disabled = 'disabled';
-        }else{
-        $disabled = "";
-        }
-        //email
-        if(isset($_GET['email'])){
-
-        $professor->setIdProfessor($_GET['email']); 
-        $acao = "Editar";
-        }else{
-          $acao = "Cadastrar";
-        }
-        if(isset($_GET['acao']) AND $_GET['acao'] == 'Visualizar'){
-        $disabled = 'disabled';
-        }else{
-        $disabled = "";
-        }
-        //disciplina
-        if(isset($_GET['disciplina'])){
-
-        $professor->setIdProfessor($_GET['disciplina']); 
-        $acao = "Editar";
-        }else{
-          $acao = "Cadastrar";
-        }
-        if(isset($_GET['acao']) AND $_GET['acao'] == 'Visualizar'){
-        $disabled = 'disabled';
-        }else{
-        $disabled = "";
-        }
-        //periodo
-        if(isset($_GET['periodo'])){
-
-        $professor->setIdProfessor($_GET['periodo']); 
-        $acao = "Editar";
-        }else{
-          $acao = "Cadastrar";
-        }
-        if(isset($_GET['acao']) AND $_GET['acao'] == 'Visualizar'){
-        $disabled = 'disabled';
-        }else{
-        $disabled = "";
-        }
-        //registro
-        if(isset($_GET['registro'])){
-
-        $professor->setIdProfessor($_GET['registro']); 
-        $acao = "Editar";
-        }else{
-          $acao = "Cadastrar";
-        }
-        if(isset($_GET['acao']) AND $_GET['acao'] == 'Visualizar'){
-        $disabled = 'disabled';
-        }else{
-        $disabled = "";
-        }
+      }
 
 ?>
 <div class="content-inner">
@@ -117,19 +46,22 @@
           </div>
       </div>
     </div>
-  <!--form elements-->
+  <!--form elements--> 
     <div class="col-lg-12">
-      <div class="card">
+      <div class="card"> 
         <div class="card-header d-flex align-items-center">
           <h3 class="h4">.:Cadastrar Professor(a):.</h3>
         </div>
           <div class="card-body">
+
             <form action="salvaProfessor.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
               <div class="form-group row">
-                <label class="col-sm-3 form-control-label" for="professor">Nome:</label>
+                <label class="col-sm-3 form-control-label" for="nome">Nome:</label>
                   <div class="col-sm-9">
-                    <input type="text" name="professor" id="professor" class="form-control" required="" value="" placeholder="Nome Professor(a)" />
-               </div></div>
+                  <input type="text" name="nome"  class="form-control" required="" value="<?php echo $professor->getNome() ?>">                    
+                    <input type="hidden" name="id" id="id" value="<?php echo $professor->getId(); ?>">
+               </div>
+             </div>
                <div class="form-group row">
                 <label style="float: left; margin-left: 97%; margin-top:-15%;" class="col-sm-3 form-control-label" for="cpf">CPF:</label>
                   <div class="col-sm-9">
@@ -160,10 +92,11 @@
                   <div class="col-sm-9">
                     <input type="text" name="registro" id="registro" class="form-control" required="" value="" placeholder="Registro de Professor(a)" />
                </div></div>
-               <input type="submit" value="Cadastrar" name="Cadastrar" class="btn btn-warning pull-right"/>
+               <button type="submit" class="btn btn-warning pull-right" <?php echo $disabled; ?> ><?php echo $acao; ?></button>
+             </form>
     </div>
   </div>
  </section> 
-<?php
+<?php 
     require_once 'template/footer.php';
 ?>    

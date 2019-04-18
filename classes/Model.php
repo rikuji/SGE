@@ -21,7 +21,7 @@
 			public function listar(){
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");
 			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
-			$sql->execute();
+			$sql->execute();  
 			return $sql->fetchAll();
 		}
 		public function procurar($id){
@@ -36,7 +36,7 @@
 		}
 		public function inserir($values){
 			$sql = $this->db->prepare("INSERT INTO {$this->table} VALUES ($values)");
-			//print_r($sql); exit;
+			print_r($sql); exit;
 			$sql->execute();
 			return $this->db->lastInsertId();
 		}
