@@ -19,7 +19,12 @@
                     <li class=""> <a href="professor.php"><i class="icon-list"></i>Professor</a></li>
                     <li class=""> <a href="aluno.php"><i class="icon-list"></i>Aluno</a></li>
                     <li class=""> <a href="turma.php"><i class="icon-list"></i>Turma</a></li>
+<<<<<<< HEAD
                     <li class=""> <a href="admins.php"><i class="icon-list"></i>Admins</a></li>
+=======
+                    <li class=""> <a href="materia.php"><i class="icon-list"></i>Matérias</a></li>
+                    <li class=""> <a href="secretaria.php"><i class="icon-list"></i>Secretaria</a></li>
+>>>>>>> 5983eebc6e4a2a1dd7de0b72b25c8598168e039b
               </ul>
           </li>
 
@@ -29,8 +34,12 @@
                 <li><a href="CadastrarAluno.php">Aluno</a></li>
                 <li><a href="novaTurma.php">Turma</a></li>
                 <li><a href="CadastrarMateria.php">Materias</a></li>
+<<<<<<< HEAD
                 <li><a href="novaDisciplina.php">Materias</a></li>
                 <li><a href="CadastrarAdmins">Admins</a></li>
+=======
+                <li><a href="CadastrarSecretaria.php">Secretaria</a></li>
+>>>>>>> 5983eebc6e4a2a1dd7de0b72b25c8598168e039b
               </ul>
             </li>
           </ul>
