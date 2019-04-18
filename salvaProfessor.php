@@ -15,6 +15,7 @@ if (isset($_GET['id']) and $_GET['acao'] == 'Deletar') {
 		$professor->setDisciplina($_POST['disciplina']);
 		$professor->setPeriodo($_POST['periodo']);
 		$professor->setRegistro($_POST['registro']);
+		$professor->setSenhaProfessor($_POST['senhaProfessor']);
 
 		$acao = $_GET['acao'];
 
