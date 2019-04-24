@@ -5,10 +5,11 @@
 			parent::__construct();
 			$this->class = 'Turma';
 			$this->table = 'turma';
-		}
+		} 
 		public function insereTurma(Turma $turma){
 			$valores = " null,
-			'{$turma->getDescricao()}'";
+			'{$turma->getDescricaoTurma()}',
+			'{$turma->getPeriodoTurma()}'";
 			$this->inserir($valores);
 		}
 		public function alterarTurma(Turma $turma){

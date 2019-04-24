@@ -5,7 +5,7 @@
 	  $turma = new turma();
 
 if (isset($_GET['id']))
-{
+{ 
 
     $turma->setId($_GET['id']);
 
@@ -97,8 +97,8 @@ else
                          <div class="form-group row">
                                 <label class="col-sm-3 form-control-label">turma:</label>
                                 <div class="col-sm-9">
-                                    <input type="text"  name="descricao" class="form-control" required autofocus value="<?php echo $turma->getDescricao() ?>">
-                                    <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $turma->getId(); ?>">        
+                                    <input type="text"  name="descricao" class="form-control" required autofocus value="<?php echo $turma->getDescricaoTurma() ?>">
+                                    <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $turma->getIdTurma(); ?>">        
                                 </div>
                             </div>
 
@@ -120,6 +120,7 @@ else
                           <tr>
                               <th>#ID</th>
                               <th>Descrição</th>
+                              <th>Periodo</th>
                               <th>Ação</th>
                             </tr>
                         </thead>
@@ -129,8 +130,8 @@ else
 
                             ?>
                             <tr>
-                              <td><?php echo $turma->getId(); ?></td>
-                              <td><?php echo utf8_encode($turma->getDescricao()); ?></td>
+                              <td><?php echo $turma->getIdTurma(); ?></td>
+                              <td><?php echo utf8_encode($turma->getDescricaoTurma()); ?></td>
                               <td>
                                 <a href="novaTurma.php?acao=Vizualizar&id=<?php echo $turma->getId(); ?>" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Vizualizar">
                                     <i class="icon-search" ></i>

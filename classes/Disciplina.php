@@ -1,27 +1,24 @@
 <?php 
 class Disciplina {
-	private $id;
-	private $descricao; 
-
-	
-
+	private $idDisciplina;
+	private $descricaoDisciplina; 
 
     /**
      * @return mixed
      */
-    public function getId()
+    public function getIdDisciplina()
     {
-        return $this->id;
+        return $this->idDisciplina;
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $idDisciplina
      *
      * @return self
      */
-    public function setId($id)
+    public function setIdDisciplina($idDisciplina)
     {
-        $this->id = $id;
+        $this->idDisciplina = $idDisciplina;
 
         return $this;
     }
@@ -29,19 +26,19 @@ class Disciplina {
     /**
      * @return mixed
      */
-    public function getDescricao()
+    public function getDescricaoDisciplina()
     {
-        return $this->descricao;
+        return $this->descricaoDisciplina;
     }
 
     /**
-     * @param mixed $descricao
+     * @param mixed $descricaoDisciplina
      *
      * @return self
      */
-    public function setDescricao($descricao)
+    public function setDescricaoDisciplina($descricaoDisciplina)
     {
-        $this->descricao = $descricao;
+        $this->descricaoDisciplina = $descricaoDisciplina;
 
         return $this;
     }

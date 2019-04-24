@@ -36,7 +36,7 @@
 		}
 		public function inserir($values){
 			$sql = $this->db->prepare("INSERT INTO {$this->table} VALUES ($values)");
-			print_r($sql); exit;
+			//print_r($sql); exit;
 			$sql->execute();
 			return $this->db->lastInsertId();
 		}

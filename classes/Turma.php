@@ -1,27 +1,30 @@
 <?php 
  
 	class Turma{
-		private $id; 
-		private $descricao;
+		private $idTurma; 
+        private $descricaoTurma;
+		private $periodoTurma;
 
 		
 	
+   
+
     /**
      * @return mixed
      */
-    public function getId()
+    public function getIdTurma()
     {
-        return $this->id;
+        return $this->idTurma;
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $idTurma
      *
      * @return self
      */
-    public function setId($id)
+    public function setIdTurma($idTurma)
     {
-        $this->id = $id;
+        $this->idTurma = $idTurma;
 
         return $this;
     }
@@ -29,19 +32,39 @@
     /**
      * @return mixed
      */
-    public function getDescricao()
+    public function getDescricaoTurma()
     {
-        return $this->descricao;
+        return $this->descricaoTurma;
     }
 
     /**
-     * @param mixed $descricao
+     * @param mixed $descricaoTurma
      *
      * @return self
      */
-    public function setDescricao($descricao)
+    public function setDescricaoTurma($descricaoTurma)
     {
-        $this->descricao = $descricao;
+        $this->descricaoTurma = $descricaoTurma;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPeriodoTurma()
+    {
+        return $this->periodoTurma;
+    }
+
+    /**
+     * @param mixed $periodoTurma
+     *
+     * @return self
+     */
+    public function setPeriodoTurma($periodoTurma)
+    {
+        $this->periodoTurma = $periodoTurma;
 
         return $this;
     }

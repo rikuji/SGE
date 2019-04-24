@@ -61,8 +61,15 @@
             <div class="form-group row">
                 <label class="col-sm-3 form-control-label" for="descricao">Descrição:</label>
                     <div class="col-sm-9">
-                        <input type="text"  id="descricao" name="descricao" class="form-control" value="<?php echo $turma->getDescricao(); ?>" <?php echo $disabled; ?>></input>
-                        <input type="hidden" name="id" value="<?php echo $turma->getId(); ?>"></input>
+                        <input type="text"  id="descricao" name="descricao" class="form-control" value="<?php echo $turma->getDescricaoTurma(); ?>" <?php echo $disabled; ?>></input>
+                        <input type="hidden" name="idTurma" value="<?php echo $turma->getIdTurma(); ?>"></input>
+                    </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 form-control-label" for="descricao">Periodo:</label>
+                    <div class="col-sm-9">
+                        <input type="text"  id="periodo" name="periodo" class="form-control" value="<?php echo $turma->getPeriodoTurma(); ?>" <?php echo $disabled; ?>></input>
                     </div>
             </div>
 

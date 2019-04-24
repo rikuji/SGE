@@ -4,24 +4,24 @@
 		public function __construct(){
 			parent::__construct();
 			$this->class = 'Secretaria'; 
-			$this->table = 'Secretaria';
+			$this->table = 'userSecretaria';
 		}
-		public function insereSecretaria(Secretaria $secretaria){
+		public function insereSecretaria(Secretaria $userSecretaria){
 			$valores = "null ,
 			'{$nome->getNomeSecretaria()}',
 			'{$cpf->getCpfSecretaria()}',
-			'{$sexo->getSehaSecretaria()}',
+			'{$senha->getSenhaSecretaria()}',
 			'{$email->getEmailSecretaria()}',
-			'{$disciplina->getSenhaSecretaria()}'";
-			$this->inserir($valores);
+			'{$cargo->getCargoSecretaria()}'";
+			print_r($this->inserir($valores));
 		}
-		public function alteraProfessor(Professor $professor){
+		public function alteraSecretaria(Secretaria $secretaria){
 			$value = " null,
 			'{$nome->getNomeSecretaria()}',
 			'{$cpf->getCpfSecretaria()}',
-			'{$sexo->getSehaSecretaria()}',
+			'{$senha->getSenhaSecretaria()}',
 			'{$email->getEmailSecretaria()}',
-			'{$disciplina->getSenhaSecretaria()}'";
+			'{$cargo->getCargoSecretaria()}'";
 			$this->alterar($secretaria->getIdSecretaria(), $value);
 	}
 }

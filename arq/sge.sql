@@ -44,13 +44,14 @@ CREATE TABLE IF NOT EXISTS `sge`.`Professor` (
   `sexoProfessor` ENUM('M', 'F') NOT NULL,
   `EmailProfessor` VARCHAR(100) NOT NULL,
   `PeriodoProfessor` VARCHAR(20) NOT NULL,
-  `RegistroProfessor` VARCHAR(45) NOT NULL,
+  `RegistroProfessor` INT(6) ZEROFILL NOT NULL,
   `senhaProfessor` VARCHAR(35) NOT NULL,
   `idDisciplina` INT UNSIGNED NOT NULL,
   `idTipoUsuario` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idProfessor`),
   INDEX `fk_Professor_Disciplina1_idx` (`idDisciplina` ASC),
   INDEX `fk_Professor_tipoUsuario1_idx` (`idTipoUsuario` ASC),
+  UNIQUE INDEX `RegistroProfessor_UNIQUE` (`RegistroProfessor` ASC),
   CONSTRAINT `fk_Professor_Disciplina1`
     FOREIGN KEY (`idDisciplina`)
     REFERENCES `sge`.`Disciplina` (`idDisciplina`)
@@ -169,14 +170,15 @@ ENGINE = InnoDB;
 -- Table `sge`.`UserSecretaria`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sge`.`UserSecretaria` (
-  `idUserSecretaria` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nomeUserSecretaria` VARCHAR(60) NOT NULL,
-  `cpfUserSecretaria` BIGINT(11) ZEROFILL NOT NULL,
-  `senhaUserSecretaria` VARCHAR(35) NOT NULL,
-  `cargoUserSecretaria` VARCHAR(15) NOT NULL,
+  `idSecretaria` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nomeSecretaria` VARCHAR(60) NOT NULL,
+  `cpfSecretaria` BIGINT(11) ZEROFILL NOT NULL,
+  `senhaSecretaria` VARCHAR(35) NOT NULL,
+  `emailSecretaria` VARCHAR(100) NOT NULL,
+  `cargoSecretaria` VARCHAR(15) NOT NULL,
   `idTipoUsuario` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`idUserSecretaria`),
-  UNIQUE INDEX `cpf_UNIQUE` (`cpfUserSecretaria` ASC),
+  PRIMARY KEY (`idSecretaria`),
+  UNIQUE INDEX `cpf_UNIQUE` (`cpfSecretaria` ASC),
   INDEX `fk_Secretaria_tipoUsuario1_idx` (`idTipoUsuario` ASC),
   CONSTRAINT `fk_Secretaria_tipoUsuario1`
     FOREIGN KEY (`idTipoUsuario`)

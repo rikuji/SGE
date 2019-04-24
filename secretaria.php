@@ -1,6 +1,37 @@
 <?php 
 	require_once "template/header.php";
 	require_once "template/menu.php";
+
+	 $SecretariaDAO = new SecretariaDAO();
+	 $Secretaria = new Secretaria();
+
+if (isset($_GET['idSecretaria']))
+{ 
+
+    $Secretaria->setidSecretaria($_GET['idSecretaria']);
+
+    $Secretaria = $SecretariaDAO->procurar($Secretaria->getId());
+
+    $acao = 'Editar';
+  } else if (isset($_GET['acao']) && $_GET_['acao'] == 'Vizualizar') {
+    
+    $acao = "Vizualizar";
+  } 
+else
+  {	
+    $acao = 'Cadastrar';
+
+  }
+
+
+if (isset($_POST['pesquisa'])){
+    $query = $SecretariaDAO->listar($_POST['pesquisa']);
+  } 
+else
+  {
+        $query = $SecretariaDAO->listar();
+    }
+?>
  ?>
 	<div class="content-inner">
 		<header class="page-header">
@@ -43,13 +74,19 @@
 							<table class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th><!----></th>
-										<th><!----></th>
-										<th><!----></th>
+										<th>Nome</th>
+										<th>CPF</th>
+										<th>Email</th>
+										<th>Senha</th>
+										<th>Cargo</th>
+										<th>Ações</th>
 									</tr>
 								</thead>
 									<tbody>
 										<tr>
+											<td><!----></td>
+											<td><!----></td>
+											<td><!----></td>
 											<td><!----></td>
 											<td><!----></td>
 											<td>

@@ -1,16 +1,17 @@
 <?php 
 	include_once 'template/autoload.php';
 
-	$turma = new Turma(); 
+	$turma = new Turma();  
 	$turmaDAO = new TurmaDAO(); 
 
-	if (isset($_GET['id']) and $_GET['acao'] == 'Deletar') {
+	if (isset($_GET['idTurma']) and $_GET['acao'] == 'Deletar') {
 		
-		$turmaDAO->deletar($_GET['id']);
+		$turmaDAO->deletar($_GET['idTurma']);
 		
 	}else{
-		$turma->setId($_POST['id']);
-		$turma->setDescricao($_POST['descricao']);
+		$turma->setIdTurma($_POST['idTurma']);
+		$turma->setDescricaoTurma($_POST['descricaoTurma']);
+		$turma->setPeriodoTurma($_POST['periodoTurma']);
 
 		$acao = $_GET['acao'];
 

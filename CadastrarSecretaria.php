@@ -1,12 +1,12 @@
 <?php
     include 'template/header.php';
     include 'template/menu.php';
-    //$secretaria = new Secretaria();
-    //$secretaria = new SecretariaDAO();
+    $secretaria = new Secretaria();
+    $secretariaDAO = new SecretariaDAO();
 
     if(isset($_GET['idSecretaria'])){
 
-        $professor->setIdSecretaria($_GET['idSecretaria']); 
+        $secretaria->setIdSecretaria($_GET['idSecretaria']); 
         $acao = "Editar";
         }else{
           $acao = "Cadastrar";
@@ -15,7 +15,7 @@
         $disabled = 'disabled';
         }else{
         $disabled = "";
-        }
+        } 
         
 ?>
 <div class="content-inner">
@@ -50,10 +50,10 @@
           <div class="card-body">
             <form action="salvaSecretaria.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
               <div class="form-group row">
-
-                <label class="col-sm-3 form-control-label" for="secretaria">Nome:</label>
+ 
+                <label class="col-sm-3 form-control-label" for="nome">Nome:</label>
                   <div class="col-sm-9">
-                    <input type="text" name="nomeSecretaria" id="nomeSecretaria" class="form-control" required="" value="" placeholder="Nome Completo" />
+                    <input type="text" name="nome" id="nome" class="form-control" required="" value="" placeholder="Nome Completo" />
                </div></div>
 
                <div class="form-group row">
