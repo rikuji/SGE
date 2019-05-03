@@ -5,10 +5,6 @@
         private $descricaoTurma;
 		private $periodoTurma;
 
-		
-	
-   
-
     /**
      * @return mixed
      */

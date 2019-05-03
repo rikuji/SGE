@@ -1,8 +1,8 @@
 <?php require_once "template/header.php";
 	  require_once "template/menu.php";		
  
-	  $turmaDAO = new turmaDAO();
-	  $turma = new turma();
+	  $turmaDAO = new TurmaDAO();
+	  $turma = new Turma();
 
 if (isset($_GET['id']))
 { 
@@ -95,10 +95,16 @@ else
     
 
                          <div class="form-group row">
-                                <label class="col-sm-3 form-control-label">turma:</label>
+                                <label class="col-sm-3 form-control-label">Descrição:</label>
                                 <div class="col-sm-9">
-                                    <input type="text"  name="descricao" class="form-control" required autofocus value="<?php echo $turma->getDescricaoTurma() ?>">
-                                    <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $turma->getIdTurma(); ?>">        
+                                    <input type="text"  name="descricaoTurma" id="descricaoTurma"class="form-control" required autofocus value="<?php echo $turma->getDescricaoTurma() ?>">
+                                    <input type="hidden" name="idTurma" id="idTurma" class="form-control" value="<?php echo $turma->getIdTurma(); ?>">        
+                                </div>
+                            </div>
+                          <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Periodo:</label>
+                                <div class="col-sm-9">
+                                    <input type="text"  name="periodoTurma" id="periodoTurma" class="form-control" required autofocus value="<?php echo $turma->getPeriodoTurma() ?>">
                                 </div>
                             </div>
 
@@ -118,7 +124,6 @@ else
                 <table class="table table-striped table-hover">
             <thead>
                           <tr>
-                              <th>#ID</th>
                               <th>Descrição</th>
                               <th>Periodo</th>
                               <th>Ação</th>
@@ -130,14 +135,14 @@ else
 
                             ?>
                             <tr>
-                              <td><?php echo $turma->getIdTurma(); ?></td>
                               <td><?php echo utf8_encode($turma->getDescricaoTurma()); ?></td>
+                              <td><?php echo $turma->getPeriodoTurma(); ?></td>
                               <td>
-                                <a href="novaTurma.php?acao=Vizualizar&id=<?php echo $turma->getId(); ?>" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Vizualizar">
+                                <a href="novaTurma.php?acao=Vizualizar&id=<?php echo $turma->getIdTurma(); ?>" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Vizualizar">
                                     <i class="icon-search" ></i>
                                 </a>
-                                <a href="novaTurma.php?acao=Editar&id=<?php echo $turma->getId(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
-                                    <i class="fa fa-pencil" aria-hidden="true" ></i>
+                                <a href="novaTurma.php?acao=Editar&id=<?php echo $turma->getIdTurma(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
+                                    <i class=icon-search aria-hidden="true" ></i>
                                 </a>
                                 
                               <?php if($temturma = 0){ ?>
@@ -146,7 +151,7 @@ else
                                 </button>
                                 <?php }else{ ?>
 
-                                    <a href="#" class="btn btn-danger" onclick="return excluir('salvaTurma.php?acao=Deletar&id=<?php echo $turma->getId(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
+                                    <a href="#" class="btn btn-danger" onclick="return excluir('salvaTurma.php?acao=Deletar&id=<?php echo $turma->getIdTurma(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
                                      <div data-icon="y" class="icon" ></div>
                                 </a>
                                 <?php } ?>

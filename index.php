@@ -10,7 +10,7 @@
                 <div class="content" align="center">
                   <div class="logo">
                   <div style="border-radius: 10%; padding-top: 30px;" align="center">
-                      <img src="img/logo.jpg" width="125%" style="border-radius: 10px;"  >
+                      <img src="img/logo.png" width="125%" style="border-radius: 10px;"  >
                     </div>
                   </div>
                 </div>

@@ -10,8 +10,12 @@
 				$valores = "null, '{$descricaoDisciplina->getDescricaoDisciplina()}'";
 				$this->inserir($valores);
 		}
-
-
+		public function listarDisciplina(){
+			$sql = $this->db->prepare("SELECT * FROM {$this->table}");
+			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
+			$sql->execute();
+			return $sql->fetchAll();
+		}
 }
 
 ?>

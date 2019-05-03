@@ -1,10 +1,10 @@
 <?php 
 	include_once 'template/autoload.php';
 
-	$turma = new Turma();  
 	$turmaDAO = new TurmaDAO(); 
+	$turma = new Turma();
 
-	if (isset($_GET['idTurma']) and $_GET['acao'] == 'Deletar') {
+	if (isset($_GET['id']) and $_GET['acao'] == 'Deletar') {
 		
 		$turmaDAO->deletar($_GET['idTurma']);
 		

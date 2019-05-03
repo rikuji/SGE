@@ -2,12 +2,12 @@
 	require_once "template/header.php";
 	require_once "template/menu.php";		
 
-  $turmaDao = new TurmaDAO();
+  $turmaDAO = new TurmaDAO();
   $turma = new Turma();
 
       if(isset($_GET['id'])){
 
-        $turma->setId($_GET['id']);
+        $turma->setIdTurma($_GET['id']);
 
         $acao = "Editar";
 
@@ -61,7 +61,7 @@
             <div class="form-group row">
                 <label class="col-sm-3 form-control-label" for="descricao">Descrição:</label>
                     <div class="col-sm-9">
-                        <input type="text"  id="descricao" name="descricao" class="form-control" value="<?php echo $turma->getDescricaoTurma(); ?>" <?php echo $disabled; ?>></input>
+                        <input type="text"  id="descricaoTurma" name="descricaoTurma" class="form-control" value="<?php echo $turma->getDescricaoTurma(); ?>" <?php echo $disabled; ?>></input>
                         <input type="hidden" name="idTurma" value="<?php echo $turma->getIdTurma(); ?>"></input>
                     </div>
             </div>
@@ -69,7 +69,7 @@
             <div class="form-group row">
                 <label class="col-sm-3 form-control-label" for="descricao">Periodo:</label>
                     <div class="col-sm-9">
-                        <input type="text"  id="periodo" name="periodo" class="form-control" value="<?php echo $turma->getPeriodoTurma(); ?>" <?php echo $disabled; ?>></input>
+                        <input type="text"  id="periodoTurma" name="periodoTurma" class="form-control" value="<?php echo $turma->getPeriodoTurma(); ?>" <?php echo $disabled; ?>></input>
                     </div>
             </div>
 

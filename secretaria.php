@@ -32,11 +32,10 @@ else
         $query = $SecretariaDAO->listar();
     }
 ?>
- ?>
 	<div class="content-inner">
 		<header class="page-header">
 			<div class="container-fluid">
-				<h2 class="no-margin-bottom">.:Lista de Secretaria:.</h2>
+				<h2 class="no-margin-bottom">.:Lista de Usuários:.</h2>
 			</div>
 		</header>
 <div class="panel-body">
@@ -84,18 +83,52 @@ else
 								</thead>
 									<tbody>
 										<tr>
-											<td><!----></td>
-											<td><!----></td>
-											<td><!----></td>
-											<td><!----></td>
-											<td><!----></td>
+											<td>Lucas Vale</td>
+											<td>000.999.777-09</td>
+											<td>lucasvalle@gmail.com</td>
+											<td>*****************</td>
+											<td>Aluno</td>
 											<td>
 												 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
-			     								 <i class="fa fa-cog" aria-hidden="true"></i>
+			     								 <i class="icon-search" ></i>
 			      								</a>
 			      								
 												 <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir">
-			     								 <i class="fa fa-eye" aria-hidden="true"></i>
+			     								 <div data-icon="y" class="icon" ></div>
+			      								</a>
+
+											</td>
+										</tr>			
+										<tr>
+											<td>Luzivaldo</td>
+											<td>000.949.437-12</td>
+											<td>luzivaldohen@gmail.com</td>
+											<td>****************</td>
+											<td>Professor</td>
+											<td>
+												 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
+			     								 <i class="icon-search" ></i>
+			      								</a>
+			      								
+												 <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir">
+			     								 <div data-icon="y" class="icon" ></div>
+			      								</a>
+
+											</td>
+										</tr>			
+										<tr>
+											<td>Deivysson Edu</td>
+											<td>157.171.155-32</td>
+											<td>deivisson@gmail.com</td>
+											<td>***************</td>
+											<td>Responsável</td>
+											<td>
+												 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
+			     								 <i class="icon-search" ></i>
+			      								</a>
+			      								
+												 <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir">
+			     								 <div data-icon="y" class="icon" ></div>
 			      								</a>
 
 											</td>

@@ -5,7 +5,7 @@
 	<div class="content-inner">
 		<header class="page-header">
 			<div class="container-fluid">
-				<h2 class="no-margin-bottom">Matérias</h2>
+				<h2 class="no-margin-bottom">Disciplina</h2>
 			</div>
 		</header>
 <div class="panel-body">
@@ -53,11 +53,11 @@
 											<td>1° Ano(Matutino)</td>
 											<td>
 												 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
-			     								 <i class="fa fa-cog" aria-hidden="true"></i>
+			     								 <i class="icon-search" ></i>
 			      								</a>
 			      								
 												 <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir">
-			     								 <i class="fa fa-eye" aria-hidden="true"></i>
+			     								 <div data-icon="y" class="icon" ></div>
 			      								</a>
 
 											</td>
