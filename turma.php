@@ -2,14 +2,14 @@
 	  require_once "template/menu.php";		
  
 	  $turmaDAO = new TurmaDAO();
-	  $turma = new Turma();
+	  $turma = new Turma(); 
 
-if (isset($_GET['id']))
+if (isset($_GET['idTurma']))
 { 
 
-    $turma->setId($_GET['id']);
+    $turma->setIdTurma($_GET['idTurma']);
 
-    $turma = $turmaDAO->procurar($turma->getId());
+    $turma = $turmaDAO->procurar($turma->getIdTurma());
 
     $acao = 'Editar';
   } else if (isset($_GET['acao']) && $_GET_['acao'] == 'Vizualizar') {
@@ -35,7 +35,7 @@ else
     <!-- Page Header-->
     <header class="page-header">
         <div class="container-fluid">
-            <h2 class="no-margin-bottom">.:Formulário de Cadastro:.</h2>
+            <h2 class="no-margin-bottom">.:Formulário de Turma:.</h2>
         </div>
     </header>
 
@@ -65,34 +65,7 @@ else
                     </div>
                     <div class="card-body">
 
-                    <?php if (isset($_GET['acao']) && $_GET['acao'] == 'Vizualizar') { ?>
-
-                        <form action="salvaTurma.php?acao=Editar&id=<?php echo $turma->getId(); ?>" method="POST" class="form-horizontal">
-
-    
-
-                         <div class="form-group row">
-                                <label class="col-sm-3 form-control-label">turma:</label>
-                                <div class="col-sm-9">
-                                    <input type="text" disabled=""  name="descricao" class="form-control" required autofocus value="<?php echo $turma->getDescricao() ?>">
-                                    <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $turma->getId(); ?>">        
-                                </div>
-                            </div>
-
-                           
-                            <div class="form-group row">
-                                <div class="col-sm-4 offset-sm-3">
-                                    <input type="submit" class="btn btn-primary" value="Editar">
-                                </div>
-                            </div>
-
-                        </form> <!-- fim formulario -->
-                    </div>
-                </div>
-                <?php }else{ ?>
-                 <form action="salvaTurma.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
-
-    
+                        <form action="salvaTurma.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
 
                          <div class="form-group row">
                                 <label class="col-sm-3 form-control-label">Descrição:</label>
@@ -116,10 +89,12 @@ else
                             </div>
 
                         </form> <!-- fim formulario -->
-
-<?php } ?>
+                    </div>
+                </div>
             </div>
-
+<div class="card-header d-flex align-items-center">
+                        <h3 class="h4">.:Lista de turmas:.</h3>
+                    </div>
     <div class=" card card-body">
                 <table class="table table-striped table-hover">
             <thead>
@@ -138,24 +113,13 @@ else
                               <td><?php echo utf8_encode($turma->getDescricaoTurma()); ?></td>
                               <td><?php echo $turma->getPeriodoTurma(); ?></td>
                               <td>
-                                <a href="novaTurma.php?acao=Vizualizar&id=<?php echo $turma->getIdTurma(); ?>" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Vizualizar">
-                                    <i class="icon-search" ></i>
-                                </a>
-                                <a href="novaTurma.php?acao=Editar&id=<?php echo $turma->getIdTurma(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
-                                    <i class=icon-search aria-hidden="true" ></i>
-                                </a>
-                                
-                              <?php if($temturma = 0){ ?>
-                                <button class="btn btn-danger" title="" disabled>
-                                  <div data-icon="y" class="icon" data-toggle="tooltip" data-placement="top" title="Não pode ser excluído, tem turma em uso!">
-                                </button>
-                                <?php }else{ ?>
 
-                                    <a href="#" class="btn btn-danger" onclick="return excluir('salvaTurma.php?acao=Deletar&id=<?php echo $turma->getIdTurma(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
-                                     <div data-icon="y" class="icon" ></div>
+                                <a href="novaTurma.php?acao=Editar&idTurma=<?php echo $turma->getIdTurma(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
+                                  <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
-                                <?php } ?>
-                                   
+                                    <a href="#" class="btn btn-danger" onclick="return excluir('salvaTurma.php?acao=Deletar&idTurma=<?php echo $turma->getIdTurma(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
+                                     <div class="fa fa-trash-o" aria-hidden="true" ></div>
+                                </a>
                               </td>
                             </tr>
                             <?php } ?>

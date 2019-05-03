@@ -5,9 +5,9 @@
   $turmaDAO = new TurmaDAO();
   $turma = new Turma();
 
-      if(isset($_GET['id'])){
+      if(isset($_GET['idTurma'])){
 
-        $turma->setIdTurma($_GET['id']);
+        $turma->setIdTurma($_GET['idTurma']);
 
         $acao = "Editar";
 
@@ -15,18 +15,12 @@
           $acao = "Cadastrar";
         
         }
-        if(isset($_GET['acao']) AND $_GET['acao'] == 'Visualizar')
-        {
-        $disabled = 'disabled';
-        }else{
-        $disabled = "";
-      }
  ?>
  	<div class="content-inner">
   <!-- Page Header-->
   <header class="page-header">
     <div class="container-fluid">
-      <h2 class="no-margin-bottom">.:Cadastro de Turma:.</h2>
+      <h2 class="no-margin-bottom">.:Editar de Turma:.</h2>
     </div>
   </header>
   <section class="forms"> 
@@ -52,7 +46,7 @@
                 <div class="col-lg-12">
                   <div class="card">
                     <div class="card-header d-flex align-items-center">
-                      <h3 class="h4">.:Cadastrar Turma:.</h3>
+                      <h3 class="h4">.:Editar Turma:.</h3>
                     </div>
                     <div class="card-body">
                       
@@ -61,7 +55,7 @@
             <div class="form-group row">
                 <label class="col-sm-3 form-control-label" for="descricao">Descrição:</label>
                     <div class="col-sm-9">
-                        <input type="text"  id="descricaoTurma" name="descricaoTurma" class="form-control" value="<?php echo $turma->getDescricaoTurma(); ?>" <?php echo $disabled; ?>></input>
+                        <input type="text"  id="descricaoTurma" name="descricaoTurma" class="form-control" value="<?php echo $turma->getDescricaoTurma(); ?>" ></input>
                         <input type="hidden" name="idTurma" value="<?php echo $turma->getIdTurma(); ?>"></input>
                     </div>
             </div>
@@ -69,11 +63,11 @@
             <div class="form-group row">
                 <label class="col-sm-3 form-control-label" for="descricao">Periodo:</label>
                     <div class="col-sm-9">
-                        <input type="text"  id="periodoTurma" name="periodoTurma" class="form-control" value="<?php echo $turma->getPeriodoTurma(); ?>" <?php echo $disabled; ?>></input>
+                        <input type="text"  id="periodoTurma" name="periodoTurma" class="form-control" value="<?php echo $turma->getPeriodoTurma(); ?>"></input>
                     </div>
             </div>
 
-     <button type="submit" class="btn btn-warning pull-right" <?php echo $disabled; ?> ><?php echo $acao; ?></button>
+     <button type="submit" class="btn btn-warning pull-right"><?php echo $acao; ?></button>
     </form>
 
     </div>

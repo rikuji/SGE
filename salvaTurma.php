@@ -4,9 +4,9 @@
 	$turmaDAO = new TurmaDAO(); 
 	$turma = new Turma();
 
-	if (isset($_GET['id']) and $_GET['acao'] == 'Deletar') {
+	if (isset($_GET['idTurma']) and $_GET['acao'] == 'Deletar') {
 		
-		$turmaDAO->deletar($_GET['idTurma']);
+		$turmaDAO->deletarTurma($_GET['idTurma']);
 		
 	}else{
 		$turma->setIdTurma($_POST['idTurma']);

@@ -13,14 +13,23 @@
 			$this->inserir($valores);
 		}
 		public function alterarTurma(Turma $turma){
-			$value = " descricao = '{$turma->getDescricao()}'";
-			$this->alterar($turma->getId(), $value);
+			$sql = $this->db->prepare("UPDATE {$this->table} SET
+				descricao = '{$turma->getDescricaoTurma()}',
+				periodo = '{$turma->getPeriodoTurma()}'
+			 WHERE idTurma = {$idTurma}");
+			$sql->execute();
+						
+			//$this->alterar($turma->getIdTurma(), $value);
 		}
 		public function listarTurma(){
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");
 			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
 			$sql->execute();
 			return $sql->fetchAll();
+		}
+		public function deletarTurma($id){
+			$sql = $this->db->prepare("DELETE FROM {$this->table} WHERE idTurma = {$id}");
+			$sql->execute();
 		}
 	}
 ?>
