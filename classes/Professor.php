@@ -1,32 +1,32 @@
 <?php
 class Professor{
-	private $id; 
-	private $nome;
-	private $cpf;
-	private $sexo;
-	private $email;
-	private $disciplina;
-	private $periodo;
-	private $registro;
-
-
+	private $idProfessor; 
+	private $nomeProfessor;
+	private $cpfProfessor;
+	private $sexoProfessor;
+	private $EmailProfessor;
+	private $matutino;
+	private $vespertino;
+    private $noturno;
+    private $registroProfessor;
+    private $senhaProfessor;
 
     /**
      * @return mixed
      */
-    public function getId()
+    public function getIdProfessor()
     {
-        return $this->id;
+        return $this->idProfessor;
     }
 
     /**
-     * @param mixed $idProfessor
+     * @param mixed $idProfessorProfessor
      *
      * @return self
      */
-    public function setId($id)
+    public function setIdProfessor($idProfessor)
     {
-        $this->id = $id;
+        $this->idProfessor = $idProfessor;
 
         return $this;
     }
@@ -34,19 +34,19 @@ class Professor{
     /**
      * @return mixed
      */
-    public function getNome()
+    public function getNomeProfessor()
     {
-        return $this->nome;
+        return $this->nomeProfessor;
     }
 
     /**
-     * @param mixed $nome
+     * @param mixed $nomeProfessor
      *
      * @return self
      */
-    public function setNome($nome)
+    public function setNomeProfessor($nomeProfessor)
     {
-        $this->nome = $nome;
+        $this->nomeProfessor = $nomeProfessor;
 
         return $this;
     }
@@ -54,19 +54,19 @@ class Professor{
     /**
      * @return mixed
      */
-    public function getCpf()
+    public function getCpfProfessor()
     {
-        return $this->cpf;
+        return $this->cpfProfessor;
     }
 
     /**
-     * @param mixed $cpf
+     * @param mixed $cpfProfessor
      *
      * @return self
      */
-    public function setCpf($cpf)
+    public function setCpfProfessor($cpfProfessor)
     {
-        $this->cpf = $cpf;
+        $this->cpfProfessor = $cpfProfessor;
 
         return $this;
     }
@@ -74,19 +74,19 @@ class Professor{
     /**
      * @return mixed
      */
-    public function getSexo()
+    public function getSexoProfessor()
     {
-        return $this->sexo;
+        return $this->sexoProfessor;
     }
 
     /**
-     * @param mixed $sexo
+     * @param mixed $sexoProfessor
      *
      * @return self
      */
-    public function setSexo($sexo)
+    public function setSexoProfessor($sexoProfessor)
     {
-        $this->sexo = $sexo;
+        $this->sexoProfessor = $sexoProfessor;
 
         return $this;
     }
@@ -94,19 +94,19 @@ class Professor{
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getEmailProfessor()
     {
-        return $this->email;
+        return $this->emailProfessor;
     }
 
     /**
-     * @param mixed $email
+     * @param mixed $emailProfessor
      *
      * @return self
      */
-    public function setEmail($email)
+    public function setEmailProfessor($emailProfessor)
     {
-        $this->email = $email;
+        $this->emailProfessor = $emailProfessor;
 
         return $this;
     }
@@ -114,19 +114,19 @@ class Professor{
     /**
      * @return mixed
      */
-    public function getDisciplina()
+    public function getMatutino()
     {
-        return $this->disciplina;
+        return $this->matutino;
     }
 
     /**
-     * @param mixed $disciplina
+     * @param mixed $matutino
      *
      * @return self
      */
-    public function setDisciplina($disciplina)
+    public function setMatutino($matutino)
     {
-        $this->disciplina = $disciplina;
+        $this->matutino = $matutino;
 
         return $this;
     }
@@ -134,19 +134,38 @@ class Professor{
     /**
      * @return mixed
      */
-    public function getPeriodo()
+    public function getVespertino()
     {
-        return $this->periodo;
+        return $this->vespertino;
     }
 
     /**
-     * @param mixed $periodo
+     * @param mixed $vespertino
      *
      * @return self
      */
-    public function setPeriodo($periodo)
+    public function setVespertino($vespertino)
     {
-        $this->periodo = $periodo;
+        $this->vespertino = $vespertino;
+
+        return $this;
+    }
+    /**
+     * @return mixed
+     */
+    public function getNoturno()
+    {
+        return $this->noturno;
+    }
+
+    /**
+     * @param mixed $noturo
+     *
+     * @return self
+     */
+    public function setNoturno($noturno)
+    {
+        $this->noturno = $noturno;
 
         return $this;
     }
@@ -154,19 +173,38 @@ class Professor{
     /**
      * @return mixed
      */
-    public function getRegistro()
+    public function getRegistroProfessor()
     {
-        return $this->registro;
+        return $this->registroProfessor;
     }
 
     /**
-     * @param mixed $registro
+     * @param mixed $registroProfessor
      *
      * @return self
      */
-    public function setRegistro($registro)
+    public function setRegistroProfessor($registroProfessor)
     {
-        $this->registro = $registro;
+        $this->registroProfessor = $registroProfessor;
+
+        return $this;
+    }
+    /**
+     * @return mixed
+     */
+    public function getSenhaProfessor()
+    {
+        return $this->senhaProfessor;
+    }
+
+    /**
+     * @param mixed $senhaprofessor
+     *
+     * @return self
+     */
+    public function setSenhaProfessor($senhaProfessor)
+    {
+        $this->senhaProfessor = $senhaProfessor;
 
         return $this;
     }
