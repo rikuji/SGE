@@ -13,13 +13,18 @@
 			$this->inserir($valores);
 		}
 		public function alterarTurma(Turma $turma){
-			$sql = $this->db->prepare("UPDATE {$this->table} SET
-				descricao = '{$turma->getDescricaoTurma()}',
-				periodo = '{$turma->getPeriodoTurma()}'
-			 WHERE idTurma = {$idTurma}");
-			$sql->execute();
-						
-			//$this->alterar($turma->getIdTurma(), $value);
+			$sql = ("UPDATE {$this->table} SET
+				descricaoTurma = '{$turma->getDescricaoTurma()}',
+				periodoTurma = '{$turma->getPeriodoTurma()}'
+			 WHERE (idTurma = {$turma->getIdTurma()})");
+			//print_r($sql);exit;
+			$stmt= $this->db->prepare($sql);
+			$stmt->execute();	
+
+
+
+
+			//$sql->execute();
 		}
 		public function listarTurma(){
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");

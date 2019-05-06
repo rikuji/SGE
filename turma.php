@@ -110,7 +110,7 @@ else
 
                             ?>
                             <tr>
-                              <td><?php echo utf8_encode($turma->getDescricaoTurma()); ?></td>
+                              <td><?php echo $turma->getDescricaoTurma(); ?></td>
                               <td><?php echo $turma->getPeriodoTurma(); ?></td>
                               <td>
 
