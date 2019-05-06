@@ -28,7 +28,7 @@ ENGINE = InnoDB;
 -- Table `sge`.`TipoUsuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sge`.`TipoUsuario` (
-  `idTipoUsuario` INT UNSIGNED NOT NULL,
+  `idTipoUsuario` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `perfilTipoUsuario` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idTipoUsuario`))
 ENGINE = InnoDB;
@@ -80,7 +80,7 @@ ENGINE = InnoDB;
 -- Table `sge`.`EstadoCivil`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sge`.`EstadoCivil` (
-  `idEstadoCivil` INT NOT NULL,
+  `idEstadoCivil` INT NOT NULL AUTO_INCREMENT,
   `descricaoEstadoCivil` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`idEstadoCivil`))
 ENGINE = InnoDB;
@@ -192,7 +192,7 @@ ENGINE = InnoDB;
 -- Table `sge`.`TurmaDisciplina`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sge`.`TurmaDisciplina` (
-  `idTurma` INT UNSIGNED NOT NULL,
+  `idTurma` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `idDisciplina` INT UNSIGNED NOT NULL,
   INDEX `fk_TurmaDisciplina_Turma1_idx` (`idTurma` ASC),
   INDEX `fk_TurmaDisciplina_Disciplina1_idx` (`idDisciplina` ASC),
@@ -213,7 +213,7 @@ ENGINE = InnoDB;
 -- Table `sge`.`TurmaProfessor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sge`.`TurmaProfessor` (
-  `idTurma` INT UNSIGNED NOT NULL,
+  `idTurma` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `idProfessor` INT UNSIGNED NOT NULL,
   INDEX `fk_TurmaProfessor_Turma1_idx` (`idTurma` ASC),
   INDEX `fk_TurmaProfessor_Professor1_idx` (`idProfessor` ASC),
@@ -234,7 +234,7 @@ ENGINE = InnoDB;
 -- Table `sge`.`AlunoResponsavel`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sge`.`AlunoResponsavel` (
-  `idResponsavel` INT UNSIGNED NOT NULL,
+  `idResponsavel` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `idAluno` INT UNSIGNED NOT NULL,
   INDEX `fk_Aluno_has_responsavelLegal_responsavelLegal1_idx` (`idResponsavel` ASC),
   INDEX `fk_Aluno_has_responsavelLegal_Aluno1_idx` (`idAluno` ASC),
@@ -255,7 +255,7 @@ ENGINE = InnoDB;
 -- Table `sge`.`Historico`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sge`.`Historico` (
-  `idHistorico` INT UNSIGNED NOT NULL,
+  `idHistorico` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nota1Historico` DECIMAL(4,2) NULL,
   `nota2Historico` DECIMAL(4,2) NULL,
   `nota3Historico` DECIMAL(4,2) NULL,
@@ -293,8 +293,8 @@ ENGINE = InnoDB;
 -- Table `sge`.`ProfessorDisciplina`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sge`.`ProfessorDisciplina` (
-  `idProfessor` INT UNSIGNED NOT NULL,
-  `idDisciplina` INT UNSIGNED NOT NULL,
+  `idProfessor` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idDisciplina` INT UNSIGNED NOT NULL ,
   INDEX `fk_ProfessorDisciplina_Professor1_idx` (`idProfessor` ASC),
   INDEX `fk_ProfessorDisciplina_Disciplina1_idx` (`idDisciplina` ASC),
   CONSTRAINT `fk_ProfessorDisciplina_Professor1`

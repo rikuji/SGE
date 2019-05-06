@@ -17,7 +17,9 @@
 		private $senhaAluno;
         private $ufEndeAluno;
 
-	/**
+	
+
+    /**
      * @return mixed
      */
     public function getIdAluno()
@@ -32,7 +34,7 @@
      */
     public function setIdAluno($idAluno)
     {
-        $this->  $idAluno;
+        $this->idAluno = $idAluno;
 
         return $this;
     }
@@ -52,7 +54,7 @@
      */
     public function setNomeAluno($nomeAluno)
     {
-        $this->  $nomeAluno;
+        $this->nomeAluno = $nomeAluno;
 
         return $this;
     }
@@ -71,8 +73,8 @@
      * @return self
      */
     public function setCpfAluno($cpfAluno)
-   {
-        $this-> $cpfAluno;
+    {
+        $this->cpfAluno = $cpfAluno;
 
         return $this;
     }
@@ -92,7 +94,7 @@
      */
     public function setEmailAluno($emailAluno)
     {
-        $this->  $emailAluno;
+        $this->emailAluno = $emailAluno;
 
         return $this;
     }
@@ -112,7 +114,7 @@
      */
     public function setCelullarAluno($celullarAluno)
     {
-        $this->  $celullarAluno;
+        $this->celullarAluno = $celullarAluno;
 
         return $this;
     }
@@ -132,7 +134,7 @@
      */
     public function setTelFixoAluno($telFixoAluno)
     {
-        $this->  $telFixoAluno;
+        $this->telFixoAluno = $telFixoAluno;
 
         return $this;
     }
@@ -152,7 +154,7 @@
      */
     public function setDtNascAluno($dtNascAluno)
     {
-        $this->  $dtNascAluno;
+        $this->dtNascAluno = $dtNascAluno;
 
         return $this;
     }
@@ -172,7 +174,7 @@
      */
     public function setSexoAluno($sexoAluno)
     {
-        $this->  $sexoAluno;
+        $this->sexoAluno = $sexoAluno;
 
         return $this;
     }
@@ -192,7 +194,7 @@
      */
     public function setLogradouroEndeAluno($logradouroEndeAluno)
     {
-        $this->  $logradouroEndeAluno;
+        $this->logradouroEndeAluno = $logradouroEndeAluno;
 
         return $this;
     }
@@ -212,7 +214,7 @@
      */
     public function setComplementoEndeAluno($complementoEndeAluno)
     {
-        $this->  $complementoEndeAluno;
+        $this->complementoEndeAluno = $complementoEndeAluno;
 
         return $this;
     }
@@ -232,7 +234,7 @@
      */
     public function setBairroEndeAluno($bairroEndeAluno)
     {
-        $this->  $bairroEndeAluno;
+        $this->bairroEndeAluno = $bairroEndeAluno;
 
         return $this;
     }
@@ -247,16 +249,15 @@
 
     /**
      * @param mixed $cidadeEndeAluno
-     *cida
+     *
      * @return self
      */
     public function setCidadeEndeAluno($cidadeEndeAluno)
     {
-        $this->  $cidadeEndeAluno;
+        $this->cidadeEndeAluno = $cidadeEndeAluno;
 
         return $this;
     }
-
 
     /**
      * @return mixed
@@ -273,7 +274,7 @@
      */
     public function setCepEndeAluno($cepEndeAluno)
     {
-        $this->  $cepEndeAluno;
+        $this->cepEndeAluno = $cepEndeAluno;
 
         return $this;
     }
@@ -293,7 +294,7 @@
      */
     public function setNumeroEndeAluno($numeroEndeAluno)
     {
-        $this->  $numeroEndeAluno;
+        $this->numeroEndeAluno = $numeroEndeAluno;
 
         return $this;
     }
@@ -311,12 +312,13 @@
      *
      * @return self
      */
-    public function setSennhaAluno($senhaAluno)
+    public function setSenhaAluno($senhaAluno)
     {
-        $this->  $senhaAluno;
+        $this->senhaAluno = $senhaAluno;
 
         return $this;
     }
+
     /**
      * @return mixed
      */
@@ -326,15 +328,15 @@
     }
 
     /**
-     * @param mixed $UfEndeAluno
+     * @param mixed $ufEndeAluno
      *
      * @return self
      */
     public function setUfEndeAluno($ufEndeAluno)
     {
-        $this->  $ufEndeAluno;
+        $this->ufEndeAluno = $ufEndeAluno;
 
         return $this;
     }
 }
- ?>
+    ?>

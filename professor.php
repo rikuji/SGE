@@ -80,13 +80,13 @@ else
 </thead>
 	<tbody>
 	<?php foreach($query AS $professor){  
-		$professor = $professorDAO->listarProfessor($professor);}
+		$lista = $professorDAO->listarProfessor($professor);}
 			?>
 		<tr>
-			<td><?php echo ($professor->getNomeProfessor());?></td>
-			<td><?php echo ($professor->getCpfProfessor());?></td>
-			<td><?php echo ($professor->getEmailProfessor());?></td>
-			<td><?php echo ($professor->getRegistroProfessor())?></td>
+			<td><?php echo $professor->getNomeProfessor();?></td>
+			<td><?php echo $professor->getCpfProfessor();?></td>
+			<td><?php echo $professor->getEmailProfessor();?></td>
+			<td><?php echo $professor->getRegistroProfessor()?></td>
 			<td>
 				 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
 					 <i class="fa fa-cog" aria-hidden="true"></i>

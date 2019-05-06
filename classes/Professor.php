@@ -11,6 +11,8 @@ class Professor{
     private $registroProfessor;
     private $senhaProfessor;
 
+   
+
     /**
      * @return mixed
      */
@@ -20,7 +22,7 @@ class Professor{
     }
 
     /**
-     * @param mixed $idProfessorProfessor
+     * @param mixed $idProfessor
      *
      * @return self
      */
@@ -96,17 +98,17 @@ class Professor{
      */
     public function getEmailProfessor()
     {
-        return $this->emailProfessor;
+        return $this->EmailProfessor;
     }
 
     /**
-     * @param mixed $emailProfessor
+     * @param mixed $EmailProfessor
      *
      * @return self
      */
-    public function setEmailProfessor($emailProfessor)
+    public function setEmailProfessor($EmailProfessor)
     {
-        $this->emailProfessor = $emailProfessor;
+        $this->EmailProfessor = $EmailProfessor;
 
         return $this;
     }
@@ -150,6 +152,7 @@ class Professor{
 
         return $this;
     }
+
     /**
      * @return mixed
      */
@@ -159,7 +162,7 @@ class Professor{
     }
 
     /**
-     * @param mixed $noturo
+     * @param mixed $noturno
      *
      * @return self
      */
@@ -189,6 +192,7 @@ class Professor{
 
         return $this;
     }
+
     /**
      * @return mixed
      */
@@ -198,7 +202,7 @@ class Professor{
     }
 
     /**
-     * @param mixed $senhaprofessor
+     * @param mixed $senhaProfessor
      *
      * @return self
      */

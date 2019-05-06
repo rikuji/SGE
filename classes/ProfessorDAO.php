@@ -35,6 +35,7 @@
 		public function listarProfessor(){
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");
 			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
+			//print_r($sql);exit;
 			$sql->execute();
 			return $sql->fetchAll();
 		}

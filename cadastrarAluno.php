@@ -3,11 +3,11 @@ include 'template/header.php';
 include 'template/menu.php';
 
    $aluno = new Aluno();
-    $alunoDAO = new AlunoDAO();
+  $alunoDAO = new AlunoDAO();
 
     if(isset($_GET['idAluno'])){
 
-         $Aluno->setIdAluno($_GET['idAluno']);
+         $aluno->setIdAluno($_GET['idAluno']);
 
         $acao = "Editar";
 
@@ -180,8 +180,7 @@ include 'template/menu.php';
                 placeholder="Letras e numeros" />
                </div></div>
 
-		<button type="submit" class="btn btn-warning pull-right">
-			<?php echo $acao; ?></button>    
+		<button type="submit" class="btn btn-warning pull-right"><?php echo $acao; ?></button>
        </div>
    </div>
 </div>

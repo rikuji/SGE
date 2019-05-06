@@ -16,23 +16,22 @@
             
             <li><a href="#geral" aria-expanded="false" data-toggle="collapse"> <i class="icon-user"></i>Perfis</a>
                <ul id="geral" class="collapse list-unstyled">
+                    <li class=""> <a href="secretaria.php"><i class="icon-list"></i>Secretaria</a></li>
                     <li class=""> <a href="professor.php"><i class="icon-list"></i>Professor</a></li>
                     <li class=""> <a href="aluno.php"><i class="icon-list"></i>Aluno</a></li>
                     <li class=""> <a href="turma.php"><i class="icon-list"></i>Turma</a></li>
-                    <li class=""> <a href="admins.php"><i class="icon-list"></i>Admins</a></li>
-                    <li class=""> <a href="materia.php"><i class="icon-list"></i>Matérias</a></li>
-                    <li class=""> <a href="secretaria.php"><i class="icon-list"></i>Secretaria</a></li>
+                    <li class=""> <a href="disciplina.php"><i class="icon-list"></i>Disciplina</a></li>
+                    <li class=""> <a href="estadoCivil.php"><i class="icon-list"></i>Estado Civil</a></li>
               </ul>
           </li>
 
             <li><a href="#cadastros" aria-expanded="false" data-toggle="collapse"> <i class="icon-user"></i>Cadastros</a>
               <ul id="cadastros" class="collapse list-unstyled">
+                <li><a href="CadastrarSecretaria.php">Secretaria</a></li>
                 <li><a href="cadastraProfessor.php">Professor</a></li>
                 <li><a href="CadastrarAluno.php">Aluno</a></li>
-                <li><a href="novaTurma.php">Turma</a></li>
-                <li><a href="CadastrarMateria.php">Materias</a></li>
+                <li><a href="novoResponsavel.php">Responsável</a></li>
                 <li><a href="novaDisciplina.php">Disciplina</a></li>
-                <li><a href="CadastrarSecretaria.php">Secretaria</a></li>
               </ul>
             </li>
           </ul>

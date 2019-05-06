@@ -33,6 +33,7 @@
                     </div><a id="login" href="principal.php" class="btn btn-info">Entrar</a>
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form>
+                  <a href="#" style="text-align: center">Esqueceu sua senha?</a>
                 </div>
               </div>
             </div>

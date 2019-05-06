@@ -133,8 +133,6 @@ else
   </div>
 </section>
 
-
-
 <?php
 include ('template/footer.php');
 ?>

@@ -1,13 +1,14 @@
 <?php 
 	require_once "template/header.php";
 	require_once "template/menu.php";
+
 	$alunoDAO = new AlunoDAO();
 	$aluno = new Aluno(); 
 
-if (isset($_GET['idaluno']))
+if (isset($_GET['idAluno']))
 { 
 
-    $aluno->setIdAluno($_GET['idaluno']);
+    $aluno->setIdAluno($_GET['idAluno']);
 
     $aluno = $alunoDAO->procurar($aluno->getIdAluno());
 
@@ -35,7 +36,7 @@ else
   <!-- Page Header-->
   <header class="page-header">
     <div class="container-fluid">
-      <h2 class="no-margin-bottom">.:Alunos(a):.</h2>
+      <h2 class="no-margin-bottom">.:Alunos:.</h2>
     </div>
   </header>
 
@@ -73,7 +74,7 @@ else
 <table class="table table-bordered table-striped">	
 	<thead>
 	<tr>
-		<th>Aluno(a)</th>
+		<th>Nome</th>
 		<th>Cpf</th>
 		<th>Email</th>
 		<th>Ações</th>
@@ -81,23 +82,23 @@ else
 </thead>
 	<tbody>
 	<?php foreach($query AS $aluno){  
-		$aluno = $alunoDAO->listaraluno($aluno);}
+		$lista = $alunoDAO->listarAluno($aluno);
 			?>
-		<tr>
-			<td><?php echo ($aluno->getNomealuno());?></td>
-			<td><?php echo ($aluno->getCpfaluno());?></td>
-			<td><?php echo ($aluno->getEmailaluno());?></td>
+		<tr>	
+			<td><?php echo $aluno->getNomeAluno();?></td>
+			<td><?php echo $aluno->getCpfAluno();?></td>
+			<td><?php echo $aluno->getEmailAluno();?></td>
 			<td>
-				 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
-					 <i class="fa fa-cog" aria-hidden="true"></i>
-					</a>
-					
-				 <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir">
-					 <i class="fa fa-eye" aria-hidden="true"></i>
-					</a>
+				<a href="cadastrarAluno.php?acao=Editar&idAluno=<?php echo $aluno->getIdAluno(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
+                                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                    <a href="#" class="btn btn-danger" onclick="return excluir('salvaAluno.php?acao=Deletar&idAluno=<?php echo $aluno->getIdAluno(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
+                                     <div class="fa fa-trash-o" aria-hidden="true" ></div>
+                                </a>
 
 			</td>
-		</tr>									
+		</tr>	
+		<?php } ?>								
 	</tbody>
 </table>
 </div>
