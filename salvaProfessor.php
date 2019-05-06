@@ -3,19 +3,20 @@ include_once 'template/autoload.php';
 $professor = new Professor(); 
 $professorDAO = new ProfessorDAO(); 
 
-if (isset($_GET['id']) and $_GET['acao'] == 'Deletar') {
+if (isset($_GET['idProfessor']) and $_GET['acao'] == 'Deletar') {
 		
-		$professorDAO->deletar($_GET['id']);
+		$professorDAO->deletarProfessor($_GET['idProfessor']);
 	}else{
-		$professor->setId($_POST['id']);
-		$professor->setNome($_POST['nome']);
-		$professor->setCpf($_POST['cpf']); 
-		$professor->setSexo($_POST['sexo']);
-		$professor->setEmail($_POST['email']);
-		$professor->setDisciplina($_POST['disciplina']);
-		$professor->setPeriodo($_POST['periodo']);
-		$professor->setRegistro($_POST['registro']);
-		$professor->setSenhaProfessor($_POST['senhaProfessor']);
+		$professor->setIdProfessor($_POST['idProfessor']);
+		$professor->setNomeProfessor($_POST['nomeProfessor']);
+		$professor->setCpfProfessor($_POST['cpfProfessor']); 
+		$professor->setSexoProfessor($_POST['sexoProfessor']);
+		$professor->setEmailProfessor($_POST['emailProfessor']);
+		$professor->setMatutino($_POST['matutino']);
+		$professor->setVespertino($_POST['vespertino']);
+		$professor->setNoturno($_POST['noturno']);
+		$professor->setRegistroProfessor($_POST['registroProfessor']);
+		$professor->setSenhaProfessor($_POST['senhaProfessorProfessor']);
 
 		$acao = $_GET['acao'];
 
