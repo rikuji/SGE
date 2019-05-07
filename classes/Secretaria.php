@@ -128,5 +128,13 @@ class Secretaria{
 
         return $this;
     }
+
+    public function getIdTipoUsuario(){
+        return $this->idTipoUsuario; 
+    }
+
+    public function setIdTipoUsuario($idTipoUsuario){
+        $this->idTipoUsuario = $idTipoUsuario;
+    }
 }
 ?>

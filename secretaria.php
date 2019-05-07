@@ -1,37 +1,16 @@
 <?php 
-	require_once "template/header.php";
-	require_once "template/menu.php";
+require_once "template/header.php";
+require_once "template/menu.php";
 
-	 $SecretariaDAO = new SecretariaDAO();
-	 $Secretaria = new Secretaria();
-
-if (isset($_GET['idSecretaria']))
-{ 
-
-    $Secretaria->setidSecretaria($_GET['idSecretaria']);
-
-    $Secretaria = $SecretariaDAO->procurar($Secretaria->getId());
-
-    $acao = 'Editar';
-  } else if (isset($_GET['acao']) && $_GET_['acao'] == 'Vizualizar') {
-    
-    $acao = "Vizualizar";
-  } 
-else
-  {	
-    $acao = 'Cadastrar';
-
-  }
+$secretariaDAO = new SecretariaDAO();
+$secretaria = new Secretaria();
 
 
-if (isset($_POST['pesquisa'])){
-    $query = $SecretariaDAO->listar($_POST['pesquisa']);
-  } 
-else
-  {
-        $query = $SecretariaDAO->listar();
-    }
+
+$lista = $secretariaDAO->listarSecretaria();
+
 ?>
+
 	<div class="content-inner">
 		<header class="page-header">
 			<div class="container-fluid">
@@ -60,10 +39,8 @@ else
 								</div>								
 							</div>
 						</div>
-							<a href="CadastraSecretaria.php" class="btn btn-primary" id="direita" style="margin-left: auto;" >Cadastra Novo Usuario(a)</a>
-							&nbsp;
-							&nbsp;
-						<a href="javascript:history.back(-1)" class="btn btn-warning col-sm-2" style="margin-left: auto; padding: 15px; background-color: #0b56a6;">Voltar</a>
+							<a href="principal.php" class="btn btn-warning col-sm-2" style="margin-left: auto;">Voltar</a>
+
 					</div>
 				</div>
 			</div>
@@ -73,6 +50,7 @@ else
 							<table class="table table-bordered table-striped">
 								<thead>
 									<tr>
+										<th>ID</th>
 										<th>Nome</th>
 										<th>CPF</th>
 										<th>Email</th>
@@ -81,58 +59,27 @@ else
 										<th>Ações</th>
 									</tr>
 								</thead>
+
 									<tbody>
+									<?php foreach ($lista as $secretaria): ?>
 										<tr>
-											<td>Lucas Vale</td>
-											<td>000.999.777-09</td>
-											<td>lucasvalle@gmail.com</td>
-											<td>*****************</td>
-											<td>Aluno</td>
+											<td><?php echo $secretaria["idSecretaria"]?></td>
+											
+											<td><?php echo $secretaria["nomeSecretaria"] ?></td>
+											<td><?php echo $secretaria["cpfSecretaria"] ?></td>
+											<td><?php echo $secretaria["emailSecretaria"] ?> </td>
+											<td><?php echo $secretaria["senhaSecretaria"] ?></td>
+											<td><?php echo $secretaria["cargoSecretaria"] ?> </td>
 											<td>
-												 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
-			     								 <i class="icon-search" ></i>
+												<a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
+													<i class="fa fa-pencil" aria-hidden="true"></i>
 			      								</a>
-			      								
-												 <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir">
-			     								 <div data-icon="y" class="icon" ></div>
-			      								</a>
-
+												<a href="#" class="btn btn-danger" onclick="return excluir('salvaSecretaria.php?acao=Deletar&idSecretaria=<?php echo $secretaria->getIdSecretaria(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
+													<div class="fa fa-trash-o" aria-hidden="true" ></div>
+												</a>
 											</td>
-										</tr>			
-										<tr>
-											<td>Luzivaldo</td>
-											<td>000.949.437-12</td>
-											<td>luzivaldohen@gmail.com</td>
-											<td>****************</td>
-											<td>Professor</td>
-											<td>
-												 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
-			     								 <i class="icon-search" ></i>
-			      								</a>
-			      								
-												 <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir">
-			     								 <div data-icon="y" class="icon" ></div>
-			      								</a>
-
-											</td>
-										</tr>			
-										<tr>
-											<td>Deivysson Edu</td>
-											<td>157.171.155-32</td>
-											<td>deivisson@gmail.com</td>
-											<td>***************</td>
-											<td>Responsável</td>
-											<td>
-												 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
-			     								 <i class="icon-search" ></i>
-			      								</a>
-			      								
-												 <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir">
-			     								 <div data-icon="y" class="icon" ></div>
-			      								</a>
-
-											</td>
-										</tr>									
+										</tr>	
+									<?php endforeach ?>
 									</tbody>
 							</table>
 						</div>

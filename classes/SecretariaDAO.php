@@ -4,15 +4,15 @@
 		public function __construct(){
 			parent::__construct();
 			$this->class = 'Secretaria'; 
-			$this->table = 'userSecretaria';
+			$this->table = 'usersecretaria';
 		}
 		public function insereSecretaria(Secretaria $userSecretaria){
 			$valores = "null ,
-			'{$nome->getNomeSecretaria()}',
-			'{$cpf->getCpfSecretaria()}',
-			'{$senha->getSenhaSecretaria()}',
-			'{$email->getEmailSecretaria()}',
-			'{$cargo->getCargoSecretaria()}'";
+			'{$this->getNomeSecretaria()}',
+			'{$this->getCpfSecretaria()}',
+			'{$this->getSenhaSecretaria()}',
+			'{$this->getEmailSecretaria()}',
+			'{$this->getCargoSecretaria()}'";
 			print_r($this->inserir($valores));
 		}
 		public function alteraSecretaria(Secretaria $secretaria){
@@ -22,7 +22,21 @@
 			'{$senha->getSenhaSecretaria()}',
 			'{$email->getEmailSecretaria()}',
 			'{$cargo->getCargoSecretaria()}'";
-			$this->alterar($secretaria->getIdSecretaria(), $value);
+			$this->alterar($this->getIdSecretaria(), $value);
+		}
+		public function listarSecretaria(){
+			$query = "SELECT * FROM usersecretaria";
+			$conexao = new PDO("mysql:host=127.0.0.1;dbname=sge","root","");
+			$stmt = $conexao->prepare($query);
+			$stmt->execute();
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $results;
+		}
+		public function deletarSecretaria($id){
+			$sql = $this->db->prepare("DELETE FROM {$this->table} WHERE idSecretaria = {$id}");
+			print_r($sql);
+			exit;
+			$sql->execute(); 
+		}
 	}
-}
 ?>	

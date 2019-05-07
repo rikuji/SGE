@@ -6,7 +6,7 @@ $secretariaDAO = new SecretariaDAO();
 
 if (isset($_GET['idSecretaria']) and $_GET['acao'] == 'Deletar') {
 		
-		$secretariaDAO->deletar($_GET['idSecretaria']);
+		$secretariaDAO->deletarSecretaria($_GET['idSecretaria']);
 	}else{
 		$secretaria->setIdSecretaria($_POST['idSecretaria']);
 		$secretaria->setNomeSecretaria($_POST['nomeSecretaria']);
