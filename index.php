@@ -24,7 +24,7 @@
                     <div class="i-checks">
                     </div>
                     <div class="form-group">
-                         <input id="email" type="text" name="email" required="" class="input-material " placeholder="Matricula:">
+                         <input id="email" type="text" name="email" required="" class="input-material " placeholder="CPF:" mask="999.999.999-99" size="11" maxlength="11">
                           <label for="email" class="label-material"></label>
                     </div>
                       <div class="form-group">

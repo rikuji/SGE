@@ -64,9 +64,9 @@ include 'template/menu.php';
                </div></div>
 
                <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-15%;" class="col-sm-3 form-control-label" for="cpfAluno">CPF:</label>
+                <label style margin-top:-15%;" class="col-sm-3 form-control-label" for="cpfAluno">CPF:</label>
                   <div class="col-sm-9">
-                    <input style="float: left; margin-left: 140%; margin-top:-15%;" type="number"  name="cpfAluno" id="cpfAluno" class="form-control" required="" value="" placeholder="EX: 12345678901" />
+                    <input -top:-15%;" type="number"  name="cpfAluno" id="cpfAluno" class="form-control" required="" value="" placeholder="EX: 12345678901" />
                </div></div>
    						
    				<div class="form-group row">
@@ -76,9 +76,9 @@ include 'template/menu.php';
                </div></div>
 
                <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-15%;" class="col-sm-3 form-control-label" for="celullarAluno">Celular:</label>
+                <label -top:-15%;" class="col-sm-3 form-control-label" for="celullarAluno">Celular:</label>
                   <div class="col-sm-9">
-                    <input style="float: left; margin-left: 140%; margin-top:-15%;" type="number"  name="celullarAluno" id="celullarAluno" class="form-control" required="" value="" placeholder="EX:(00)9 9999-8888"/>
+                    <input -top:-15%;" type="number"  name="celullarAluno" id="celullarAluno" class="form-control" required="" value="" placeholder="EX:(00)9 9999-8888"/>
                </div></div>
 
                <div class="form-group row">
@@ -88,9 +88,9 @@ include 'template/menu.php';
                </div></div>
 
                 <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-20%;" class="col-sm-3 form-control-label" for="telFixoAluno">Telefone:</label>
+                <label -top:-20%;" class="col-sm-3 form-control-label" for="telFixoAluno">Telefone:</label>
                   <div class="col-sm-9">
-                    <input style="float: left; margin-left:140%;margin-top:-20%;" type="number"  name="telFixoAluno" id="telFixoAluno" class="form-control" required="" value="" placeholder="EX:(00)9999-8888" />
+                    <input %;" type="number"  name="telFixoAluno" id="telFixoAluno" class="form-control" required="" value="" placeholder="EX:(00)9999-8888" />
                </div></div>
 
              <label class="col-sm-3 form-control-label" for="sexoAluno">Sexo:</label>
@@ -103,9 +103,9 @@ include 'template/menu.php';
                </div></div>
 
                <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-20%;" class="col-sm-3 form-control-label" for="logradouroEndeAluno">Logradouro:</label>
+                <label -top:-20%;" class="col-sm-3 form-control-label" for="logradouroEndeAluno">Logradouro:</label>
                   <div class="col-sm-9">
-                    <input style="float: left;margin-left:140%;margin-top:-20%;" type="number"  name="logradouroEndeAluno" id="logradouroEndeAluno" class="form-control" required="" value=""/>
+                    <input  type="number"  name="logradouroEndeAluno" id="logradouroEndeAluno" class="form-control" required="" value=""/>
                </div></div>
 
                <div class="form-group row">
@@ -115,9 +115,9 @@ include 'template/menu.php';
                </div></div>
 
                <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-20%;" class="col-sm-3 form-control-label" for="bairroEndeAluno">Bairro:</label>
+                <label -top:-20%;" class="col-sm-3 form-control-label" for="bairroEndeAluno">Bairro:</label>
                   <div class="col-sm-9">
-                    <input style="float: left;margin-left:140%;margin-top:-20%;" type="text"  name="bairroEndeAluno" id="bairroEndeAluno" class="form-control" required="" value=""/>
+                    <input  type="text"  name="bairroEndeAluno" id="bairroEndeAluno" class="form-control" required="" value=""/>
                </div></div>
 
                <div class="form-group row">
@@ -127,9 +127,9 @@ include 'template/menu.php';
                </div></div>
 
                <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-20%;" class="col-sm-3 form-control-label" for="cepEndealuno">CEP:</label>
+                <label -top:-20%;" class="col-sm-3 form-control-label" for="cepEndealuno">CEP:</label>
                   <div class="col-sm-9">
-                    <input style="float: left;margin-left:140%;margin-top:-20%;" type="number"  name="cepEndealuno" id="cepEndealuno" class="form-control" required="" value="" placeholder="EX:00.123.456"/>
+                    <input  type="number"  name="cepEndealuno" id="cepEndealuno" class="form-control" required="" value="" placeholder="EX:00.123.456"/>
                </div></div>
 
                <div class="form-group row">
@@ -141,7 +141,7 @@ include 'template/menu.php';
                <div class="form-group row">
                 <label class="col-sm-3 form-control-label" for="ufEndeAluno" id="ufEndeAluno">UF:</label>
                   <div class="col-sm-9">
-                    <select style="margin-top:-100%;" value="ufEndeAluno" id="ufEndeAluno">
+                    <select 
                       <option value="ac">AC</option>
                       <option value="al">AL</option>
                       <option value="ap">AP</option>
@@ -173,10 +173,10 @@ include 'template/menu.php';
                  </div></div>
 
                  <div class="form-group row"> 
-                <label style="float: left;margin-left:97%;margin-top:-20%;"
+                <label 
                class="col-sm-3 form-control-label" for="senhaAluno">Senha:</label>
                <div class="col-sm-9"> 
-                <input type="password" style="float: left;margin-left:140%;margin-top:-20%;" name="senhaAluno" id="senhaAluno" class="form-control"required="" value="" 
+                <input type="password"  name="senhaAluno" id="senhaAluno" class="form-control"required="" value="" 
                 placeholder="Letras e numeros" />
                </div></div>
 
@@ -186,6 +186,6 @@ include 'template/menu.php';
 </div>
 </form>
 </section>
-<?php include 'template/footer.php'; ?>
+<?php include 'template/footer.php'; ?> 
 
          

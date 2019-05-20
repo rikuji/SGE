@@ -18,9 +18,10 @@
                <ul id="geral" class="collapse list-unstyled">
                     <li class=""> <a href="secretaria.php"><i class="icon-list"></i>Secretaria</a></li>
                     <li class=""> <a href="professor.php"><i class="icon-list"></i>Professor</a></li>
-                    <li class=""> <a href="aluno.php"><i class="icon-list"></i>Aluno</a></li>
                     <li class=""> <a href="turma.php"><i class="icon-list"></i>Turma</a></li>
                     <li class=""> <a href="disciplina.php"><i class="icon-list"></i>Disciplina</a></li>
+                    <li class=""> <a href="aluno.php"><i class="icon-list"></i>Aluno</a></li>
+                     <li class=""> <a href="responsavel.php"><i class="icon-list"></i>Responsável</a></li>
               </ul>
           </li>
 

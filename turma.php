@@ -1,5 +1,5 @@
 <?php require_once "template/header.php";
-	  require_once "template/menu.php";		
+	  require_once "template/menu.php";	
  
 	  $turmaDAO = new TurmaDAO();
 	  $turma = new Turma(); 
