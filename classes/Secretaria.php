@@ -5,7 +5,8 @@ class Secretaria{
 	private $cpfSecretaria;
 	private $senhaSecretaria;
     private $emailSecretaria;
-	private $cargoSecretaria;
+    private $cargoSecretaria;
+    private $idTipoUsuario;
 
     
 

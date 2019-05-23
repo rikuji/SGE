@@ -6,6 +6,21 @@
 			$this->class = 'Secretaria'; 
 			$this->table = 'usersecretaria';
 		}
+		public function insereUsuarioSecretaria($secretaria){
+			$query = "INSERT INTO sge.usersecretaria 
+			(nomeSecretaria, cpfSecretaria, senhaSecretaria, emailSecretaria,cargoSecretaria,idTipoUsuario)
+                VALUES (:nomeSecretaria, :cpfSecretaria, :senhaSecretaria, :emailSecretaria,:cargoSecretaria,:idTipoUsuario)";
+
+			$conexao = new PDO("mysql:host=127.0.0.1;dbname=sge","root","");
+			$stmt = $conexao->prepare($query);
+			$stmt->bindValue(':nomeSecretaria', $secretaria->getNomeSecretaria());
+			$stmt->bindValue(':cpfSecretaria', $secretaria->getCpfSecretaria());
+			$stmt->bindValue(':senhaSecretaria',  $secretaria->getSenhaSecretaria());
+			$stmt->bindValue(':emailSecretaria', $secretaria->getEmailSecretaria());
+			$stmt->bindValue(':cargoSecretaria', $secretaria->getCargoSecretaria());
+			$stmt->bindValue(':idTipoUsuario', $secretaria->getIdTipoUsuario());
+			$stmt->execute();
+		}
 		public function insereSecretaria(Secretaria $userSecretaria){
 			$valores = "null ,
 			'{$this->getNomeSecretaria()}',

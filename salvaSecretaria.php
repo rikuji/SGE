@@ -1,30 +1,32 @@
-<?php
-include_once 'template/autoload.php';
-$secretaria = new Secretaria(); 
-$secretariaDAO = new SecretariaDAO(); 
+<?php 
+	include_once 'template/autoload.php';
 
+	$secretariaDao = new SecretariaDao(); 
+	$secretaria = new Secretaria();
 
-if (isset($_GET['idSecretaria']) and $_GET['acao'] == 'Deletar') {
+	if (isset($_GET['idSecretaria']) and $_GET['acao'] == 'Deletar') {
 		
-		$secretariaDAO->deletarSecretaria($_GET['idSecretaria']);
+		$secretariaDao->deletarUsuarioSecretaria($_GET['idSecretaria']);
+		
 	}else{
-		$secretaria->setIdSecretaria($_POST['idSecretaria']);
 		$secretaria->setNomeSecretaria($_POST['nomeSecretaria']);
-		$secretaria->setCpfSecretaria($_POST['cpfSecretaria']);  
+		$secretaria->setCpfSecretaria($_POST['cpfSecretaria']);
 		$secretaria->setSenhaSecretaria($_POST['senhaSecretaria']);
 		$secretaria->setEmailSecretaria($_POST['emailSecretaria']);
 		$secretaria->setCargoSecretaria($_POST['cargoSecretaria']);
+		$secretaria->setIdTipoUsuario($_POST['idTipoUsuario']);
 
 		$acao = $_GET['acao'];
 
 		if ($acao == 'Cadastrar') {
-			$secretariaDAO->insereSecretaria($secretaria);
+			$secretariaDao->insereUsuarioSecretaria($secretaria); 
 		}
 		else if($acao == 'Editar'){
-			$secretariaDAO->alteraSecretaria($secretaria);
+			$turmaDAO->alterarTurma($turma);
 		}
 	}
 	$msg = "Executado com sucesso!";
 	$class = "success";
+
 	header("Location: secretaria.php?msg=$msg&class=$class");
-?> 
+ ?>
