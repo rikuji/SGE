@@ -7,7 +7,7 @@
 
     if(isset($_GET['id'])){
 
-         $professor->setId($_GET['id']);
+         $professor->setIdProfessor($_GET['idProfessor']);
 
         $acao = "Editar";
 
@@ -54,72 +54,107 @@
         </div>
           <div class="card-body">
 
-            <form action="salvaProfessor.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
+            <form action="salvaProfessor.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal col-sm-12">
               <div class="form-group row">
-                <label class="col-sm-3 form-control-label" for="professor">Nome:</label>
-                  <div class="col-sm-9">
-                    <input type="text" name="professor" id="professor" class="form-control" required=""value=""placeholder="Nome Professor(a)"/>
-               </div></div>
+                <label class="form-control-label" for="nomeProfessor">Nome:</label>
+                  <div class="col-sm-5">
+                    <input type="text" name="nomeProfessor" id="nomeProfessor" class="form-control" required=""
+                    value="<?php echo $professor->getNomeProfessor();?>"/>
+                    <input type="hidden" name="idProfessor" id="idProfessor" value="<?php  echo $professor->getIdProfessor();?>">
+               </div>
 
                <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-15%;" class="col-sm-3 form-control-label" for="cpf">CPF:</label>
-                  <div class="col-sm-9">
-                    <input style="float: left; margin-left: 140%; margin-top:-15%;" type="number"  name="cpf" id="cpf" class="form-control" required="" value="" placeholder="EX: 12345678901" />
-               </div></div>
-
-                <label class="col-sm-3 form-control-label" for="sexo">Sexo:</label>
-               <div class="form-group row">
-                  <div class="col-sm-9">
-                    <select value="sexo">
-                      <option value="feminino">Feminino</option>
-                      <option value="masculino">Masculino</option>
-                    </select><br><br>
-               </div></div>
+                <label class="col-sm-1 form-control-label" for="cpfProfessor">CPF:</label>
+                  <div class="col-sm-7">
+                    <input type="text" size="20" maxlength="14"  name="cpfProfessor" id="cpfProfessor" class="form-control cpf" required="s"
+                    value="<?php echo $professor->getCpfProfessor();?>"/>
+               </div></div></div>
 
                <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-17%;"class="col-sm-3 form-control-label" for="email">Email:</label>
-                  <div class="col-sm-9">
-                    <input style="float: left; margin-left: 140%; margin-top:-15%;" type="email" name="email" autocomplete="off"id="email" class="form-control" required="" value="" placeholder="exemplo@gmail.com"/>
-               </div></div>
+                <label class="form-control-label" for="sexoProfessor">Sexo:</label>
+                  <div class="col-sm-2">
+                    <select name="sexoProfessor" id="sexoProfessor" value="sexoProfessor">
+                      <option name="sexoProfessor" value="F">Feminino</option>
+                      <option name="sexoProfessor" value="M">Masculino</option>
+                    </select 
+                    value="<?php echo $professor->getSexoProfessor();?>">
+                   </div>
 
                <div class="form-group row">
-                <label class="col-sm-3 form-control-label" for="disciplina">Disciplina Ministrada:</label>
+                <label class="form-control-label" for="emailProfessor">Email:</label>
                   <div class="col-sm-9">
-                    <select value="disciplina">
-                      <option value="biologia">Biologia</option>
+                    <input type="emailProfessor" name="emailProfessor" autocomplete="off"id="emailProfessor" class="form-control" required="" value="" placeholder="exemplo@gmail.com"
+                   value="<?php echo $professor->getEmailProfessor();?>"/>
+               </div></div></div>
+
+               <div class="form-group row">
+                <label class=" form-control-label" for="disciplinaProfessor">Disciplina Ministrada:</label>
+                  <div class="col-sm-3">
+                    <select name="disciplinaProfessor" id="disciplinaProfessor"value="disciplinaProfessor">
+                      <option value="bio">Biologia</option>
                       <option value="ef">Ed.Fisica</option>
-                      <option value="espanhol">Espanhol</option>
-                      <option value="fisica">Fisica</option>
-                      <option value="geografia">Geografia</option>
-                      <option value="historia">História</option>
-                      <option value="ingles">Inglês</option>
-                      <option value="matematica">Matemática</option>
-                      <option value="portugues">Português</option>
-                      <option value="quimica">Quimica</option>
+                      <option value="esp">Espanhol</option>
+                      <option value="fis">Fisica</option>
+                      <option value="geo">Geografia</option>
+                      <option value="his">História</option>
+                      <option value="ing">Inglês</option>
+                      <option value="mat">Matemática</option>
+                      <option value="port">Português</option>
+                      <option value="qui">Quimica</option>
                       <option value="outro">Outra</option>
-                    </select><br><br>
-                 </div></div>
+                    </select 
+                    value="<?php echo $professor->getIdDisciplina();?>"> 
+                 </div>
 
                <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-25%;"class="col-sm-3 form-control-label" for="periodo">Periodo:</label>
-                  <div class="col-sm-9">
-                    <input style="float:left;margin-left:140%; margin-top:-25%;"type="" name="periodo" id="periodo" class="form-control" required="" value=""/>
-               </div></div>
+                <label class="col-sm-3 form-control-label" for="matutino">Matutino:</label>
+                  <div class="col-sm-8">
+                      <select name="matutino" id="matutino" value="matutino">
+                        <option value="S">Sim</option>
+                        <option value="S">Não</option>
+                      </select 
+                      value="<?php echo $professor->getMatutino();?>">
+                  </div></div>
+
+                      <div class="form-group row">
+                <label class="col-sm-3 form-control-label" for="vespertino">Vespertino:</label>
+                  <div class="col-sm-8">
+                      <select name="vespertino" id="vespertino" value="vespertino">
+                        <option value="S">Sim</option>
+                        <option value="N">Não</option>
+                      </select 
+                      value="<?php echo $professor->getVespertino();?>">
+                  </div></div>
+
+                      <div class="form-group row">
+                <label style="margin-left:400%; margin-top:-39%" class="col-sm-3 form-control-label" for="noturno">Noturno:</label>
+                <div style="margin-left:400%;margin-top:-25%"class="col-sm-8">
+                      <select name="noturno" id="noturno" value="noturno">
+                        <option value="S">Sim</option>
+                        <option value="N">Não</option>
+                      </select 
+                      value="<?php echo $professor->getNoturno();?>">
+                  </div></div></div>
 
                <div class="form-group row">
-                <label style="float: left; margin-left: 97%; margin-top:-5%;"class="col-sm-3 form-control-label" for="registro">Registro de Professor(a):</label>
-                  <div class="col-sm-9">
-                    <input style="float: left; margin-left: 140%; margin-top:-1%;"type="number" name="registro" id="registro" class="form-control" required="" value="" placeholder="123456" />
-               </div></div>
+                <label class="form-control-label" for="registroProfessor">Registro de Professor(a):</label>
+                  <div class="col-sm-3">
+                    <input type="text" submask="number"name="registroProfessor" id="registroProfessor" class="form-control" required="" value="" placeholder="123456"
+                    value="<?php echo $professor->getRegistroProfessor();?>" />
+               </div>
 
                <div class="form-group row"> 
-                <label style="margin-top:-20%;"
-               class="col-sm-3 form-control-label" for="senha">Senha:</label>
-               <div class="col-sm-9"> 
-                <input type="password"  style="margin-top:-17%;"name="senhaProfessor" id="senhaProfessor" class="form-control"required="" value="" 
-                placeholder="Letras e numeros" />
-               </div></div>
-               <button type="submit" class="btn btn-warning pull-right" <?php echo $disabled; ?> ><?php echo $acao; ?></button>
+                <label class="col-sm-1 form-control-label" for="senhaProfessor">Senha:</label>
+               <div class="col-sm-7"> 
+                <input type="password"name="senhaProfessor"id="senhaProfessor" class="form-control"required=""placeholder="Letras e numeros"
+                value="<?php echo $professor->getSenhaProfessor();?>" />
+
+                <input type="hidden" name="idTipoUsuario" id="idTipoUsuario" value="<?php  echo $professor->getIdTipoUsuario();?>">
+               </div></div></div>
+
+               <button type="submit" class="btn btn-warning pull-right" 
+               <?php echo $disabled; ?> ><?php echo $acao; ?>
+               </button>
              </form>
     </div>
   </div>

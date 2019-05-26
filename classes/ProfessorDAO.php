@@ -8,34 +8,33 @@
 		}
 		public function insereProfessor(Professor $professor){
 			$valores = " null,
-			'{$nomeProfessor->getNomeProfessor()}', 
-			'{$cpfProfessor->getCpfProfessor()}', 
-			'{$sexoProfessor->getSexoProfessor()}', 
-			'{$emailProfessor->getEmailProfessor()}', 
-			'{$matutino->getMatutino()}', 
-			'{$vespertino->getVespertino()}',
-			'{$noturno->getNoturno()}',
-			'{$registroProfessor->getRegistroProfessor()}',
-			'{$senhaProfessor->getSenhaProfessor()}'";
+			'{$professor->getNomeProfessor()}', 
+			'{$professor->getCpfProfessor()}', 
+			'{$professor->getSexoProfessor()}', 
+			'{$professor->getEmailProfessor()}', 
+			'{$professor->getMatutino()}', 
+			'{$professor->getVespertino()}',
+			'{$professor->getNoturno()}',
+			'{$professor->getRegistroProfessor()}',
+			'{$professor->getSenhaProfessor()}'";
 			$this->inserir($valores);
 		}
 		public function alteraProfessor(Professor $professor){
 			$value = " null,
-			'{$nomeProfessor->getNomeProfessor()}', 
-			'{$cpfProfessor->getCpfProfessor()}', 
-			'{$sexoProfessor->getSexoProfessor()}', 
-			'{$emailProfessor->getEmailProfessor()}', 
-			'{$matutino->getMatutino()}', 
-			'{$vespertino->getVespertino()}',
-			'{$noturno->getNoturno()}',
-			'{$registroProfessor->getRegistroProfessor()}',
-			'{$senhaProfessor->getSenhaProfessor()}'";
+			'{$professor->getNomeProfessor()}', 
+			'{$professor->getCpfProfessor()}', 
+			'{$professor->getSexoProfessor()}', 
+			'{$professor->getEmailProfessor()}', 
+			'{$professor->getMatutino()}', 
+			'{$professor->getVespertino()}',
+			'{$professor->getNoturno()}',
+			'{$professor->getRegistroProfessor()}',
+			'{$professor->getSenhaProfessor()}'";
 			$this->alterar($professor->getIdeProfessor(), $value);
 		}
 		public function listarProfessor(){
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");
 			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
-			//print_r($sql);exit;
 			$sql->execute();
 			return $sql->fetchAll();
 		}

@@ -1,17 +1,17 @@
 <?php
 class Professor{
-	private $idProfessor; 
-	private $nomeProfessor;
-	private $cpfProfessor;
-	private $sexoProfessor;
-	private $EmailProfessor;
-	private $matutino;
-	private $vespertino;
+    private $idProfessor; 
+    private $nomeProfessor;
+    private $cpfProfessor;
+    private $sexoProfessor;
+    private $EmailProfessor;
+    private $matutino;
+    private $vespertino;
     private $noturno;
     private $registroProfessor;
     private $senhaProfessor;
-
-   
+    private $idDisciplina;
+    private $idTipoUsuario;
 
     /**
      * @return mixed
@@ -22,7 +22,7 @@ class Professor{
     }
 
     /**
-     * @param mixed $idProfessor
+     * @param mixed $idProfessorProfessor
      *
      * @return self
      */
@@ -98,17 +98,17 @@ class Professor{
      */
     public function getEmailProfessor()
     {
-        return $this->EmailProfessor;
+        return $this->emailProfessor;
     }
 
     /**
-     * @param mixed $EmailProfessor
+     * @param mixed $emailProfessor
      *
      * @return self
      */
-    public function setEmailProfessor($EmailProfessor)
+    public function setEmailProfessor($emailProfessor)
     {
-        $this->EmailProfessor = $EmailProfessor;
+        $this->emailProfessor = $emailProfessor;
 
         return $this;
     }
@@ -152,7 +152,6 @@ class Professor{
 
         return $this;
     }
-
     /**
      * @return mixed
      */
@@ -162,7 +161,7 @@ class Professor{
     }
 
     /**
-     * @param mixed $noturno
+     * @param mixed $noturo
      *
      * @return self
      */
@@ -192,7 +191,6 @@ class Professor{
 
         return $this;
     }
-
     /**
      * @return mixed
      */
@@ -202,7 +200,7 @@ class Professor{
     }
 
     /**
-     * @param mixed $senhaProfessor
+     * @param mixed $senhaprofessor
      *
      * @return self
      */
@@ -212,5 +210,42 @@ class Professor{
 
         return $this;
     }
+    /**
+     * @return mixed
+     */
+    public function getIdDisciplina()
+    {
+        return $this->IdDisciplina;
+    }
+    /**
+     * @param mixed $idDisciplina
+     *
+     * @return self
+     */
+    public function setidDisciplina($idDisciplina)
+    {
+        $this->idDisciplina = $idDisciplina;
+
+        return $this;
+    }
+        /**
+     * @return mixed
+     */
+    public function getIdTipoUsuario()
+    {
+        return $this->IdTipoUsuario;
+    }
+    /**
+     * @param mixed $IdTipoUsuario
+     *
+     * @return self
+     */
+    public function setIdTipoUsuario($idTipoUsuario)
+    {
+        $this->idTipoUsuario = $idTipoUsuario;
+
+        return $this;
+    }
+
 }
 ?>

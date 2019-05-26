@@ -6,6 +6,7 @@ $professorDAO = new ProfessorDAO();
 if (isset($_GET['idProfessor']) and $_GET['acao'] == 'Deletar') {
 		
 		$professorDAO->deletarProfessor($_GET['idProfessor']);
+
 	}else{
 		$professor->setIdProfessor($_POST['idProfessor']);
 		$professor->setNomeProfessor($_POST['nomeProfessor']);
@@ -16,7 +17,7 @@ if (isset($_GET['idProfessor']) and $_GET['acao'] == 'Deletar') {
 		$professor->setVespertino($_POST['vespertino']);
 		$professor->setNoturno($_POST['noturno']);
 		$professor->setRegistroProfessor($_POST['registroProfessor']);
-		$professor->setSenhaProfessor($_POST['senhaProfessorProfessor']);
+		$professor->setSenhaProfessor($_POST['senhaProfessor']);
 
 		$acao = $_GET['acao'];
 
