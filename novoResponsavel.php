@@ -41,7 +41,8 @@ include 'template/menu.php';
               <div class="form-group row">
                 <label class="form-control-label" for="aluno">Nome:</label>
                   <div class="col-sm-5">
-                    <input type="text" name="nomeResponsavel" id="nomeResponsavel" class="form-control" required=""value=""placeholder="Nome Responsavel"/>
+                    <input type="text" name="nomeResponsavel" id="nomeResponsavel" class="form-control" required=""
+                    value="<?php echo $responsavel->getNomeResponsavel();?>"/>
                </div>
 
                <div class="form-group row">
