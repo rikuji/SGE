@@ -37,7 +37,7 @@
                       <a style="margin-left: auto;"></a>  
                         &nbsp;
                         &nbsp;
-                        <a href="javascript:history.back(-1)" class="btn btn-warning col-sm-2" style="">Voltar</a>
+                        <a href="javascript:history.back(-1)" class="btn btn-info col-sm-2" style="background-color: #0b56a6;">Voltar</a>
                   </div>
               </div>
             </div>
@@ -50,24 +50,24 @@
                     </div>
                     <div class="card-body">
                       
-                     <form action="salvaTurma.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
+                     <form action="salvaTurma.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal col-sm-12">
 
             <div class="form-group row">
-                <label class="col-sm-3 form-control-label" for="descricao">Descrição:</label>
-                    <div class="col-sm-9">
+                <label class=" col-sm-1form-control-label" for="descricao">Descrição:</label>
+                    <div class="col-sm-6">
                         <input type="text"  id="descricaoTurma" name="descricaoTurma" class="form-control" value="<?php echo $turma->getDescricaoTurma(); ?>" ></input>
-                        <input type="hidden" name="idTurma" value="<?php echo $turma->getIdTurma(); ?>"></input>
+                        <input type="hidden" name="idTurma" value="<?php echo $turma->getIdTurma(); ?>"/>
                     </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-3 form-control-label" for="descricao">Periodo:</label>
-                    <div class="col-sm-9">
+                <label class="col-sm-1 form-control-label" for="descricao">Periodo:</label>
+                    <div class="col-sm-6">
                         <input type="text"  id="periodoTurma" name="periodoTurma" class="form-control" value="<?php echo $turma->getPeriodoTurma(); ?>"></input>
                     </div>
             </div>
 
-     <button type="submit" class="btn btn-warning pull-right"><?php echo $acao; ?></button>
+     <button type="submit" class="btn btn-info  pull-right" style="background-color:#0b56a6"><?php echo $acao; ?></button>
     </form>
 
     </div>
