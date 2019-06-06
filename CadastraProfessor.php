@@ -4,7 +4,9 @@
     
    $professor = new Professor();
    $professorDAO = new ProfessorDAO();
-    if(isset($_GET['id']))
+   
+
+    if(isset($_GET['idProfessor']))
     {
         $professor->setIdProfessor($_GET['idProfessor']);
         $acao = "Editar";
@@ -89,7 +91,7 @@
                   <div class="col-sm-3">
                       <select name="matutino"id="matutino" >
                         <option value="S">Sim</option>
-                        <option value="S">Não</option>
+                        <option value="N">Não</option>
                       </select
                       value="<?php echo $professor->getMatutino();?>">
                   </div>
@@ -116,7 +118,7 @@
 
                <div class="form-group row">
                 <label class="form-control-label" for="registroProfessor">Registro de Professor(a):</label>
-                  <div class="col-sm-4">
+                  <div class="col-sm-2">
                     <input type="text" maxlength="6" name="registroProfessor" id="registroProfessor" class="form-control"required=""
                     value="<?php echo $professor->getRegistroProfessor(); ?>"/>
                </div>
@@ -126,26 +128,7 @@
                <div class="col-sm-6"> 
                 <input type="password" maxlength="35"name="senhaProfessor"id="senhaProfessor" class="form-control"required=""
                 value="<?php echo $professor->getSenhaProfessor(); ?>"/>
-               </div></div></div>
-
-               <div class="form-group row">
-                <label class=" form-control-label" for="disciplinaProfessor">Disciplina Ministrada:</label>
-                  <div class="col-sm-3">
-                    <select name="disciplinaProfessor" id="disciplinaProfessor">
-                      <option value="bio">Biologia</option>
-                      <option value="ef">Ed.Fisica</option>
-                      <option value="esp">Espanhol</option>
-                      <option value="fis">Fisica</option>
-                      <option value="geo">Geografia</option>
-                      <option value="his">História</option>
-                      <option value="ing">Inglês</option>
-                      <option value="mat">Matemática</option>
-                      <option value="port">Português</option>
-                      <option value="qui">Quimica</option>
-                      <option value="outro">Outra</option>
-                    </select
-                    value="<?php echo $professor->getIdDisciplina();?>"> 
-                 </div>
+               </div></div>
 
                   <div class="form-group row"> 
                 <label class="col-sm-2 form-control-label" for="idTipoUsuario">Tipo Usuario:</label>

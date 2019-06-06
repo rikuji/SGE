@@ -4,13 +4,12 @@ class Professor{
     private $nomeProfessor;
     private $cpfProfessor;
     private $sexoProfessor;
-    private $EmailProfessor;
+    private $emailProfessor;
     private $matutino;
     private $vespertino;
     private $noturno;
     private $registroProfessor;
     private $senhaProfessor;
-    private $idDisciplina;
     private $idTipoUsuario;
 
     /**
@@ -210,30 +209,12 @@ class Professor{
 
         return $this;
     }
-    /**
-     * @return mixed
-     */
-    public function getIdDisciplina()
-    {
-        return $this->IdDisciplina;
-    }
-    /**
-     * @param mixed $idDisciplina
-     *
-     * @return self
-     */
-    public function setidDisciplina($idDisciplina)
-    {
-        $this->idDisciplina = $idDisciplina;
-
-        return $this;
-    }
         /**
      * @return mixed
      */
     public function getIdTipoUsuario()
     {
-        return $this->IdTipoUsuario;
+        return $this->idTipoUsuario;
     }
     /**
      * @param mixed $IdTipoUsuario

@@ -18,6 +18,7 @@ if (isset($_GET['idProfessor']) and $_GET['acao'] == 'Deletar') {
 		$professor->setNoturno($_POST['noturno']);
 		$professor->setRegistroProfessor($_POST['registroProfessor']);
 		$professor->setSenhaProfessor($_POST['senhaProfessor']);
+		$professor->setIdTipoUsuario($_POST['idTipoUsuario']);
 
 		$acao = $_GET['acao'];
 

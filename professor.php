@@ -1,8 +1,11 @@
 <?php 
 	require_once "template/header.php";
 	require_once "template/menu.php";
+
 	$professorDAO = new ProfessorDAO();
 	$professor = new Professor(); 
+	$disciplina = new Disciplina();
+	$disciplina = new DisciplinaDAO();
 
 if (isset($_GET['idprofessor']))
 { 
@@ -72,9 +75,11 @@ else
 <thead>
 	<tr>
 		<th>Professor(a)</th>
-		<th>Cpf</th>
-		<th>Email</th>
 		<th>Registro de Professor</th>
+		<th>Matutino</th>
+		<th>Vespertino</th>
+		<th>Noturno</th>
+		<th>Disciplina</th>
 		<th>Ações</th>
 	</tr>
 </thead>
@@ -84,11 +89,13 @@ else
 			?>
 		<tr>
 			<td><?php echo $professor->getNomeProfessor();?></td>
-			<td><?php echo $professor->getCpfProfessor();?></td>
-			<td><?php echo $professor->getEmailProfessor();?></td>
 			<td><?php echo $professor->getRegistroProfessor()?></td>
+			<td><?php echo $professor->getMatutino();?></td>
+			<td><?php echo $professor->getVespertino();?></td>
+			<td><?php echo $professor->getNoturno();?></td>
+
 			<td>
-				 <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
+				 <a href="cadastraProfessor.php" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Editar">
 					 <i class="fa fa-cog" aria-hidden="true"></i>
 					</a>
 					
