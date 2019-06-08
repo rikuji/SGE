@@ -4,8 +4,8 @@
 
 	$professorDAO = new ProfessorDAO();
 	$professor = new Professor(); 
-	$disciplina = new Disciplina();
-	$disciplina = new DisciplinaDAO();
+	//$disciplina = new Disciplina();
+	//$disciplina = new DisciplinaDAO();
 
 if (isset($_GET['idprofessor']))
 { 
@@ -84,16 +84,22 @@ else
 	</tr>
 </thead>
 	<tbody>
-	<?php foreach($query AS $professor){  
-		$lista = $professorDAO->listarProfessor($professor);}
-			?>
+	<?php 
+		foreach ($query as $row) 
+		{
+			foreach($query AS $professor)
+			{  
+				$lista = $professorDAO->listarProfessor($professor);
+			}
+		}
+	?>
 		<tr>
 			<td><?php echo $professor->getNomeProfessor();?></td>
 			<td><?php echo $professor->getRegistroProfessor()?></td>
 			<td><?php echo $professor->getMatutino();?></td>
 			<td><?php echo $professor->getVespertino();?></td>
 			<td><?php echo $professor->getNoturno();?></td>
-
+			<td><?php echo "            ";?></td>
 			<td>
 				 <a href="cadastraProfessor.php" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Editar">
 					 <i class="fa fa-cog" aria-hidden="true"></i>

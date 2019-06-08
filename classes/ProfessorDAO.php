@@ -10,7 +10,7 @@
 		}
 		public function insereProfessor(Professor $professor)
 		{
-			$values = " null,
+			$values = "null,
 			'{$professor->getNomeProfessor()}', 
 			'{$professor->getCpfProfessor()}', 
 			'{$professor->getSexoProfessor()}', 
@@ -23,7 +23,7 @@
 			'{$professor->getIdTipoUsuario()}'";
 			$this->inserir($values);
 		}
-		public function alteraProfessor(Professor $professor)
+		/*public function alteraProfessor(Professor $professor)
 		{
 			$value = " null,
 			'{$professor->getNomeProfessor()}', 
@@ -37,7 +37,7 @@
 			'{$professor->getSenhaProfessor()}',
 			'{$professor->getIdTipoUsuario()}'";
 			$this->alterar($professor->getIdeProfessor(), $value);
-		}
+		}*/
 		public function listarProfessor()
 		{
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");
