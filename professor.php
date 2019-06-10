@@ -1,46 +1,44 @@
-<?php 
-	require_once "template/header.php";
-	require_once "template/menu.php";
+<?php
+require_once "template/header.php";
+require_once "template/menu.php";
 
-	$professorDAO = new ProfessorDAO();
-	$professor = new Professor(); 
-	//$disciplina = new Disciplina();
-	//$disciplina = new DisciplinaDAO();
-
-if (isset($_GET['idprofessor']))
-{ 
-
-    $professor->setIdProfessor($_GET['idprofessor']);
-
-    $professor = $professorDAO->procurar($professor->getIdProfessor());
-
-    $acao = 'Editar';
-  } else if (isset($_GET['acao']) && $_GET_['acao'] == 'Vizualizar') {
+    $professor = new Professor();
+		$professorDAO  = new ProfessorDAO();
+		$disciplina = new Disciplina();
+		$disciplinaDAO = new DisciplinaDAO();
     
-    $acao = "Vizualizar";
-  } 
-else
-  {
-    $acao = 'Cadastrar';
+if (isset($_GET['idProfessor']))
+{     
+        $professor->setIdProfessor($_GET['idProfessor']);  
+        $professor = $ProfessorDAO->procurar($professor->getIdProfessor());
+        $acao = 'Editar';
 
-  }
+} else if (isset($_GET['acao']) && $_GET_['acao'] == 'Vizualizar') 
+    {    
+        $acao = "Vizualizar";
+    }else
+      {
+        $acao = 'Cadastrar';
+      }
+if (isset($_POST['pesquisa']))
+{
+        $query = $professorDAO->listar($_POST['pesquisa']);
+} else
+      {
+          $query = $professorDAO->listar();
+     }
+       
+?>
 
+<div class="content-inner">
+  <!-- Page Header-->
+  <header class="page-header">
+    <div class="container-fluid">
+      <h2 class="no-margin-bottom">.:Professor(a):.</h2>
+    </div>
+  </header>
 
-if (isset($_POST['pesquisa'])){
-    $query = $professorDAO->listar($_POST['pesquisa']);
-  } 
-else
-  {
-        $query = $professorDAO->listar();
-    }
- ?>
-	<div class="content-inner">
-		<header class="page-header">
-			<div class="container-fluid">
-				<h2 class="no-margin-bottom">.:Lista de Professores:.</h2>
-			</div>
-		</header>
-<div class="panel-body">
+    <div class="panel-body">
 <section class="tables">
 <div class="container-fluid">
 <div class="col-lg-12">
@@ -71,46 +69,40 @@ else
 <div class="col-lg-12">
 <div class="card">
 <div class="card-body">
-<table class="table table-bordered table-striped">
-<thead>
+<table class="table table-bordered table-striped">	
+	<thead>
 	<tr>
-		<th>Professor(a)</th>
-		<th>Registro de Professor</th>
+		<th>Nome</th>
+		<th>Registro</th>
 		<th>Matutino</th>
 		<th>Vespertino</th>
 		<th>Noturno</th>
-		<th>Disciplina</th>
+    	<th>Disciplina</th>
 		<th>Ações</th>
 	</tr>
 </thead>
 	<tbody>
-	<?php 
-		foreach ($query as $row) 
-		{
-			foreach($query AS $professor)
-			{  
-				$lista = $professorDAO->listarProfessor($professor);
-			}
-		}
-	?>
-		<tr>
+	<?php foreach($query AS $professor){  
+		$lista = $professorDAO->listarProfessor($professor);
+			?>
+		<tr>	
 			<td><?php echo $professor->getNomeProfessor();?></td>
-			<td><?php echo $professor->getRegistroProfessor()?></td>
+			<td><?php echo $professor->getRegistroProfessor();?></td>
 			<td><?php echo $professor->getMatutino();?></td>
 			<td><?php echo $professor->getVespertino();?></td>
 			<td><?php echo $professor->getNoturno();?></td>
-			<td><?php echo "            ";?></td>
+      		<td><?php echo "    ";?></td>
 			<td>
-				 <a href="cadastraProfessor.php" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Editar">
-					 <i class="fa fa-cog" aria-hidden="true"></i>
-					</a>
-					
-				 <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir">
-					 <i class="fa fa-eye" aria-hidden="true"></i>
-					</a>
+				<a href="cadastrarProfessor.php?acao=Editar&idPro$professor=<?php echo $professor->getIdProfessor(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
+             <i class="fa fa-pencil" aria-hidden="true"></i>
+         </a>
+  			 <a href="professor.php" class="btn btn-danger" onclick="return excluir('salvaProfessor.php?acao=Deletar&idProfessor=<?php echo $professor->getIdProfessor(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
+						 <div class="fa fa-trash-o" aria-hidden="true" ></div>
+          </a>
 
 			</td>
-		</tr>									
+		</tr>	
+		<?php } ?>								
 	</tbody>
 </table>
 </div>
@@ -119,6 +111,5 @@ else
 </div>
 </section>
 </div>
-<?php 
-require_once "template/footer.php";
-?>
+
+<?php include 'template/footer.php'; ?>
