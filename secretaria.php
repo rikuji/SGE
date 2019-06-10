@@ -5,11 +5,32 @@ require_once "template/menu.php";
 $secretariaDAO = new SecretariaDAO();
 $secretaria = new Secretaria();
 
+if (isset($_GET['idSecretaria']))
+{ 
+	$secretaria->setIdSecretaria($_GET['idSecretaria']);
 
+	$secretaria = $secretariaDAO->procurar($secretaria->getIdSecretaria());
 
-$lista = $secretariaDAO->listarSecretaria();
+	$acao = 'Editar';
+} 
+else if(isset($_GET['acao']) && $_GET_['acao'] == 'Vizualizar')
+{
+  $acao = "Vizualizar";
+} 
+else
+{
+	$acao = 'Cadastrar';
+}
 
+if (isset($_POST['pesquisa'])){
+	$query = $secretariaDAO->listar($_POST['pesquisa']);
+} 
+else
+{
+	$query = $secretariaDAO->listarSecretaria();
+}
 ?>
+
 
 	<div class="content-inner">
 		<header class="page-header">
@@ -61,20 +82,19 @@ $lista = $secretariaDAO->listarSecretaria();
 								</thead>
 
 									<tbody>
-									<?php foreach ($lista as $secretaria): ?>
+									<?php foreach ($query as $secretaria): ?>
 										<tr>
 											<td><?php echo $secretaria["idSecretaria"]?></td>
-											
 											<td><?php echo $secretaria["nomeSecretaria"] ?></td>
 											<td><?php echo $secretaria["cpfSecretaria"] ?></td>
 											<td><?php echo $secretaria["emailSecretaria"] ?> </td>
 											<td><?php echo $secretaria["senhaSecretaria"] ?></td>
 											<td><?php echo $secretaria["cargoSecretaria"] ?> </td>
 											<td>
-												<a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="top" 	title="Editar">
+												<a href="" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
 													<i class="fa fa-pencil" aria-hidden="true"></i>
-			      								</a>
-												<a href="#" class="btn btn-danger" onclick="return excluir('salvaSecretaria.php?acao=Deletar&idSecretaria=<?php echo $secretaria->getIdSecretaria(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
+												</a>
+												<a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Deletar">
 													<div class="fa fa-trash-o" aria-hidden="true" ></div>
 												</a>
 											</td>

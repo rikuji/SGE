@@ -64,7 +64,7 @@
             <div class="form-group row">
               <label class="col-sm-3 form-control-label" for="senhaSecretaria">Senha:</label>
                   <div class="col-sm-9">
-                      <input type="password"  id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $secretaria->getSenhaSecretaria(); ?>" ></input>
+                      <input type="text"  id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $secretaria->getSenhaSecretaria(); ?>" ></input>
                   </div>
             </div>
             <div class="form-group row">
