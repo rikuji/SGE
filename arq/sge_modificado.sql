@@ -191,28 +191,20 @@ CREATE TABLE IF NOT EXISTS `sge`.`CargoSecretaria` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `sge`.`UserSecretaria`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sge`.`UserSecretaria` (
-  `idSecretaria` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
-  `nomeSecretaria` VARCHAR(60) NOT NULL COMMENT '',
-  `cpfSecretaria` BIGINT(11) ZEROFILL NOT NULL COMMENT '',
-  `senhaSecretaria` VARCHAR(35) NOT NULL COMMENT '',
-  `idTipoUsuario` INT UNSIGNED NOT NULL COMMENT '',
-  `idCargoSecretaria` INT NOT NULL COMMENT '',
-  PRIMARY KEY (`idSecretaria`)  COMMENT '',
-  UNIQUE INDEX `cpf_UNIQUE` (`cpfSecretaria` ASC)  COMMENT '',
-  INDEX `fk_Secretaria_tipoUsuario1_idx` (`idTipoUsuario` ASC)  COMMENT '',
-  INDEX `fk_UserSecretaria_CargoSecretaria1_idx` (`idCargoSecretaria` ASC)  COMMENT '',
+  `idSecretaria` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nomeSecretaria` VARCHAR(60) NOT NULL,
+  `cpfSecretaria` BIGINT(11) ZEROFILL NOT NULL,
+  `senhaSecretaria` VARCHAR(35) NOT NULL,
+  `emailSecretaria` VARCHAR(100) NOT NULL,
+  `cargoSecretaria` VARCHAR(15) NOT NULL,
+  `idTipoUsuario` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`idSecretaria`),
+  UNIQUE INDEX `cpf_UNIQUE` (`cpfSecretaria` ASC),
+  INDEX `fk_Secretaria_tipoUsuario1_idx` (`idTipoUsuario` ASC),
   CONSTRAINT `fk_Secretaria_tipoUsuario1`
     FOREIGN KEY (`idTipoUsuario`)
     REFERENCES `sge`.`TipoUsuario` (`idTipoUsuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_UserSecretaria_CargoSecretaria1`
-    FOREIGN KEY (`idCargoSecretaria`)
-    REFERENCES `sge`.`CargoSecretaria` (`idCargoSecretaria`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
