@@ -20,6 +20,15 @@ class TipoUsuarioDAO extends Model{
         $this->alterar($tipoUsuario->getIdtipoUsuario(), $value);
     }
 
+    public static function listarTipoUsuario(){
+        $query = "SELECT * FROM tipousuario ";
+        $conexao = new PDO("mysql:host=127.0.0.1;dbname=sge","root","");
+        $stmt = $conexao->prepare($query);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $results;
+    }
+
     
 }
     

@@ -4,6 +4,9 @@ require_once "template/menu.php";
 
 $secretariaDAO = new SecretariaDAO();
 $secretaria = new Secretaria(); 
+
+$tipoUsuario = TipoUsuarioDAO::listarTipoUsuario();
+
 if(isset($_GET['idSecretaria'])){
 
   $secretaria->setIdSecretaria($_GET['idSecretaria']);
@@ -68,7 +71,7 @@ if(isset($_GET['idSecretaria'])){
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="emailSecretaria">Email:</label>
                       <div class="col-sm-9">
-                          <input type="text"  id="emailSecretaria" name="emailSecretaria" class="form-control" value="<?php echo $secretaria->getEmailSecretaria(); ?>" ></input>
+                          <input type="text"  id="emailSecretaria" name="emailSecretaria" class="form-control" value="<?php echo $secretaria->getEmailSecretaria(); ?>" placeholder="email@email.com" ></input>
                       </div>
                 </div>
                 <div class="form-group row">
