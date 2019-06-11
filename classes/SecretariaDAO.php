@@ -47,19 +47,34 @@
 			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			return $results;
 		}
-		public function listarPorIdSecretaria(){
-			$query = "SELECT * FROM usersecretaria where idSecretaria=";
+		public function listarPorIdSecretaria($id){
+			$query = "SELECT * FROM usersecretaria where idSecretaria = :id";
 			$conexao = new PDO("mysql:host=127.0.0.1;dbname=sge","root","");
 			$stmt = $conexao->prepare($query);
+			$stmt->bindValue(':id', $id);
 			$stmt->execute();
 			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			return $results;
 		}
-		public function deletarSecretaria($id){
-			$sql = $this->db->prepare("DELETE FROM {$this->table} WHERE idSecretaria = {$id}");
-			print_r($sql);
-			exit;
-			$sql->execute(); 
+		public function atualizaSecretaria($secretaria){
+		    $query = "UPDATE usersecretaria SET nomeSecretaria = :nomeSecretaria, cpfSecretaria = :cpfSecretaria, senhaSecretaria = :senhaSecretaria,emailSecretaria = :emailSecretaria,cargoSecretaria = :cargoSecretaria,idTipoUsuario = :idTipoUsuario WHERE idSecretaria = :idSecretaria ";
+		    $conexao = new PDO("mysql:host=127.0.0.1;dbname=sge","root","");
+		    $stmt = $conexao->prepare($query);
+		    $stmt->bindValue(':idSecretaria', $secretaria->getIdSecretaria());
+		    $stmt->bindValue(':nomeSecretaria', $secretaria->getNomeSecretaria());
+		    $stmt->bindValue(':cpfSecretaria',  $secretaria->getCpfSecretaria());
+		    $stmt->bindValue(':senhaSecretaria',$secretaria->getSenhaSecretaria());
+		    $stmt->bindValue(':emailSecretaria',$secretaria->getEmailSecretaria());
+		    $stmt->bindValue(':cargoSecretaria',$secretaria->getCargoSecretaria());
+		    $stmt->bindValue(':idTipoUsuario',  $secretaria->getIdTipoUsuario());;
+		    $stmt->execute();
+		}
+		public function deletarUsuarioSecretaria($id){
+		    $query = "DELETE FROM usersecretaria WHERE idSecretaria = :idSecretaria ";
+		    $conexao = new PDO("mysql:host=127.0.0.1;dbname=sge","root","");
+		    $stmt = $conexao->prepare($query);
+		    $stmt->bindValue(':idSecretaria', $id);
+		    $stmt->execute();
 		}
 	}
 ?>	

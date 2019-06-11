@@ -1,19 +1,26 @@
-<?php 
+<?php
 require_once "template/header.php";
-require_once "template/menu.php";		
+require_once "template/menu.php";
 
+$id = $_GET["idSecretaria"];
 $secretariaDAO = new SecretariaDAO();
-$secretaria = new Secretaria(); 
-if(isset($_GET['idSecretaria'])){
+$secretariaDAO->listarPorIdSecretaria($id);
 
-  $secretaria->setIdSecretaria($_GET['idSecretaria']);
+$results = $secretariaDAO->listarPorIdSecretaria($id);
 
-  $acao = "Editar";
-
-}else{
-  $acao = "Cadastrar";
+foreach ($results as $result){
+    $idSecretaria      = $result["idSecretaria"  ];         
+    $nomeSecretaria    = $result["nomeSecretaria"]; 
+    $cpfSecretaria     = $result["cpfSecretaria"]; 
+    $senhaSecretaria   = $result["senhaSecretaria"]; 
+    $emailSecretaria   = $result["emailSecretaria"]; 
+    $cargoSecretaria   = $result["cargoSecretaria"]; 
+    $idTipoUsuario     = $result["idTipoUsuario"];  
 }
- ?>
+$secretaria = new Secretaria();
+$acao = "Editar";
+
+?>
 <div class="content-inner">
     <!-- Page Header-->
     <header class="page-header">
@@ -45,42 +52,42 @@ if(isset($_GET['idSecretaria'])){
                     <h3 class="h4">.:Cadastro Secretaria:.</h3>
                 </div>
                 <div class="card-body">
-              <form action="salvaSecretaria.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
+              <form action="salvaSecretaria.php?acao=<?php echo $acao; ?>&id" method="POST" class="form-horizontal">
               	<div class="form-group row">
                     <label class="col-sm-3 form-control-label" for="nomeSecretaria">Nome:</label>
                         <div class="col-sm-9">
-                            <input type="text"  id="nomeSecretaria" name="nomeSecretaria" class="form-control" value="<?php echo $secretaria->getNomeSecretaria(); ?>" ></input>
-                            <input type="hidden" name="idSecretaria" id="idSecretaria" value="<?php echo $secretaria->getIdSecretaria(); ?>"></input>
+               				<input type=hidden name="idSecretaria" id="idSecretaria" value="<?php echo $idSecretaria; ?>"></input>
+                            <input type="text"  id="nomeSecretaria" name="nomeSecretaria" class="form-control" value="<?php echo $nomeSecretaria; ?>" ></input>
                         </div>
                   </div>
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="cpfSecretaria">CPF:</label>
                       <div class="col-sm-9">
-                          <input type="text"  id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $secretaria->getCpfSecretaria(); ?>" ></input>
+                          <input type="text"  id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $cpfSecretaria; ?>" ></input>
                       </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="senhaSecretaria">Senha:</label>
                       <div class="col-sm-9">
-                          <input type="text"  id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $secretaria->getSenhaSecretaria(); ?>" ></input>
+                          <input type="text"  id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $senhaSecretaria; ?>" ></input>
                       </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="emailSecretaria">Email:</label>
                       <div class="col-sm-9">
-                          <input type="text"  id="emailSecretaria" name="emailSecretaria" class="form-control" value="<?php echo $secretaria->getEmailSecretaria(); ?>" ></input>
+                          <input type="text"  id="emailSecretaria" name="emailSecretaria" class="form-control" value="<?php echo $emailSecretaria; ?>" ></input>
                       </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="cargoSecretaria">Cargo:</label>
                       <div class="col-sm-9">
-                          <input type="text"  id="cargoSecretaria" name="cargoSecretaria" class="form-control" value="<?php echo $secretaria->getCargoSecretaria(); ?>" ></input>
+                          <input type="text"  id="cargoSecretaria" name="cargoSecretaria" class="form-control" value="<?php echo $cargoSecretaria; ?>" ></input>
                       </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="idTipoUsuario">Tipo Usuario:</label>
                       <div class="col-sm-9">
-                          <input type="number"  id="idTipoUsuario" name="idTipoUsuario" class="form-control" value="<?php echo $secretaria->getIdTipoUsuario(); ?>" ></input>
+                          <input type="number"  id="idTipoUsuario" name="idTipoUsuario" class="form-control" value="<?php echo $idTipoUsuario; ?>" ></input>
                       </div>
                 </div>
                 <button type="submit" class="btn btn-warning pull-right"><?php echo $acao; ?></button>
