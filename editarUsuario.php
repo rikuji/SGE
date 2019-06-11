@@ -63,7 +63,7 @@ $acao = "Editar";
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="cpfSecretaria">CPF:</label>
                       <div class="col-sm-9">
-                          <input type="text"  id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $cpfSecretaria; ?>" ></input>
+                          <input type="text" maxlength="11" id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $cpfSecretaria; ?>" ></input>
                       </div>
                 </div>
                 <div class="form-group row">

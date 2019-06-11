@@ -2,17 +2,6 @@
 require_once "template/header.php";
 require_once "template/menu.php";
 
-function formatarCnpj($cnpj_cpf)
-{
-  if (strlen(preg_replace("/\D/", '', $cnpj_cpf)) === 11) {
-    $response = preg_replace("/(\d{3})(\d{3})(\d{3})(\d{2})/", "\$1.\$2.\$3-\$4", $cnpj_cpf);
-  } else {
-    $response = preg_replace("/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/", "\$1.\$2.\$3/\$4-\$5", $cnpj_cpf);
-  }
-
-  return $response;
-}
-
 $secretariaDAO = new SecretariaDAO();
 $secretaria = new Secretaria();
 
@@ -85,7 +74,6 @@ else
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Nome</th>
                                         <th>CPF</th>
                                         <th>Email</th>
@@ -97,9 +85,8 @@ else
                                 <tbody>
                                     <?php foreach ($query as $secretaria): ?>
                                     <tr>
-                                        <td><?php echo $secretaria["idSecretaria"]?></td>
                                         <td><?php echo $secretaria["nomeSecretaria"] ?></td>
-                                        <td><?php echo formatarCnpj($secretaria["cpfSecretaria"]) ?></td>
+                                        <td><?php echo Secretaria::formatarCnpj($secretaria["cpfSecretaria"]) ?></td>
                                         <td><?php echo $secretaria["emailSecretaria"] ?> </td>
                                         <td><?php echo $secretaria["cargoSecretaria"] ?> </td>
                                         <td>
