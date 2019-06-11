@@ -91,7 +91,7 @@ else
 											<td><?php echo $secretaria["senhaSecretaria"] ?></td>
 											<td><?php echo $secretaria["cargoSecretaria"] ?> </td>
 											<td>
-												<a href="" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
+												<a href="novoUsuarioSecretaria.php?idSecretaria=<?php echo $secretaria["idSecretaria"] ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
 													<i class="fa fa-pencil" aria-hidden="true"></i>
 												</a>
 												<a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Deletar">

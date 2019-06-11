@@ -47,6 +47,14 @@
 			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			return $results;
 		}
+		public function listarPorIdSecretaria(){
+			$query = "SELECT * FROM usersecretaria where idSecretaria=";
+			$conexao = new PDO("mysql:host=127.0.0.1;dbname=sge","root","");
+			$stmt = $conexao->prepare($query);
+			$stmt->execute();
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $results;
+		}
 		public function deletarSecretaria($id){
 			$sql = $this->db->prepare("DELETE FROM {$this->table} WHERE idSecretaria = {$id}");
 			print_r($sql);
