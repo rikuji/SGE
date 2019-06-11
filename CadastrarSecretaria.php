@@ -56,13 +56,13 @@ if(isset($_GET['idSecretaria'])){
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="cpfSecretaria">CPF:</label>
                       <div class="col-sm-9">
-                          <input type="text"  id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $secretaria->getCpfSecretaria(); ?>" ></input>
+                          <input type="text"  maxlength="11" id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $secretaria->getCpfSecretaria(); ?>" ></input>
                       </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="senhaSecretaria">Senha:</label>
                       <div class="col-sm-9">
-                          <input type="text"  id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $secretaria->getSenhaSecretaria(); ?>" ></input>
+                          <input type="password" maxlength="15" id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $secretaria->getSenhaSecretaria(); ?>" ></input>
                       </div>
                 </div>
                 <div class="form-group row">
