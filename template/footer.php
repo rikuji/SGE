@@ -4,7 +4,7 @@
               <div class="row">
                 <div class="col-sm-6">
                   <p>
-                    Sistema de Gerenciamnto Escolar- SGE &copy; 2019</h6>
+                    Sistema de Gerenciamento Escolar- SGE &copy; 2019</h6>
                   </p>
                 </div>
               </div>

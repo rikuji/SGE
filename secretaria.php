@@ -115,7 +115,6 @@ else
             </div>
         </section>
     </div>
+    <?php require_once "template/footer.php";?>
 </div>
- <?php 
- 	require_once "template/footer.php";
-  ?>
+
