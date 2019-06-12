@@ -1,27 +1,34 @@
 <?php
-    include 'template/header.php';
-    include 'template/menu.php';
-    
-   $professor = new Professor();
-   $professorDAO = new ProfessorDAO();
-   
-   $tipoUsuario = TipoUsuarioDAO::listarTipoUsuario();
+require_once "template/header.php";
+require_once "template/menu.php";
 
-if(isset($_GET['idProfessor'])){
+$id = $_GET["idProfessor"];
+$professorDAO = new ProfessorDAO();
+$professorDAO->listarPorIdProfessor($id);
 
-  $professor->setIdProfessor($_GET['idProfessor']);
+$results = $professorDAO->listarPorIdProfessor($id);
 
-  $acao = "Editar";
-
-}else{
-  $acao = "Cadastrar";
+foreach ($results as $result){
+    $idProfessor = $result["idProfessor"];         
+    $nomeProfessor = $result["nomeProfessor"]; 
+    $cpfProfessor = $result["cpfProfessor"]; 
+    $sexoProfessor = $result["sexoProfessor"];
+    $emailProfessor = $result["emailProfessor"]; 
+    $matutino = $result["matutino"];
+    $vespertino = $result["vespertino"];
+    $noturno = $result["noturno"];
+    $registroProfessor = $result["registroProfessor"];
+    $senhaProfessor = $result["senhaProfessor"]; 
+    $idTipoUsuario = $result["idTipoUsuario"];  
 }
+$professor = new Professor();
+$acao = "Editar";
+
 ?>
-<!-- Page Header-->
 <div class="content-inner">
 <header class="page-header">
 <div class="container-fluid">
-  <h2 class="no-margin-bottom">.:Cadastro de Professor(a):.</h2>
+  <h2 class="no-margin-bottom">.:Formulario de Edição:.</h2>
 </div>
 </header>
  <section class="forms">
@@ -44,7 +51,7 @@ if(isset($_GET['idProfessor'])){
     <div class="col-lg-12">
       <div class="card"> 
         <div class="card-header d-flex align-items-center">
-          <h3 class="h4">.:Formulario de Cadastro:.</h3>
+          <h3 class="h4">.:Editar Professor:.</h3>
         </div>
           <div class="card-body">
 
@@ -132,13 +139,10 @@ if(isset($_GET['idProfessor'])){
                 value="<?php echo $professor->getIdTipoUsuario(); ?>"/>
                </div></div></div>
 
-
-               <button type="submit" class="btn btn-warning pull-right"><?php echo $acao; ?>
+               <button type="submit" class="btn btn-warning pull-right"> 
+               <?php echo $acao; ?>
                </button>
              </form>
     </div>
   </div>
  </section> 
-<?php 
-//    require_once 'template/footer.php';
-?>    

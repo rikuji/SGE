@@ -3,12 +3,11 @@ include_once 'template/autoload.php';
 $professor = new Professor(); 
 $professorDAO = new ProfessorDAO(); 
 
-if (isset($_GET['idProfessor']) and $_GET['acao'] == 'Deletar') {
-		
-		$professorDAO->deletarProfessor($_GET['idProfessor']);
-
-	}else{
-		
+if ($_GET['acao'] == 'Deletar') 
+{
+    $id = $_GET["idProfessor"];
+    $professorDAO->deletarProfessor($id);
+}else{
 		$professor->setNomeProfessor($_POST['nomeProfessor']);
 		$professor->setCpfProfessor($_POST['cpfProfessor']); 
 		$professor->setSexoProfessor($_POST['sexoProfessor']);
@@ -26,7 +25,7 @@ if (isset($_GET['idProfessor']) and $_GET['acao'] == 'Deletar') {
 			$professorDAO->insereProfessor($professor);
 		}
 		else if($acao == 'Editar'){
-			$professorDAO->alterarProfessor($professor);
+			$professorDAO->atualizaProfessor($professor);
 		}
 	}
 	$msg = "Executado com sucesso!";

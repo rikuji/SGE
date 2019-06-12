@@ -3,14 +3,16 @@ require_once "template/header.php";
 require_once "template/menu.php";
 
     $professor = new Professor();
-		$professorDAO  = new ProfessorDAO();
-		$disciplina = new Disciplina();
-		$disciplinaDAO = new DisciplinaDAO();
+	$professorDAO  = new ProfessorDAO();
+	$disciplina = new Disciplina();
+	$disciplinaDAO = new DisciplinaDAO();
     
 if (isset($_GET['idProfessor']))
 {     
-        $professor->setIdProfessor($_GET['idProfessor']);  
+        $professor->setIdProfessor($_GET['idProfessor']);
+
         $professor = $ProfessorDAO->procurar($professor->getIdProfessor());
+
         $acao = 'Editar';
 
 } else if (isset($_GET['acao']) && $_GET_['acao'] == 'Vizualizar') 
@@ -93,13 +95,12 @@ if (isset($_POST['pesquisa']))
 			<td><?php echo $professor->getNoturno();?></td>
       		<td><?php echo "    ";?></td>
 			<td>
-				<a href="cadastrarProfessor.php?acao=Editar&idPro$professor=<?php echo $professor->getIdProfessor(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
+				<a href="novoProfessor.php?acao=Editar&idProfessor=<?php echo $professor->getIdProfessor(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
              <i class="fa fa-pencil" aria-hidden="true"></i>
          </a>
-  			 <a href="professor.php" class="btn btn-danger" onclick="return excluir('salvaProfessor.php?acao=Deletar&idProfessor=<?php echo $professor->getIdProfessor(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
+  			 <a href="#" class="btn btn-danger" onclick="return excluir('salvaProfessor.php?acao=Deletar&idProfessor=<?php echo $professor->getIdProfessor(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
 						 <div class="fa fa-trash-o" aria-hidden="true" ></div>
           </a>
-
 			</td>
 		</tr>	
 		<?php } ?>								
