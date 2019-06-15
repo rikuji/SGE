@@ -29,7 +29,7 @@
               <ul id="cadastros" class="collapse list-unstyled">
                 <li><a href="cadastraProfessor.php">Professor</a></li>
                 <li><a href="CadastrarAluno.php">Aluno</a></li>
-                <li><a href="novaTurma.php">Turma</a></li>
+                <li><a href="CadastrarTurma.php">Turma</a></li>
                 <li><a href="CadastrarMateria.php">Materias</a></li>
                 <li><a href="novaDisciplina.php">Disciplina</a></li>
                 <li><a href="CadastrarSecretaria.php">Secretaria</a></li>
