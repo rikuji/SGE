@@ -1,30 +1,3 @@
-<?php
-require_once "template/header.php";
-require_once "template/menu.php";
-
-$id = $_GET["idProfessor"];
-$professor = new Professor();
-$professorDAO = new ProfessorDAO();
-
-$results = $professorDAO->listarPorIdProfessor($id);
-
-foreach ($results as $result){
-    $professor->setIdProfessor($result["idProfessor"]);
-    $professor->setNomeProfessor($result["nomeProfessor"]); 
-    $professor->setCpfProfessor($result["cpfProfessor"]); 
-    $professor->setSexoProfessor($result["sexoProfessor"]);
-    $professor->setEmailProfessor($result["emailProfessor"]); 
-    $professor->setMatutino($result["matutino"]);
-    $professor->setVespertino($result["vespertino"]);
-    $professor->setNoturno($result["noturno"]);
-    $professor->setRegistroProfessor($result["registroProfessor"]);
-    $professor->setSenhaProfessor($result["senhaProfessor"]); 
-    $professor->setIdTipoUsuario($result["idTipoUsuario"]);  
-}
-
-$acao = "Editar";
-
-?>
 <div class="content-inner">
     <header class="page-header">
         <div class="container-fluid">
@@ -94,14 +67,14 @@ $acao = "Editar";
                             </div>
                         </div>
 
-                            <div class="form-group row">
+                        <div class="form-group row">
                             <label class=" form-control-label" for="matutino">Matutino:</label>
                             <div class="col-sm-3">
                                 <select name="matutino" id="matutino">
                                     <option value="S">Sim</option>
                                     <option value="N">Não</option>
                                 </select value="<?php echo $professor->getMatutino();?>">
-                            
+                            </div>
 
                             <div class="form-group row">
                                 <label class="form-control-label" for="vespertino">Vespertino:</label>
@@ -157,5 +130,6 @@ $acao = "Editar";
                 </div>
             </div>
     </section>
-    <?php include 'template/footer.php'; ?>
+    
+<?php include 'template/footer.php'; ?>
 </div>

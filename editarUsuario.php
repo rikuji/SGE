@@ -52,15 +52,15 @@ $acao = "Editar";
                     <h3 class="h4">.:Cadastro Secretaria:.</h3>
                 </div>
                 <div class="card-body">
-              <form action="salvaSecretaria.php?acao=<?php echo $acao; ?>&id" method="POST" class="form-horizontal">
+              <form action="salvaSecretaria.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
               	<div class="form-group row">
                     <label class="col-sm-3 form-control-label" for="nomeSecretaria">Nome:</label>
                         <div class="col-sm-9">
                				<input type=hidden name="idSecretaria" id="idSecretaria" value="<?php echo $idSecretaria; ?>"></input>
                             <input type="text"  id="nomeSecretaria" name="nomeSecretaria" class="form-control" value="<?php echo $nomeSecretaria; ?>" ></input>
                         </div>
-                  </div>
-                <div class="form-group row">
+                  
+                
                   <label class="col-sm-3 form-control-label" for="cpfSecretaria">CPF:</label>
                       <div class="col-sm-9">
                           <input type="text" maxlength="11" id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $cpfSecretaria; ?>" ></input>

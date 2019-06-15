@@ -55,7 +55,8 @@ if(isset($_GET['idSecretaria'])){
                             <input type="text"  id="nomeSecretaria" name="nomeSecretaria" class="form-control" value="<?php echo $secretaria->getNomeSecretaria(); ?>" ></input>
                             <input type="hidden" name="idSecretaria" id="idSecretaria" value="<?php echo $secretaria->getIdSecretaria(); ?>"></input>
                         </div>
-                  </div>
+                </div>
+                
                 <div class="form-group row">
                   <label class="col-sm-3 form-control-label" for="cpfSecretaria">CPF:</label>
                       <div class="col-sm-9">

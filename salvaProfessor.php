@@ -8,6 +8,7 @@ if ($_GET['acao'] == 'Deletar')
     $id = $_GET["idProfessor"];
     $professorDAO->deletarProfessor($id);
 }else{
+		$professor->setIdProfessor($_POST['idProfessor']);
 		$professor->setNomeProfessor($_POST['nomeProfessor']);
 		$professor->setCpfProfessor($_POST['cpfProfessor']); 
 		$professor->setSexoProfessor($_POST['sexoProfessor']);

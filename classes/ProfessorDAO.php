@@ -86,7 +86,7 @@ class ProfessorDAO extends Model
 		        matutino = :matutino,
 		        vespertino = :vespertino,
 		        noturno = :noturno
-		        registroProfessor = registroProfessor,
+		        registroProfessor = :registroProfessor,
 		        senhaSecretaria = :senhaSecretaria,
 		        idTipoUsuario = :idTipoUsuario
 		         WHERE idProfessor = :idProfessor ";
