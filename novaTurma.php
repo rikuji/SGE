@@ -2,8 +2,17 @@
 	require_once "template/header.php";
 	require_once "template/menu.php";		
 
+  $id = $_GET["idTurma"]; 
   $turmaDAO = new TurmaDAO();
   $turma = new Turma();
+
+  $query = $turmaDAO->listarPorIdTurma($id);
+
+  foreach ($query as $listarId){
+    $turma->setIdTurma($listarId['idTurma']);
+		$turma->setDescricaoTurma($listarId['descricaoTurma']);
+		$turma->setPeriodoTurma($listarId['periodoTurma']);
+  }
 
       if(isset($_GET['idTurma'])){
 
