@@ -1,5 +1,6 @@
 <?php 
-	class Responsavel{
+class Responsavel
+{
 		private $idResponsavel; 
 		private $nomeResponsavel;
 		private $cpfResponsavel;
@@ -14,8 +15,13 @@
 		private $cidadeEndeResponsavel;
 		private $cepEndeResponsavel;
 		private $numeroEndeResponsavel;
-		private $senhaResponsavel;
         private $ufEndeResponsavel;
+        private $idTipoUsuario; 
+        private $idEstadoCivil;
+        private $legalResponsavel;
+        private $financeiroResponsavel;
+		private $senhaResponsavel;
+
 
 
 
@@ -303,26 +309,6 @@
     /**
      * @return mixed
      */
-    public function getSenhaResponsavel()
-    {
-        return $this->senhaResponsavel;
-    }
-
-    /**
-     * @param mixed $senhaResponsavel
-     *
-     * @return self
-     */
-    public function setSenhaResponsavel($senhaResponsavel)
-    {
-        $this->senhaResponsavel = $senhaResponsavel;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getUfEndeResponsavel()
     {
         return $this->ufEndeResponsavel;
@@ -339,6 +325,106 @@
 
         return $this;
     }
-}
 
+    /**
+     * @return mixed
+     */
+    public function getIdTipoUsuario()
+    {
+        return $this->idTipoUsuario;
+    }
+
+    /**
+     * @param mixed $idTipoUsuario
+     *
+     * @return self
+     */
+    public function setIdTipoUsuario($idTipoUsuario)
+    {
+        $this->idTipoUsuario = $idTipoUsuario;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdEstadoCivil()
+    {
+        return $this->idEstadoCivil;
+    }
+
+    /**
+     * @param mixed $idEstadoCivil
+     *
+     * @return self
+     */
+    public function setIdEstadoCivil($idEstadoCivil)
+    {
+        $this->idEstadoCivil = $idEstadoCivil;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLegalResponsavel()
+    {
+        return $this->legalResponsavel;
+    }
+
+    /**
+     * @param mixed $legalResponsavel
+     *
+     * @return self
+     */
+    public function setLegalResponsavel($legalResponsavel)
+    {
+        $this->legalResponsavel = $legalResponsavel;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFinanceiroResponsavel()
+    {
+        return $this->financeiroResponsavel;
+    }
+
+    /**
+     * @param mixed $financeiroResponsavel
+     *
+     * @return self
+     */
+    public function setFinanceiroResponsavel($financeiroResponsavel)
+    {
+        $this->financeiroResponsavel = $financeiroResponsavel;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSenhaResponsavel()
+    {
+        return $this->senhaResponsavel;
+    }
+
+    /**
+     * @param mixed $senhaResponsavel
+     *
+     * @return self
+     */
+    public function setSenhaResponsavel($senhaResponsavel)
+    {
+        $this->senhaResponsavel = $senhaResponsavel;
+
+        return $this;
+    }
+}
+   
 ?>

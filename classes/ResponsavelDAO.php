@@ -8,48 +8,51 @@
 		}
 		public function insereResponsavel(Responsavel $responsavel)
 		{
-			$valores = "null,
-			'{$nomeResponsavel->getNomeResponsavel()}', 
-			'{$cpfResponsavel->getCpfResponsavel()}', 
-			'{$emailResponsavel->getEmailResponsavel()}',
-			'{$celullarResponsavel->getCelullarResponsavel()}',
-			'{$telFixoResponsavel->getTelFixoResponsavel()}',
-			'{$dtNascResponsavel->getDtNascResponsavel()}', 
-			'{$sexoResponsavel->getSexoResponsavel()}', 
-			'{$logradoruroEndeResponsavel->getLogradoruroEndeResponsavel()}', 
-			'{$complementoEndeResponsavel->getComplementoEndeResponsavel()}',
-			'{$bairroEndeResponsavel->getBairroEndeResponsavel()}',
-			'{$cidadeEndeResponsavel->getCidadeEndeResponsavel()}',
-			'{$ufEndeResponsavel->getUfEndeResponsavel()}',
-			'{$numeroResponsavel->getNumeroResponsavel()}',
-			'{$senhaResponsavel->getSenhaResponsavel()}',
-			'{$cepResponsavel->getCepResponsavel()}'";
-			$this->inserir($valores);
+			$values = "null,
+			'{$responsavel->getNomeResponsavel()}', 
+			'{$responsavel->getCpfResponsavel()}', 
+			'{$responsavel->getEmailResponsavel()}',
+			'{$responsavel->getCelullarResponsavel()}',
+			'{$responsavel->getTelFixoResponsavel()}',
+			'{$responsavel->getDtNascResponsavel()}', 
+			'{$responsavel->getSexoResponsavel()}', 
+			'{$responsavel->getLogradouroEndeResponsavel()}', 
+			'{$responsavel->getComplementoEndeResponsavel()}',
+			'{$responsavel->getBairroEndeResponsavel()}',
+			'{$responsavel->getCidadeEndeResponsavel()}',
+			'{$responsavel->getUfEndeResponsavel()}',
+			'{$responsavel->getCepEndeResponsavel()}',
+			'{$responsavel->getNumeroEndeResponsavel()}',
+			'{$responsavel->getLegalResponsavel()}',
+			'{$responsavel->getFinanceiroResponsavel()}',
+			'{$responsavel->getSenhaResponsavel()}',
+			'{$responsavel->getIdTipoUsuario()}',
+			'{$responsavel->getIdEstadoCivil()}'";
+			$this->inserir($values);
 		}
 /*
 		public function alteraResponsavel(Responsavel $responsavel)
 		{
 			$value = " null,
-			'{$nomeResponsavel->getNomeResponsavel()}', 
-			'{$cpfResponsavel->getCpfResponsavel()}', 
-			'{$emailResponsavel->getEmailResponsavel()}',
-			'{$celullarResponsavel->getCelullarResponsavel()}',
-			'{$telFixoResponsavel->getTelFixoResponsavel()}',
-			'{$dtNascResponsavel->getDtNascResponsavel()}', 
-			'{$sexoResponsavel->getSexoResponsavel()}', 
-			'{$logradoruroEndeResponsavel->getLogradoruroEndeResponsavel()}', 
-			'{$complementoEndeResponsavel->getComplementoEndeResponsavel()}',
-			'{$bairroEndeResponsavel->getBairroEndeResponsavel()}',
-			'{$cidadeEndeResponsavel->getCidadeEndeResponsavel()}',
-			'{$ufEndeResponsavel->getUfEndeResponsavel()}',
-			'{$numeroResponsavel->getNumeroResponsavel()}',
-			'{$senhaResponsavel->getSenhaResponsavel()}'.
-			'{$cepResponsavel->getCepResponsavel()}'";
+			'{$responsavel->getNomeResponsavel()}', 
+			'{$responsavel->getCpfResponsavel()}', 
+			'{$responsavel->getEmailResponsavel()}',
+			'{$responsavel->getCelullarResponsavel()}',
+			'{$responsavel->getTelFixoResponsavel()}',
+			'{$responsavel->getDtNascResponsavel()}', 
+			'{$responsavel->getSexoResponsavel()}', 
+			'{$responsavel->getLogradoruroEndeResponsavel()}', 
+			'{$responsavel->getComplementoEndeResponsavel()}',
+			'{$responsavel->getBairroEndeResponsavel()}',
+			'{$responsavel->getCidadeEndeResponsavel()}',
+			'{$responsavel->getUfEndeResponsavel()}',
+			'{$responsavel->getNumeroResponsavel()}',
+			'{$responsavel->getSenhaResponsavel()}',
+			'{$responsavel->getCepResponsavel()}'";
 			$this->alterar($responsavel->getIdeResposavel(), $value);
 		}
 */
-		public function listarResposavel()
-		{
+		public function listarResposavel(){
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");
 			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
 			//print_r($sql);exit;
@@ -59,8 +62,18 @@
 
 		public function deletarResponsavel($id)
 		{
-			$sql = $this->db->prepare("DELETE FROM {$this->table} WHERE idProfessor = {$id}");
+			$sql = $this->db->prepare("DELETE FROM {$this->table} WHERE idResponsavel = {$id}");
 			$sql->execute();
+		}
+		public function listarPorIdResponsavel($id)
+		{
+			$query = "SELECT * FROM responsavel where idResponsavel = :id";
+			$conexao = new PDO("mysql:host=127.0.0.1;dbname=sge","root","");
+			$stmt = $conexao->prepare($query);
+			$stmt->bindValue(':id', $id);
+			$stmt->execute();
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $results;
 		}
 	}
 ?>	
