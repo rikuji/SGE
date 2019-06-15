@@ -126,7 +126,6 @@ if(isset($_GET['idProfessor']))
                                                   <option value="3">Aluno</option>
                                                   <option value="4">Responsavel</option>
                                                   </select value="<?php echo $professor->getIdTipoUsuario();?>">
-
                                                 </div>
                                             </div>
                                           </div>
@@ -137,6 +136,6 @@ if(isset($_GET['idProfessor']))
           </div>
       </div>
   </section>  
-<?php require_once 'template/footer.php';?> 
+  <?php require_once 'template/footer.php';?> 
 </div>
 
