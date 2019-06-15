@@ -29,20 +29,6 @@ class ProfessorDAO extends Model
 		$stmt->bindValue(':idTipoUsuario', $professor->getIdTipoUsuario());
 		$stmt->execute();
 	}
-		/*public function insereProfessor(Professor $professor){
-			$values = "null ,
-			'{$this->getNomeProfessor()}',
-			'{$this->getCpfProfessor()}',
-			'{$this->getSexoProfessor()}',
-			'{$this->getEmailProfessor()}',
-			'{$this->getMatutino()}',
-			'{$this->getVespertino()}',
-			'{$this->getNoturno()}',
-			'{$this->getRegistroProfessor()}',
-			'{$this->getSenhaSecretaria()}',
-			'{$this->getIdTipoUsuario()}'";
-			print_r($this->inserir($values));
-		}*/
 		public function alteraSecretaria(Secretaria $secretaria)
 		{
 			$valores = "null ,

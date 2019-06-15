@@ -10,17 +10,17 @@ $results = $professorDAO->listarPorIdProfessor($id);
 
 foreach ($results as $result)
 {
-    $professor->setIdProfessor($result["idProfessor"]);         
-    $professor->setNomeProfessor($result["nomeProfessor"]); 
-    $professor->setCpfProfessor($result["cpfProfessor"]); 
-    $professor->setSexoProfessor($result["sexoProfessor"]);
-    $professor->setEmailProfessor($result["emailProfessor"]); 
-    $professor->setMatutino($result["matutino"]);
-    $professor->setVespertino($result["vespertino"]);
+    $professor->setIdProfessor($results["idProfessor"]);         
+    $professor->setNomeProfessor($results["nomeProfessor"]); 
+    $professor->setCpfProfessor($results["cpfProfessor"]); 
+    $professor->setSexoProfessor($results["sexoProfessor"]);
+    $professor->setEmailProfessor($results["emailProfessor"]); 
+    $professor->setMatutino($results["matutino"]);
+    $professor->setVespertino($results["vespertino"]);
     $professor->setNoturno($results["noturno"]);
-    $professor->setRegistroProfessor($result["registroProfessor"]);
+    $professor->setRegistroProfessor($results["registroProfessor"]);
     $professor->setSenhaProfessor($results["senhaProfessor"]); 
-    $professor->setIdTipoUsuario($result["idTipoUsuario"]);  
+    $professor->setIdTipoUsuario($results["idTipoUsuario"]);  
 }
 $professor = new Professor();
 $acao = "Editar";

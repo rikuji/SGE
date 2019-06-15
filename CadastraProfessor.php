@@ -56,23 +56,23 @@ if(isset($_GET['idProfessor']))
                                      <div class="form-group row">
                                         <label class="col-sm-1 form-control-label" for="cpfProfessor">CPF:</label>
                                          <div class="col-sm-6">
-                                           <input type="text" size="20" maxlength="14"  name="cpfProfessor" id="cpfProfessor" class="form-control cpf" required="s"value="<?php echo $professor->getCpfProfessor();?>"/>
+                                           <input type="text" maxlength="11"  name="cpfProfessor" id="cpfProfessor" class="form-control cpf" required="s"value="<?php echo $professor->getCpfProfessor();?>"/>
                                         </div>
                                       </div>
                           </div>
                             <div class="form-group row">
                               <label class="form-control-label" for="sexoProfessor">Sexo:
                               </label>
-                                 <div class="col-sm-3">
+                                 <div class="col-sm-2">
                                   <select name="sexoProfessor" id="sexoProfessor" value="sexoProfessor">
                                   <option value="F">Feminino</option>
                                   <option value="M">Masculino</option>
                                   </select value="<?php echo $professor->getSexoProfessor();?>">
                                 </div>
                                   <div class="form-group row">
-                                     <label class="form-control-label" for="emailProfessor">Email:</label>
-                                        <div class="col-sm-9">
-                                          <input type="emailProfessor" name="emailProfessor" id="emailProfessor" class="form-control" value="<?php echo $professor->getEmailProfessor();?>" />
+                                     <label class="col-sm-1 form-control-label" for="emailProfessor">Email:</label>
+                                        <div class="col-sm-12">
+                                          <input type="text" name="emailProfessor" id="emailProfessor"class="form-control" required="" value="<?php echo $professor->getEmailProfessor();?>"/>
                                         </div>
                                   </div>
                             </div>
@@ -88,7 +88,7 @@ if(isset($_GET['idProfessor']))
                                         <div class="form-group row">
                                           <label class=" form-control-label" for="vespertino">
                                           Vespertino:</label>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-7">
                                               <select name="vespertino"id="vespertino" >
                                                 <option value="S">Sim</option>
                                                 <option value="N">Não</option>
@@ -97,34 +97,39 @@ if(isset($_GET['idProfessor']))
                                         </div>
                                 </div>
                                      <div class="form-group row">
-                                       <label class="form-control-label" for="noturno">
-                                       Noturno:</label>
-                                          <div class="col-sm-3">
+                                       <label class="form-control-label"for="noturno">Noturno:</label>
+                                          <div class="col-sm-2">
                                             <select name="noturno" id="noturno" >
                                              <option value="S">Sim</option>
                                               <option value="N">Não</option>
                                             </select value="<?php echo $professor->getNoturno(); ?>">
                                           </div>
-                                      </div>
                                           <div class="form-group row">
                                             <label class="form-control-label" for="registroProfessor">
                                             Registro de Professor(a):</label>
-                                              <div class="col-sm-2">
-                                                <input type="text" maxlength="6" name="registroProfessor" id="registroProfessor" class="form-control"required=""value="<?php echo $professor->getRegistroProfessor(); ?>"/>
+                                              <div class="col-sm-4">
+                                                <input type="text" maxlength="7" name="registroProfessor" id="registroProfessor" class="form-control"required=""value="<?php echo $professor->getRegistroProfessor(); ?>"/>
                                               </div>
-                                                <div class="form-group row"> 
-                                                  <label class="col-sm-2 form-control-label" for="senhaProfessor">Senha:</label>
-                                                    <div class="col-sm-6"> 
-                                                      <input type="password" maxlength="35"name="senhaProfessor"id="senhaProfessor" class="form-control"required=""value="<?php echo $professor->getSenhaProfessor(); ?>"/>
-                                                    </div>
-                                                </div>
                                           </div>
-                                              <div class="form-group row"> 
-                                                <label class="col-sm-2 form-control-label" for="idTipoUsuario">Tipo Usuario:</label>
-                                                  <div class="col-sm-3"> 
-                                                    <input type="number" name="idTipoUsuario"id="idTipoUsuario" class="form-control"required=""value="<?php echo $professor->getIdTipoUsuario(); ?>"/>
+                                      </div>
+                                          <div class="form-group row"> 
+                                              <label class="form-control-label" for="senhaProfessor">Senha:</label>
+                                                <div class="col-sm-3"> 
+                                                    <input type="password" maxlength="20"name="senhaProfessor"id="senhaProfessor" class="form-control"required=""value="<?php echo $professor->getSenhaProfessor(); ?>"/>
                                                   </div>
-                                              </div>
+                                            <div class="form-group row"> 
+                                              <label class=" form-control-label" for="idTipoUsuario">Tipo Usuario:</label>
+                                                <div class="col-sm-7"> 
+                                                    <select name="idTipoUsuario" id="idTipoUsuario" value="idTipoUsuario">
+                                                  <option value="1">Secretaria</option>
+                                                  <option value="2">Professor</option>
+                                                  <option value="3">Aluno</option>
+                                                  <option value="4">Responsavel</option>
+                                                  </select value="<?php echo $professor->getIdTipoUsuario();?>">
+
+                                                </div>
+                                            </div>
+                                          </div>
                                               <button type="submit" class="btn btn-warning pull-right">     <?php echo $acao; ?>
                                               </button>
                   </form>
@@ -132,8 +137,6 @@ if(isset($_GET['idProfessor']))
           </div>
       </div>
   </section>  
+<?php require_once 'template/footer.php';?> 
 </div>
-<?php 
-require_once 'template/footer.php';
-?> 
 
