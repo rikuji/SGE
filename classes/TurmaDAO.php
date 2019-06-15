@@ -21,9 +21,6 @@
 			$stmt= $this->db->prepare($sql);
 			$stmt->execute();	
 
-
-
-
 			//$sql->execute();
 		}
 		public function listarTurma(){
@@ -31,6 +28,15 @@
 			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
 			$sql->execute();
 			return $sql->fetchAll();
+
+		}
+
+		public function listarPorIdTurma($id){
+		$sql = $this->db->prepare("SELECT * FROM {$this->table} where idTurma = {$id}");
+			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
+			$sql->execute();
+			$results = $sql->fetchAll(PDO::FETCH_ASSOC);
+			return $results; 
 		}
 		public function deletarTurma($id){
 			$sql = $this->db->prepare("DELETE FROM {$this->table} WHERE idTurma = {$id}");
