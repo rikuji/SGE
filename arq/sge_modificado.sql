@@ -319,3 +319,15 @@ INSERT INTO `sge`.`tipousuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('
 INSERT INTO `sge`.`tipousuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('2', 'professor');
 INSERT INTO `sge`.`tipousuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('3', 'aluno');
 INSERT INTO `sge`.`tipousuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('4', 'responsavel');
+
+INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('1','solteiro');
+INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('2','casado');
+INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('3','viúvo');
+INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('4','divorciado');
+INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('5','União Estável');
+
+ALTER TABLE `sge`.`aluno` 
+DROP FOREIGN KEY `fk_Aluno_responsavelLegal1`;
+ALTER TABLE `sge`.`aluno` 
+DROP COLUMN `idResponsavelAluno`,
+DROP INDEX `fk_Aluno_responsavelLegal1_idx`;
