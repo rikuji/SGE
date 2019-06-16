@@ -16,6 +16,8 @@
 		private $numeroEndeAluno;
 		private $senhaAluno;
         private $ufEndeAluno;
+        private $idTipoUsuario;
+        private $idResponsavel;
 
 	
 
@@ -335,6 +337,32 @@
     public function setUfEndeAluno($ufEndeAluno)
     {
         $this->ufEndeAluno = $ufEndeAluno;
+
+        return $this;
+    }
+    public function getIdTipoUsuario(){
+        return $this->idTipoUsuario; 
+    }
+
+    public function setIdTipoUsuario($idTipoUsuario){
+        $this->idTipoUsuario = $idTipoUsuario;
+    }
+    /**
+     * @return mixed
+     */
+    public function getIdResponsavel()
+    {
+        return $this->idResponsavel;
+    }
+
+    /**
+     * @param mixed $idResponsavel
+     *
+     * @return self
+     */
+    public function setIdResponsavel($idResponsavel)
+    {
+        $this->idResponsavel = $idResponsavel;
 
         return $this;
     }

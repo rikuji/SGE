@@ -3,14 +3,14 @@ include 'template/header.php';
 include 'template/menu.php';  
 
 $id = $_GET["idResponsavel"];
-$responsavelDAo = new ResponsavelDAO();
+$responsavelDAO = new ResponsavelDAO();
 $responsavel = new Responsavel();
-$responsavelDAo->listarPorIdResponsavel($id);
+$estadoCivil = new EstadoCivil();
 
-$query = $responsavelDAo->listarPorIdResponsavel($id);
-
+$query = $responsavelDAO->listarPorIdResponsavel($id);
+ 
 foreach ($query as $listaId)
-{
+{  
   $responsavel->setIdResponsavel($listaId["idResponsavel"]);
   $responsavel->setNomeResponsavel($listaId["nomeResponsavel"]); 
   $responsavel->setCpfResponsavel($listaId["cpfResponsavel"]); 
@@ -27,7 +27,7 @@ foreach ($query as $listaId)
   $responsavel->setCepEndeResponsavel($listaId["cepEndeResponsavel"]);
   $responsavel->setNumeroEndeResponsavel($listaId["numeroEndeResponsavel"]);
   $responsavel->setLegalResponsavel($listaId["legalResponsavel"]);
-  $responsavel->setFinanceiroResponsavel($listaId["finaceiroResponsavel"]);
+  $responsavel->setFinanceiroResponsavel($listaId["financeiroResponsavel"]);
   $responsavel->setSenhaResponsavel($listaId["senhaResponsavel"]);
   $responsavel->setIdTipoUsuario($listaId["idTipoUsuario"]);
   $responsavel->setIdEstadoCivil($listaId["idEstadoCivil"]);
@@ -114,7 +114,7 @@ if(isset($_GET['idResponsavel']))
               </div>
 
               <div class="form-group row">
-                <label " class=" form-control-label" for="telFixoResponsavel">Telefone:</label>
+                <label class=" form-control-label" for="telFixoResponsavel">Telefone:</label>
                 <div class="col-sm-3">
                   <input type="text" name="telFixoResponsavel" id="telFixoResponsavel" class="form-control" required=""
                     value="<?php echo $responsavel->getTelFixoResponsavel();?>" />
@@ -132,7 +132,7 @@ if(isset($_GET['idResponsavel']))
               <div class="form-group row">
                 <label class="col-sm- form-control-label" for="sexoResponsavel">Sexo:</label>
                 <div class="col-sm-2">
-                  <select "value=" <?php echo $responsavel->getSexoResponsavel();?>" name="sexoResponsavel"
+                  <select value=" <?php echo $responsavel->getSexoResponsavel();?>" name="sexoResponsavel"
                     id="sexoResponsavel">
                     <option value="F">Feminino</option>
                     <option value="M">Masculino</option>
@@ -174,7 +174,7 @@ if(isset($_GET['idResponsavel']))
                 </div>
 
                 <div class="form-group row">
-                  <label " class=" col-sm-1 form-control-label" for="cepEndeResponsavel">CEP:</label>
+                  <label class=" col-sm-1 form-control-label" for="cepEndeResponsavel">CEP:</label>
                   <div class="col-sm-8">
                     <input type="text" name="cepEndeResponsavel" id="cepEndeResponsavel" class="form-control"
                       required="" value="<?php echo $responsavel->getCepEndeResponsavel(); ?>"
@@ -193,7 +193,7 @@ if(isset($_GET['idResponsavel']))
                 <div class="form-group row">
                   <label class="col-sm-1 form-control-label" for="ufEndeResponsavel">UF:</label>
                   <div class="col-sm-8">
-                    <select "value=" <?php echo $responsavel->getUfEndeResponsavel();?>" id="ufEndeResponsavel"
+                    <select value=" <?php echo $responsavel->getUfEndeResponsavel();?>" id="ufEndeResponsavel"
                       name="ufEndeResponsavel">
                       <option value="ac">Ac</option>
                       <option value="al">Al</option>
@@ -229,7 +229,7 @@ if(isset($_GET['idResponsavel']))
               <div class="form-group row">
                 <label class="form-control-label" for="idTipoUsuario">Tipo Usuario:</label>
                 <div class="col-sm-2">
-                  <select "value=" <?php echo $responsavel->getIdTipoUsuario();?>" id="idTipoUsuario"
+                  <select value=" <?php echo $responsavel->getIdTipoUsuario();?>" id="idTipoUsuario"
                     name="idTipoUsuario">
                     <option value="1">Secretaria</option>
                     <option value="2">Professor</option>
@@ -238,11 +238,10 @@ if(isset($_GET['idResponsavel']))
                   </select>
                 </div>
 
-
                 <div class="form-group row">
                   <label class="form-control-label" for="idEstadoCivil">Estado Civil:</label>
                   <div class="col-sm-9">
-                    <select "value=" <?php echo $estadoCivil->getIdEstadoCivil();?>" id="idEstadoCivil"
+                    <select value="<?php echo $estadoCivil->getIdEstadoCivil();?>" id="idEstadoCivil"
                       name="idEstadoCivil">
                       <option value="1">Solteiro</option>
                       <option value="2">Casado</option>
@@ -257,7 +256,7 @@ if(isset($_GET['idResponsavel']))
               <div class="form-group row">
                 <label class="form-control-label" for="legalResponsavel">Legal:</label>
                 <div class="col-sm-2">
-                  <select "value=" <?php echo $responsavel->getLegalResponsavel(); ?>" id="legalResponsavel"
+                  <select value=" <?php echo $responsavel->getLegalResponsavel(); ?>" id="legalResponsavel"
                     name="legalResponsavel">
                     <option value="S">Sim</option>
                     <option value="N">Não</option>
@@ -267,7 +266,7 @@ if(isset($_GET['idResponsavel']))
                 <div class="form-group row">
                   <label class="col-sm-4 form-control-label" for="financeiroResponsavel">Financeiro:</label>
                   <div class="col-sm-6">
-                    <select "value=" <?php echo $responsavel->getFinanceiroResponsavel();?>" id="financeiroResponsavel"
+                    <select value=" <?php echo $responsavel->getFinanceiroResponsavel();?>" id="financeiroResponsavel"
                       name="financeiroResponsavel">
                       <option value="S">Sim</option>
                       <option value="N">Não</option>
@@ -284,14 +283,10 @@ if(isset($_GET['idResponsavel']))
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-warning pull-right"><?php echo $acao; ?></button>
+              <button type="submit" class="btn btn-info pull-right"><?php echo $acao; ?></button>
             </form>
           </div>
         </div>
       </div>
-    </div>
-</div>
-</div>
-</section>
 <?php include 'template/footer.php' ?>
 </div>

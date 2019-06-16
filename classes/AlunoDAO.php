@@ -7,23 +7,24 @@
 			$this->table = 'aluno';
 		}
 		public function insereAluno(Aluno $aluno)
-		{
+		{ 
 			$valores = " null,
-			'{$nomeAluno->getNomeAluno()}', 
-			'{$cpfAluno->getCpfAluno()}', 
-			'{$emailAluno->getEmailAluno()}',
-			'{$celullarAluno->getCelullarAluno()}',
-			'{$telFixoAluno->getTelFixoAluno()}',
-			'{$dtNascAluno->getDtNascAluno()}', 
-			'{$sexoAluno->getSexoAluno()}', 
-			'{$logradoruroEndeAluno->getLogradoruroEndeAluno()}', 
-			'{$complementoEndeAluno->getComplementoEndeAluno()}',
-			'{$bairroEndeAluno->getBairroEndeAluno()}',
-			'{$cidadeEndeAluno->getCidadeEndeAluno()}',
-			'{$ufEndeAluno->getUfEndeAluno()}',
-			'{$numeroAluno->getNumeroAluno()}',
-			'{$senhaAluno->getSenhaAluno()}',
-			'{$cepAluno->getCepAluno()}'";
+			'{$aluno->getNomeAluno()}', 
+			'{$aluno->getCpfAluno()}', 
+			'{$aluno->getEmailAluno()}',
+			'{$aluno->getCelullarAluno()}',
+			'{$aluno->getTelFixoAluno()}',
+			'{$aluno->getDtNascAluno()}', 
+			'{$aluno->getSexoAluno()}', 
+			'{$aluno->getLogradouroEndeAluno()}', 
+			'{$aluno->getComplementoEndeAluno()}',
+			'{$aluno->getBairroEndeAluno()}',
+			'{$aluno->getCidadeEndeAluno()}',
+			'{$aluno->getUfEndeAluno()}',
+			'{$aluno->getNumeroEndeAluno()}',
+			'{$aluno->getSenhaAluno()}',
+			'{$aluno->getCepEndeAluno()}'";
+			//print_r($valores);exit;
 			$this->inserir($valores);
 		}
 

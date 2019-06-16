@@ -1,7 +1,7 @@
 <?php 
 class Responsavel
 {
-		private $idResponsavel; 
+		private $idResponsavel;  
 		private $nomeResponsavel;
 		private $cpfResponsavel;
 		private $emailResponsavel;

@@ -64,7 +64,7 @@ else
                                 </div>
                             </div>
                             <a href="principal.php" class="btn btn-warning col-sm-2"
-                                style="margin-left: auto;">Voltar</a>
+                                style="margin-left: auto;background-color: #0b56a6;">Voltar</a>
                         </div>
                     </div>
                 </div>

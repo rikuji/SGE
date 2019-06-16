@@ -39,9 +39,9 @@ include 'template/menu.php';
                 <div class="cards">
                     <div class="card-header d-flex align-items-right">
                         <a style="margin-left: auto;"></a>
+                        &nbsp; 
                         &nbsp;
-                        &nbsp;
-                        <a href="aluno.php" class="btn btn-warning col-sm-2" style="">Voltar</a>
+                        <a href="responsavel.php" class="btn btn-info col-sm-2" style="background-color: #0b56a6;">Voltar</a>
                     </div>
                 </div>
             </div>
@@ -61,13 +61,13 @@ include 'template/menu.php';
                                     <input type="text" name="nomeResponsavel" id="nomeResponsavel" class="form-control"
                                         value="<?php echo $responsavel->getNomeResponsavel();?>" />
                                     <input type="hidden" name="idResponsavel" id="idResponsavel"
-                                        value="<?php echo $responsavel->getIdResponsavel(); ?>"></input>
+                                        value="<?php echo $responsavel->getIdResponsavel(); ?>" />
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-1 form-control-label" for="cpfResponsavel">CPF:</label>
                                     <div class="col-sm-7">
-                                        <input type="text" name="cpfResponsavel" id="cpfResponsavel"
+                                        <input type="text" maxlength="11" name="cpfResponsavel" id="cpfResponsavel"
                                             class="form-control" required=""
                                             value="<?php echo $responsavel->getCpfResponsavel();?>" />
                                     </div>
@@ -113,7 +113,7 @@ include 'template/menu.php';
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm- form-control-label" for="sexoResponsavel">Sexo:</label>
+                                <label class="form-control-label" for="sexoResponsavel">Sexo:</label>
                                 <div class="col-sm-2">
                                     <select "value=" <?php echo $responsavel->getSexoResponsavel();?>"
                                         name="sexoResponsavel" id="sexoResponsavel">
@@ -276,7 +276,7 @@ include 'template/menu.php';
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-warning pull-right"><?php echo $acao; ?></button>
+                            <button type="submit" class="btn btn-info pull-right"><?php echo $acao; ?></button>
                         </form>
                     </div>
                 </div>

@@ -25,7 +25,7 @@ $acao = "Editar";
     <!-- Page Header-->
     <header class="page-header">
     	<div class="container-fluid">
-      <h2 class="no-margin-bottom">.:Cadastro Secretaria:.</h2>
+      <h2 class="no-margin-bottom">.:Editar Secretaria:.</h2>
     </div>
   	</header>
   	<section class="forms"> 
@@ -41,7 +41,7 @@ $acao = "Editar";
             <a style="margin-left: auto;"></a>  
               &nbsp;
               &nbsp;
-              <a href="secretaria.php" class="btn btn-warning col-sm-2" style="">Voltar</a>
+              <a href="secretaria.php" class="btn btn-info col-sm-2" style="background-color: #0b56a6;">Voltar</a>
         </div>
       </div>
     </div>
@@ -49,48 +49,58 @@ $acao = "Editar";
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-flex align-items-center">
-                    <h3 class="h4">.:Cadastro Secretaria:.</h3>
+                    <h3 class="h4">.:Editar Secretaria:.</h3>
                 </div>
                 <div class="card-body">
-              <form action="salvaSecretaria.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
-              	<div class="form-group row">
-                    <label class="col-sm-3 form-control-label" for="nomeSecretaria">Nome:</label>
-                        <div class="col-sm-9">
-               				<input type=hidden name="idSecretaria" id="idSecretaria" value="<?php echo $idSecretaria; ?>"></input>
+              <form action="salvaSecretaria.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal col-sm-12">
+              <div class="form-group row">
+                    <label class="form-control-label" for="nomeSecretaria">Nome:</label>
+                        <div class="col-sm-4">
                             <input type="text"  id="nomeSecretaria" name="nomeSecretaria" class="form-control" value="<?php echo $nomeSecretaria; ?>" ></input>
+                            <input type="hidden" name="idSecretaria" id="idSecretaria" value="<?php echo $idSecretaria; ?>"></input>
                         </div>
-                  
                 
-                  <label class="col-sm-3 form-control-label" for="cpfSecretaria">CPF:</label>
+                <div class="form-group row">
+                  <label class="col-sm-1 form-control-label" for="cpfSecretaria">CPF:</label>
                       <div class="col-sm-9">
-                          <input type="text" maxlength="11" id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $cpfSecretaria; ?>" ></input>
+                          <input type="text"  maxlength="11" id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $cpfSecretaria; ?>" ></input>
                       </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-sm-3 form-control-label" for="senhaSecretaria">Senha:</label>
-                      <div class="col-sm-9">
-                          <input type="text"  id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $senhaSecretaria; ?>" ></input>
+              </div>
+
+              <div class="form-group row">
+                  <label class=" form-control-label" for="emailSecretaria">Email:</label>
+                      <div class="col-sm-4">
+                          <input type="text"  id="emailSecretaria" name="emailSecretaria" class="form-control" value="<?php echo $emailSecretaria; ?>" placeholder="email@email.com" ></input>
                       </div>
-                </div>
                 <div class="form-group row">
-                  <label class="col-sm-3 form-control-label" for="emailSecretaria">Email:</label>
-                      <div class="col-sm-9">
-                          <input type="text"  id="emailSecretaria" name="emailSecretaria" class="form-control" value="<?php echo $emailSecretaria; ?>" ></input>
-                      </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-sm-3 form-control-label" for="cargoSecretaria">Cargo:</label>
+                  <label class="col-sm-1 form-control-label" for="cargoSecretaria">Cargo:</label>
                       <div class="col-sm-9">
                           <input type="text"  id="cargoSecretaria" name="cargoSecretaria" class="form-control" value="<?php echo $cargoSecretaria; ?>" ></input>
                       </div>
                 </div>
+              </div>
+
+                
+                <div class="form-group row"> 
+                  <label class=" form-control-label" for="idTipoUsuario">Tipo Usuario:</label>
+                  <div class="col-sm-3"> 
+                    <select name="idTipoUsuario" id="idTipoUsuario" value="idTipoUsuario">
+                      <option value="1">Secretaria</option>
+                      <option value="2">Professor</option>
+                      <option value="3">Aluno</option>
+                      <option value="4">Responsavel</option>
+                    </select value="<?php echo $idTipoUsuario;?>">
+                  </div>
                 <div class="form-group row">
-                  <label class="col-sm-3 form-control-label" for="idTipoUsuario">Tipo Usuario:</label>
+                  <label class="col-sm-2 form-control-label" for="senhaSecretaria">Senha:</label>
                       <div class="col-sm-9">
-                          <input type="number"  id="idTipoUsuario" name="idTipoUsuario" class="form-control" value="<?php echo $idTipoUsuario; ?>" ></input>
+                          <input type="password" maxlength="15" id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $senhaSecretaria; ?>" ></input>
                       </div>
                 </div>
-                <button type="submit" class="btn btn-warning pull-right"><?php echo $acao; ?></button>
+              </div>
+
+                <button type="submit" class="btn btn-info pull-right"><?php echo $acao; ?></button>
               </form>
             </div>
           	</div>

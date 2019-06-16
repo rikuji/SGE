@@ -37,7 +37,7 @@ if(isset($_GET['idSecretaria'])){
             <a style="margin-left: auto;"></a>  
               &nbsp;
               &nbsp;
-              <a href="secretaria.php" class="btn btn-warning col-sm-2" style="">Voltar</a>
+              <a href="javascript:history.back(-1)" class="btn btn-info col-sm-2" style="background-color: #0b56a6;">Voltar</a>
         </div>
       </div>
     </div>
@@ -48,46 +48,55 @@ if(isset($_GET['idSecretaria'])){
                     <h3 class="h4">.:Cadastro Secretaria:.</h3>
                 </div>
                 <div class="card-body">
-              <form action="salvaSecretaria.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal">
+              <form action="salvaSecretaria.php?acao=<?php echo $acao; ?>" method="POST" class="form-horizontal col-sm-12">
               	<div class="form-group row">
-                    <label class="col-sm-3 form-control-label" for="nomeSecretaria">Nome:</label>
-                        <div class="col-sm-9">
+                    <label class="form-control-label" for="nomeSecretaria">Nome:</label>
+                        <div class="col-sm-4">
                             <input type="text"  id="nomeSecretaria" name="nomeSecretaria" class="form-control" value="<?php echo $secretaria->getNomeSecretaria(); ?>" ></input>
                             <input type="hidden" name="idSecretaria" id="idSecretaria" value="<?php echo $secretaria->getIdSecretaria(); ?>"></input>
                         </div>
-                </div>
                 
                 <div class="form-group row">
-                  <label class="col-sm-3 form-control-label" for="cpfSecretaria">CPF:</label>
+                  <label class="col-sm-1 form-control-label" for="cpfSecretaria">CPF:</label>
                       <div class="col-sm-9">
                           <input type="text"  maxlength="11" id="cpfSecretaria" name="cpfSecretaria" class="form-control" value="<?php echo $secretaria->getCpfSecretaria(); ?>" ></input>
                       </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-sm-3 form-control-label" for="senhaSecretaria">Senha:</label>
-                      <div class="col-sm-9">
-                          <input type="password" maxlength="15" id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $secretaria->getSenhaSecretaria(); ?>" ></input>
-                      </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-sm-3 form-control-label" for="emailSecretaria">Email:</label>
-                      <div class="col-sm-9">
+              </div>
+
+              <div class="form-group row">
+                  <label class=" form-control-label" for="emailSecretaria">Email:</label>
+                      <div class="col-sm-4">
                           <input type="text"  id="emailSecretaria" name="emailSecretaria" class="form-control" value="<?php echo $secretaria->getEmailSecretaria(); ?>" placeholder="email@email.com" ></input>
                       </div>
-                </div>
                 <div class="form-group row">
-                  <label class="col-sm-3 form-control-label" for="cargoSecretaria">Cargo:</label>
+                  <label class="col-sm-1 form-control-label" for="cargoSecretaria">Cargo:</label>
                       <div class="col-sm-9">
                           <input type="text"  id="cargoSecretaria" name="cargoSecretaria" class="form-control" value="<?php echo $secretaria->getCargoSecretaria(); ?>" ></input>
                       </div>
                 </div>
+              </div>
+
+                
+                <div class="form-group row"> 
+                  <label class=" form-control-label" for="idTipoUsuario">Tipo Usuario:</label>
+                  <div class="col-sm-3"> 
+                    <select name="idTipoUsuario" id="idTipoUsuario" value="idTipoUsuario">
+                      <option value="1">Secretaria</option>
+                      <option value="2">Professor</option>
+                      <option value="3">Aluno</option>
+                      <option value="4">Responsavel</option>
+                    </select value="<?php echo $secretaria->getIdTipoUsuario();?>">
+                  </div>
                 <div class="form-group row">
-                  <label class="col-sm-3 form-control-label" for="idTipoUsuario">Tipo Usuario:</label>
+                  <label class="col-sm-2 form-control-label" for="senhaSecretaria">Senha:</label>
                       <div class="col-sm-9">
-                          <input type="number"  id="idTipoUsuario" name="idTipoUsuario" class="form-control" value="<?php echo $secretaria->getIdTipoUsuario(); ?>" ></input>
+                          <input type="password" maxlength="15" id="senhaSecretaria" name="senhaSecretaria" class="form-control" value="<?php echo $secretaria->getSenhaSecretaria(); ?>" ></input>
                       </div>
                 </div>
-                <button type="submit" class="btn btn-warning pull-right"><?php echo $acao; ?></button>
+              </div>
+                
+                <button type="submit" class="btn btn-info pull-right"><?php echo $acao; ?></button>
               </form>
             </div>
           	</div>

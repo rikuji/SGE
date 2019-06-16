@@ -51,7 +51,7 @@ else
               <?php } ?>
               <div class="cards">
                   <div class="card-header d-flex align-items-right">
-                    <a href="javascript:history.back(-1)" class="btn btn-warning col-sm-2" style="margin-left: auto;">Voltar</a>
+                    <a href="javascript:history.back(-1)" class="btn btn-warning col-sm-2" style="margin-left: auto; background-color: #0b56a6;">Voltar</a>
                   </div>
               </div>
             </div>

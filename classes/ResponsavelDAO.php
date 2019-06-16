@@ -30,28 +30,28 @@
 			'{$responsavel->getIdEstadoCivil()}'";
 			$this->inserir($values);
 		}
-/*
-		public function alteraResponsavel(Responsavel $responsavel)
-		{
-			$value = " null,
-			'{$responsavel->getNomeResponsavel()}', 
-			'{$responsavel->getCpfResponsavel()}', 
-			'{$responsavel->getEmailResponsavel()}',
-			'{$responsavel->getCelullarResponsavel()}',
-			'{$responsavel->getTelFixoResponsavel()}',
-			'{$responsavel->getDtNascResponsavel()}', 
-			'{$responsavel->getSexoResponsavel()}', 
-			'{$responsavel->getLogradoruroEndeResponsavel()}', 
-			'{$responsavel->getComplementoEndeResponsavel()}',
-			'{$responsavel->getBairroEndeResponsavel()}',
-			'{$responsavel->getCidadeEndeResponsavel()}',
-			'{$responsavel->getUfEndeResponsavel()}',
-			'{$responsavel->getNumeroResponsavel()}',
-			'{$responsavel->getSenhaResponsavel()}',
-			'{$responsavel->getCepResponsavel()}'";
-			$this->alterar($responsavel->getIdeResposavel(), $value);
+
+		public function alterarResponsavel(Responsavel $responsavel){
+			$sql = ("UPDATE {$this->table} SET 
+			nomeResponsavel = '{$responsavel->getNomeResponsavel()}', 
+			cpfResponsavel  = '{$responsavel->getCpfResponsavel()}', 
+			emailResponsavel = '{$responsavel->getEmailResponsavel()}',
+			celullarResponsavel = '{$responsavel->getCelullarResponsavel()}',
+			telFixoResponsavel = '{$responsavel->getTelFixoResponsavel()}',
+			dtNascResponsavel = '{$responsavel->getDtNascResponsavel()}', 
+			sexoResponsavel = '{$responsavel->getSexoResponsavel()}', 
+			logradouroEndeResponsavel = '{$responsavel->getLogradouroEndeResponsavel()}', 
+			complementoEndeResponsavel = '{$responsavel->getComplementoEndeResponsavel()}',
+			bairroEndeResponsavel = '{$responsavel->getBairroEndeResponsavel()}',
+			cidadeEndeResponsavel = '{$responsavel->getCidadeEndeResponsavel()}',
+			ufEndeResponsavel = '{$responsavel->getUfEndeResponsavel()}',
+			numeroEndeResponsavel = '{$responsavel->getNumeroEndeResponsavel()}',
+			senhaResponsavel = '{$responsavel->getSenhaResponsavel()}',
+			cepEndeResponsavel = '{$responsavel->getCepEndeResponsavel()}'
+			WHERE (idResponsavel = {$responsavel->getIdResponsavel()})");
+				$stmt= $this->db->prepare($sql);
+				$stmt->execute();
 		}
-*/
 		public function listarResposavel(){
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");
 			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
@@ -67,13 +67,11 @@
 		}
 		public function listarPorIdResponsavel($id)
 		{
-			$query = "SELECT * FROM responsavel where idResponsavel = :id";
-			$conexao = new PDO("mysql:host=127.0.0.1;dbname=sge","root","");
-			$stmt = $conexao->prepare($query);
-			$stmt->bindValue(':id', $id);
-			$stmt->execute();
-			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			return $results;
-		}
+			$sql = $this->db->prepare("SELECT * FROM {$this->table} where idResponsavel = {$id}");
+			$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
+			$sql->execute();
+			$results = $sql->fetchAll(PDO::FETCH_ASSOC);
+			return $results; 
+		} 
 	}
 ?>	

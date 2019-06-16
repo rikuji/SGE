@@ -6,7 +6,7 @@ $alunoDAO = new AlunoDAO();
 if (isset($_GET['idAluno']) and $_GET['acao'] == 'Deletar') {
 		
 		$alunoDAO->deletarAluno($_GET['idAluno']);
-	}else{
+	}else{ 
 		$aluno->setIdAluno($_POST['idAluno']);
 		$aluno->setNomeAluno($_POST['nomeAluno']);
 		$aluno->setCpfAluno($_POST['cpfAluno']);
@@ -21,7 +21,7 @@ if (isset($_GET['idAluno']) and $_GET['acao'] == 'Deletar') {
 		$aluno->setCidadeEndeAluno($_POST['cidadeEndeAluno']);
 		$aluno->setCepEndeAluno($_POST['cepEndeAluno']);
 		$aluno->setNumeroEndeAluno($_POST['numeroEndeAluno']);
-		$aluno->setSenhaaluno($_POST['senhaalunoaluno']);
+		$aluno->setSenhaAluno($_POST['senhaAluno']);
 		$aluno->setUfEndeAluno($_POST['ufEndeAluno']);
 
 		$acao = $_GET['acao'];
