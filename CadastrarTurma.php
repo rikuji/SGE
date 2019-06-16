@@ -84,7 +84,7 @@ else
                            
                             <div class="form-group row">
                                 <div class="col-sm-12 offset-sm-3">
-                                    <button type="submit" class="btn btn-primary"><?php echo $acao; ?></button>
+                                    <button type="submit" class="btn btn-info"><?php echo $acao; ?></button>
                                 </div>
                             </div>
 

@@ -65,7 +65,7 @@ if(isset($_GET['idResponsavel']))
             <a style="margin-left: auto;"></a>
             &nbsp;
             &nbsp;
-            <a href="aluno.php" class="btn btn-warning col-sm-2" style="">Voltar</a>
+            <a href="aluno.php" class="btn btn-warning col-sm-2" style="background-color: #0b56a6;">Voltar</a>
           </div>
         </div>
       </div>

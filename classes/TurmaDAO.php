@@ -20,8 +20,6 @@
 			//print_r($sql);exit;
 			$stmt= $this->db->prepare($sql);
 			$stmt->execute();	
-
-			//$sql->execute();
 		}
 		public function listarTurma(){
 			$sql = $this->db->prepare("SELECT * FROM {$this->table}");

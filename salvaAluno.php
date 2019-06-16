@@ -14,15 +14,17 @@ if (isset($_GET['idAluno']) and $_GET['acao'] == 'Deletar') {
 		$aluno->setCelullarAluno($_POST['celullarAluno']);
 		$aluno->setTelFixoAluno($_POST['telFixoAluno']);
 		$aluno->setDtNascAluno($_POST['dtNascAluno']); 
-		$aluno->setSexoaluno($_POST['sexoAluno']);
+		$aluno->setSexoAluno($_POST['sexoAluno']);
 		$aluno->setLogradouroEndeAluno($_POST['logradouroEndeAluno']);
 		$aluno->setComplementoEndeAluno($_POST['complementoEndeAluno']);
 		$aluno->setBairroEndeAluno($_POST['bairroEndeAluno']);
 		$aluno->setCidadeEndeAluno($_POST['cidadeEndeAluno']);
+		$aluno->setUfEndeAluno($_POST['ufEndeAluno']);		
 		$aluno->setCepEndeAluno($_POST['cepEndeAluno']);
 		$aluno->setNumeroEndeAluno($_POST['numeroEndeAluno']);
 		$aluno->setSenhaAluno($_POST['senhaAluno']);
-		$aluno->setUfEndeAluno($_POST['ufEndeAluno']);
+		$aluno->setIdTipoUsuario($_POST['idTipoUsuario']);
+
 
 		$acao = $_GET['acao'];
 

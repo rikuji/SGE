@@ -346,6 +346,7 @@
 
     public function setIdTipoUsuario($idTipoUsuario){
         $this->idTipoUsuario = $idTipoUsuario;
+        return $this;
     }
     /**
      * @return mixed

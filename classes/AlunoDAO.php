@@ -21,32 +21,37 @@
 			'{$aluno->getBairroEndeAluno()}',
 			'{$aluno->getCidadeEndeAluno()}',
 			'{$aluno->getUfEndeAluno()}',
+			'{$aluno->getCepEndeAluno()}',
 			'{$aluno->getNumeroEndeAluno()}',
 			'{$aluno->getSenhaAluno()}',
-			'{$aluno->getCepEndeAluno()}'";
+			'{$aluno->getIdTipoUsuario()}'";
 			//print_r($valores);exit;
 			$this->inserir($valores);
 		}
 
-		public function alteraAluno(Aluno $aluno)
+		public function alterarAluno(Aluno $aluno)
 		{
-			$value = " null,
-			'{$nomeAluno->getNomeAluno()}', 
-			'{$cpfAluno->getCpfAluno()}', 
-			'{$emailAluno->getEmailAluno()}',
-			'{$celullarAluno->getCelullarAluno()}',
-			'{$telFixoAluno->getTelFixoAluno()}',
-			'{$dtNascAluno->getDtNascAluno()}', 
-			'{$sexoAluno->getSexoAluno()}', 
-			'{$logradoruroEndeAluno->getLogradoruroEndeAluno()}', 
-			'{$complementoEndeAluno->getComplementoEndeAluno()}',
-			'{$bairroEndeAluno->getBairroEndeAluno()}',
-			'{$cidadeEndeAluno->getCidadeEndeAluno()}',
-			'{$ufEndeAluno->getUfEndeAluno()}',
-			'{$numeroAluno->getNumeroAluno()}',
-			'{$senhaAluno->getSenhaAluno()}'.
-			'{$cepAluno->getCepAluno()}'";
-			$this->alterar($aluno->getIdeAluno(), $value);
+		$sql = ("UPDATE {$this->table} SET
+			nomeAluno = '{$aluno->getNomeAluno()}', 
+			cpfAluno = '{$aluno->getCpfAluno()}', 
+			emailAluno = '{$aluno->getEmailAluno()}',
+			celullarAluno = '{$aluno->getCelullarAluno()}',
+			telFixoAluno = '{$aluno->getTelFixoAluno()}',
+			dtNascAluno  = '{$aluno->getDtNascAluno()}', 
+			sexoAluno = '{$aluno->getSexoAluno()}', 
+			logradouroEndeAluno = '{$aluno->getLogradouroEndeAluno()}', 
+			complementoEndeAluno = '{$aluno->getComplementoEndeAluno()}',
+			bairroEndeAluno  = '{$aluno->getBairroEndeAluno()}',
+			cidadeEndeAluno = '{$aluno->getCidadeEndeAluno()}',
+			ufEndeAluno = '{$aluno->getUfEndeAluno()}',
+			cepEndeAluno = '{$aluno->getCepEndeAluno()}',
+			numeroEndeAluno = '{$aluno->getNumeroEndeAluno()}',
+			senhaAluno = '{$aluno->getSenhaAluno()}',
+			idTipoUsuario = '{$aluno->getIdTipoUsuario()}'
+			WHERE (idAluno = {$aluno->getIdAluno()})");
+			$stmt= $this->db->prepare($sql);
+			//print_r($sql);exit;
+			$stmt->execute();
 		}
 
 		public function listarAluno()
@@ -57,7 +62,13 @@
 			$sql->execute();
 			return $sql->fetchAll();
 		}
-
+		public function listarPorIdAluno($id){
+			$sql = $this->db->prepare("SELECT * FROM {$this->table} where idAluno = {$id}");
+				$sql->setFetchMode(PDO::FETCH_CLASS, $this->class);
+				$sql->execute();
+				$results = $sql->fetchAll(PDO::FETCH_ASSOC);
+				return $results; 
+			}
 		public function deletarAluno($id)
 		{
 			$sql = $this->db->prepare("DELETE FROM {$this->table} WHERE idProfessor = {$id}");

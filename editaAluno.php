@@ -1,9 +1,31 @@
 <?php 
 include 'template/header.php';
 include 'template/menu.php';
-
+  $id = $_GET['idAluno'];
   $aluno = new Aluno();
   $alunoDAO = new AlunoDAO();
+
+  $query = $alunoDAO->listarPorIdAluno($id);
+
+  foreach($query as $listaAluno){
+    $aluno->setIdAluno($listaAluno['idAluno']);
+		$aluno->setNomeAluno($listaAluno['nomeAluno']);
+		$aluno->setCpfAluno($listaAluno['cpfAluno']);
+		$aluno->setEmailaluno($listaAluno['emailAluno']);
+		$aluno->setCelullarAluno($listaAluno['celullarAluno']);
+		$aluno->setTelFixoAluno($listaAluno['telFixoAluno']);
+		$aluno->setDtNascAluno($listaAluno['dtNascAluno']); 
+		$aluno->setSexoAluno($listaAluno['sexoAluno']);
+		$aluno->setLogradouroEndeAluno($listaAluno['logradouroEndeAluno']);
+		$aluno->setComplementoEndeAluno($listaAluno['complementoEndeAluno']);
+		$aluno->setBairroEndeAluno($listaAluno['bairroEndeAluno']);
+		$aluno->setCidadeEndeAluno($listaAluno['cidadeEndeAluno']);
+		$aluno->setUfEndeAluno($listaAluno['ufEndeAluno']);		
+		$aluno->setCepEndeAluno($listaAluno['cepEndeAluno']);
+		$aluno->setNumeroEndeAluno($listaAluno['numeroEndeAluno']);
+		$aluno->setSenhaAluno($listaAluno['senhaAluno']);
+		$aluno->setIdTipoUsuario($listaAluno['idTipoUsuario']);
+  }
 
     if(isset($_GET['idAluno'])){
 

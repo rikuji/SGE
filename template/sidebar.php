@@ -20,7 +20,6 @@
                     <li class=""> <a href="aluno.php"><i class="icon-list"></i>Aluno</a></li>
                     <li class=""> <a href="turma.php"><i class="icon-list"></i>Turma</a></li>
                     <li class=""> <a href="responsavel.php"><i class="icon-list"></i>Responsavel</a></li>
-                    <li class=""> <a href="materia.php"><i class="icon-list"></i>Matérias</a></li>
                     <li class=""> <a href="secretaria.php"><i class="icon-list"></i>Secretaria</a></li>
               </ul>
           </li>
@@ -30,8 +29,6 @@
                 <li><a href="cadastraProfessor.php">Professor</a></li>
                 <li><a href="CadastrarAluno.php">Aluno</a></li>
                 <li><a href="CadastrarTurma.php">Turma</a></li>
-                <li><a href="CadastrarMateria.php">Materias</a></li>
-                <li><a href="novaDisciplina.php">Disciplina</a></li>
                 <li><a href="novoResponsavel.php">Responsavel</a></li>
                 <li><a href="CadastrarSecretaria.php">Secretaria</a></li>
               </ul>

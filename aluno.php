@@ -89,12 +89,12 @@ else
 			<td><?php echo $aluno->getCpfAluno();?></td>
 			<td><?php echo $aluno->getEmailAluno();?></td>
 			<td>
-				<a href="cadastrarAluno.php?acao=Editar&idAluno=<?php echo $aluno->getIdAluno(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
-                                  <i class="fa fa-pencil" aria-hidden="true"></i>
-                                </a>
-                                    <a href="#" class="btn btn-danger" onclick="return excluir('salvaAluno.php?acao=Deletar&idAluno=<?php echo $aluno->getIdAluno(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
-                                     <div class="fa fa-trash-o" aria-hidden="true" ></div>
-                                </a>
+				<a href="editaAluno.php?acao=Editar&idAluno=<?php echo $aluno->getIdAluno(); ?>" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
+                	<i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="btn btn-danger" onclick="return excluir('salvaAluno.php?acao=Deletar&idAluno=<?php echo $aluno->getIdAluno(); ?>')" data-toggle="tooltip" data-placement="top" title="Deletar">
+                    <div class="fa fa-trash-o" aria-hidden="true" ></div>
+                    </a>
 
 			</td>
 		</tr>	
