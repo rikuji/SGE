@@ -1,3 +1,4 @@
-FROM php:7.2-cli
-COPY . /usr/src/sge
+FROM php:apache
+LABEL maintainer="Deyvisson Eduardo <deyvissoarouche@gmail.com>"
+
 
