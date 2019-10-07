@@ -315,19 +315,13 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-INSERT INTO `sge`.`tipousuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('1', 'secretaria');
-INSERT INTO `sge`.`tipousuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('2', 'professor');
-INSERT INTO `sge`.`tipousuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('3', 'aluno');
-INSERT INTO `sge`.`tipousuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('4', 'responsavel');
+INSERT INTO `sge`.`TipoUsuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('1', 'secretaria');
+INSERT INTO `sge`.`TipoUsuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('2', 'professor');
+INSERT INTO `sge`.`TipoUsuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('3', 'aluno');
+INSERT INTO `sge`.`TipoUsuario` (`idTipoUsuario`, `perfilTipoUsuario`) VALUES ('4', 'responsavel');
 
-INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('1','solteiro');
-INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('2','casado');
-INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('3','viúvo');
-INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('4','divorciado');
-INSERT INTO `sge`.`estadocivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('5','União Estável');
-
-ALTER TABLE `sge`.`aluno` 
-DROP FOREIGN KEY `fk_Aluno_responsavelLegal1`;
-ALTER TABLE `sge`.`aluno` 
-DROP COLUMN `idResponsavelAluno`,
-DROP INDEX `fk_Aluno_responsavelLegal1_idx`;
+INSERT INTO `sge`.`EstadoCivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('1','solteiro');
+INSERT INTO `sge`.`EstadoCivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('2','casado');
+INSERT INTO `sge`.`EstadoCivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('3','viúvo');
+INSERT INTO `sge`.`EstadoCivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('4','divorciado');
+INSERT INTO `sge`.`EstadoCivil` (`idEstadoCivil`,`descricaoEstadoCivil`) VALUES ('5','União Estável');
