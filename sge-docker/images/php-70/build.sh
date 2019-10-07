@@ -1,1 +1,1 @@
-docker build . -t sge-docker/php-70:latest
+docker build . -t php-70:latest
