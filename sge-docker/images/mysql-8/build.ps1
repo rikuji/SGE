@@ -1,1 +1,1 @@
-docker build . -t sge-docker/mysql
+docker build . -t mysql
