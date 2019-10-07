@@ -1,0 +1,26 @@
+version: '2.2'
+
+volumes:
+  mysql_data: {}
+
+services:
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./config/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d:ro
+      #- mysql_data:/var/lib/mysql:rw
+  php:
+    image: php:apache
+    depends_on:
+      - mysql
+    ports:
+      - "80:80"
+    volumes:
+      - ./config/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d:ro
+      - ../../:/var/www/html:ro
+  
+      
